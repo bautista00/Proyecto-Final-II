@@ -23,5 +23,5 @@ public class City {
     private String zipCode;
 
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Place> places = new HashSet<>();
+    private Set<Place> places;
 }

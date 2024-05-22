@@ -29,5 +29,5 @@ public class Place {
     private City city;
 
     @OneToMany (mappedBy = "place", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Zone> zones = new HashSet<>();
+    private Set<Zone> zones;
 }
