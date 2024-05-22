@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.proyectointegrador.msestadio</groupId>
-	<artifactId>ms-estadio</artifactId>
+	<artifactId>ms-place</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-estadio</name>
 	<description>Demo project for Spring Boot</description>
