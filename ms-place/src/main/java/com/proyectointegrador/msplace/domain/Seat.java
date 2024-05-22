@@ -1,4 +1,5 @@
 package com.proyectointegrador.msplace.domain;
+
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -18,5 +18,5 @@ public class ZoneDTO {
     private Integer numberSeats;
     private Integer availability;
     private Place place;
-    private Set<Seat> seats = new HashSet<>();
+    private Set<Seat> seats;
 }

@@ -1,20 +1,12 @@
 package com.proyectointegrador.msplace.controller;
 
-import com.proyectointegrador.msplace.domain.Place;
-import com.proyectointegrador.msplace.dto.CityDTO;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
 import com.proyectointegrador.msplace.service.implement.PlaceService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.Set;
 
@@ -50,12 +42,43 @@ public class PlaceController {
         return placeService.getAllZonesByPlaceName(name);
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<String> addPlace(@RequestBody PlaceDTO placeDTO) {
+        try {
+            PlaceDTO placeDTOR = placeService.addPlace(placeDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Estadio registrado con éxito: " + placeDTOR);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al registrar el estadio: " + e.getMessage());
+        }
+    }
 
+    @PutMapping("/update")
+    public ResponseEntity<String> updatePlace(@RequestBody PlaceDTO placeDTO) {
+        try {
+            PlaceDTO placeDTOR = placeService.updatePlace(placeDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Estadio actualizado con éxito: " + placeDTOR);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al actualizar el estadio: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletePlaceById(@PathVariable Long id) {
+        try {
+            placeService.deletePlaceById(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Estadio eliminado con éxito: " + id);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el estadio: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/delete/{name}")
+    public ResponseEntity<String> deletePlaceByName(@PathVariable String name) {
+        try {
+            placeService.deletePlaceByName(name);
+            return ResponseEntity.status(HttpStatus.OK).body("Estadio eliminado con éxito: " + name);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el estadio: " + e.getMessage());
+        }
+    }
 }
-
-/*
-PlaceDTO addPlace(PlaceDTO placeDTO);
-    PlaceDTO updatePlace(PlaceDTO placeDTO);
-    void deletePlaceById(Long id);
-    void deletePlaceByName(String name);
- */
