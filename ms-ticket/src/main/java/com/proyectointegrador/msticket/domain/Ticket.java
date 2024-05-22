@@ -21,7 +21,7 @@ public class Ticket {
 //    private User userId;
 
     @ManyToOne
-    @JoinColumn(name = "payment_id")
+    @JoinColumn(name = "payment_method_id")
     private Payment paymentId;
 
 }

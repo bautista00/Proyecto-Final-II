@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "Payment-Methods")
+@Table(name = "PaymentMethod")
 public class Payment {
 
     @Id
