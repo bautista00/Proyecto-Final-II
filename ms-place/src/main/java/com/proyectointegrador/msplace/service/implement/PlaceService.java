@@ -8,7 +8,6 @@ import com.proyectointegrador.msplace.repository.IPlaceRepository;
 import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;

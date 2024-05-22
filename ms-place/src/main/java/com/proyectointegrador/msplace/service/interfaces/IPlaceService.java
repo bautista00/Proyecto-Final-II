@@ -1,15 +1,9 @@
 package com.proyectointegrador.msplace.service.interfaces;
-
 import com.proyectointegrador.msplace.dto.PlaceDTO;
-import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
-
 import java.util.Optional;
 import java.util.Set;
 
-/*
-obtener las zonas de un estadio
- */
 public interface IPlaceService {
     Optional<PlaceDTO> getPlaceById(Long id);
     Optional<PlaceDTO> getPlaceByName(String name);

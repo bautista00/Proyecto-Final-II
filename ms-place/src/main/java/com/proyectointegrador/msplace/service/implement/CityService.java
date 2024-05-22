@@ -2,15 +2,12 @@ package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msplace.domain.City;
-import com.proyectointegrador.msplace.domain.Place;
-import com.proyectointegrador.msplace.domain.Zone;
 import com.proyectointegrador.msplace.dto.CityDTO;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.repository.ICityRepository;
 import com.proyectointegrador.msplace.service.interfaces.ICityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;

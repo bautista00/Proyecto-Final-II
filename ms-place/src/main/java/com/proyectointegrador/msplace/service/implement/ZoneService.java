@@ -1,17 +1,13 @@
 package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyectointegrador.msplace.domain.Place;
-import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.domain.Zone;
-import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
 import com.proyectointegrador.msplace.repository.IZoneRepository;
 import com.proyectointegrador.msplace.service.interfaces.IZoneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
