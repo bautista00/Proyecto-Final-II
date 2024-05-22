@@ -13,7 +13,7 @@ public interface IZoneService {
     void deleteZoneById(Long id);
     void deleteZoneByName(String name);
     Integer getAvailability(Long id);
-    ZoneDTO putAvailability(Integer number, Long id);
+    void putAvailability(Integer number, Long id);
     Set<SeatDTO> getSeatsByZoneId(Long id);
     Set<SeatDTO> getSeatsByZoneName(String name);
     Set<SeatDTO> getSeatsAvailableByZoneId(Long id);

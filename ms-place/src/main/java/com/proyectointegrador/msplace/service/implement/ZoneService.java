@@ -94,8 +94,9 @@ public class ZoneService implements IZoneService {
         }
     }
 
+    // ver si al modificar el del asiento, se modifica aca tambien
     @Override
-    public ZoneDTO putAvailability(Integer number, Long id) {
+    public void putAvailability(Integer number, Long id) {
         // si recibe un 0 es porque tiene que restar un asiento
         // si recibe un 1 es porque tiene que sumar un asiento
         if (number == 0) {
@@ -105,8 +106,6 @@ public class ZoneService implements IZoneService {
             Optional<Zone> zone = zoneRepository.findById(id);
             zone.ifPresent(value -> value.setAvailability(value.getAvailability() + 1));
         }
-        ZoneDTO zoneDTO = mapper.convertValue(getZoneById(id), ZoneDTO.class);
-        return zoneDTO;
     }
 
     @Override

@@ -8,10 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +36,11 @@ public class ZoneController {
         return zoneService.getAllZones();
     }
 
+    @GetMapping("/availability/{id}")
+    public Integer getAvailability(@PathVariable Long id) {
+        return zoneService.getAvailability(id);
+    }
+
     @GetMapping("/seats/id/{id}")
     public Set<SeatDTO> getSeatsByZoneId(@PathVariable Long id) {
         return zoneService.getSeatsByZoneId(id);
@@ -57,5 +59,45 @@ public class ZoneController {
     @GetMapping("/seats/noAvailability/{id}")
     public Set<SeatDTO> getSeatsNotAvailableByZoneId(@PathVariable Long id) {
         return zoneService.getSeatsNotAvailableByZoneId(id);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<String> addZone(@RequestBody ZoneDTO zoneDTO) {
+        try {
+            ZoneDTO zoneDTOR = zoneService.addZone(zoneDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Zona registrada con éxito: " + zoneDTOR);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al registrar la zona: " + e.getMessage());
+        }
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<String> updateZone(@RequestBody ZoneDTO zoneDTO) {
+        try {
+            ZoneDTO zoneDTOR = zoneService.updateZone(zoneDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Zona actualizada con éxito: " + zoneDTOR);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al actualizar la zona: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteZoneById(@PathVariable Long id) {
+        try {
+            zoneService.deleteZoneById(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Zona eliminada con éxito: " + id);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar la zona: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/delete/{name}")
+    public ResponseEntity<String> deleteZoneByName(@PathVariable String name) {
+        try {
+            zoneService.deleteZoneByName(name);
+            return ResponseEntity.status(HttpStatus.OK).body("Zona eliminada con éxito: " + name);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar la zona: " + e.getMessage());
+        }
     }
 }

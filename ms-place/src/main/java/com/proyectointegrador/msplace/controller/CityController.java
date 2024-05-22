@@ -54,3 +54,10 @@ public class CityController {
         return cityService.getAllPlacesByCityName(name);
     }
 }
+
+/*
+CityDTO addCity(CityDTO cityDTO);
+    CityDTO updateCity(CityDTO cityDTO);
+    void deleteCityById(Long id);
+    void deleteCityByName(String name);
+ */

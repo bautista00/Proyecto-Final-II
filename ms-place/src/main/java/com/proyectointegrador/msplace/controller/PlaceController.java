@@ -49,4 +49,13 @@ public class PlaceController {
     public Set<ZoneDTO> getAllZonesByPlaceName(@PathVariable String name) {
         return placeService.getAllZonesByPlaceName(name);
     }
+
+
 }
+
+/*
+PlaceDTO addPlace(PlaceDTO placeDTO);
+    PlaceDTO updatePlace(PlaceDTO placeDTO);
+    void deletePlaceById(Long id);
+    void deletePlaceByName(String name);
+ */
