@@ -16,7 +16,7 @@ public class TicketService implements ITicketService {
     private final ITicketRepository ticketRepository;
 
     @Override
-    public Optional<Ticket> getTicketById(int id) {
+    public Optional<Ticket> getTicketById(Long id) {
         return ticketRepository.findById(id);
     }
 
@@ -33,7 +33,7 @@ public class TicketService implements ITicketService {
     }
 
     @Override
-    public void deleteTicket(int id) {
+    public void deleteTicket(Long id) {
         ticketRepository.deleteById(id);
     }
 }

@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface ITicketService {
 
-    Optional<Ticket> getTicketById(int id);
+    Optional<Ticket> getTicketById(Long id);
     List<Ticket> getAllTickets();
     Ticket createTicket(Ticket ticket);
-    void deleteTicket(int id);
+    void deleteTicket(Long id);
 }

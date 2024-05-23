@@ -11,13 +11,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "PaymentMethod")
-public class Payment {
+public class PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
-    private String type;
-    private String details;
+    private Long Id;
+    private String category;
+    private String detail;
 
 }

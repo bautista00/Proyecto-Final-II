@@ -14,14 +14,6 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
-
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    private User userId;
-
-    @ManyToOne
-    @JoinColumn(name = "payment_method_id")
-    private Payment paymentId;
+    private Long Id;
 
 }
