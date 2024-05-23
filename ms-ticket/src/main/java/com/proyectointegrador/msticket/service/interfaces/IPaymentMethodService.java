@@ -12,8 +12,8 @@ public interface IPaymentMethodService {
     List<PaymentMethod> getAllPayments();
     PaymentMethod createPayment(PaymentMethod paymentMethod);
     PaymentMethod updatePayment(PaymentMethod paymentMethod);
-    void deletePayment(PaymentMethod paymentMethod);
-    Optional<PaymentMethod> getPaymentsByTicketId(Ticket ticket);
-    List<PaymentMethod> getAllPaymentsByType(Ticket ticket);
+    void deletePayment(Long id);
+    Optional<PaymentMethod> getPaymentsByTicketId(Long ticketId);
+    List<PaymentMethod> getAllPaymentsByCategory(String category);
 
 }
