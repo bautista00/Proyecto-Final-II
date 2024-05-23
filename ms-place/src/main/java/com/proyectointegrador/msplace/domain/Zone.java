@@ -20,8 +20,8 @@ public class Zone {
     @GeneratedValue(generator = "zone-sequence", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
-    @Column(name = "number_seats")
-    private Integer numberSeats;
+    @Column(name = "quantity_seat")
+    private Integer quantitySeats;
     private Integer availability;
 
     @ManyToOne(fetch = FetchType.EAGER)
