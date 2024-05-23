@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentMethodService implements IPaymentMethodService {
+public class PaymentMethodServiceImpl implements IPaymentMethodService {
 
     private final IPaymentMethodRepository paymentRepository;
 
