@@ -11,12 +11,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "PaymentMethod")
 public class PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+
+    @Column(name = "category",nullable = false)
     private String category;
+
+    @Column(name="detail",nullable = false)
     private String detail;
 
 }
