@@ -30,8 +30,6 @@ public class TicketServiceImpl implements ITicketService {
         return ticketRepository.findAll();
     }
 
-
-
     @Override
     public Ticket createTicket(Ticket ticket) {
         PaymentMethod paymentMethod =

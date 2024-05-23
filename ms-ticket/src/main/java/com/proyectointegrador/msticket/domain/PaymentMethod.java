@@ -24,4 +24,7 @@ public class PaymentMethod {
     @Column(name="detail",nullable = false)
     private String detail;
 
+    public PaymentMethod(Long id) {
+        this.Id = id;
+    }
 }
