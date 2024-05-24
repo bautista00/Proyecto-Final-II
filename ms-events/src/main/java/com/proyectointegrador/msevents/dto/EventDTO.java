@@ -1,6 +1,6 @@
 package com.proyectointegrador.msevents.dto;
 import com.proyectointegrador.msevents.domain.Category;
-import com.proyectointegrador.msevents.domain.EventDate;
+import com.proyectointegrador.msevents.domain.DateEvent;
 import lombok.*;
 
 @Getter
@@ -13,5 +13,5 @@ public class EventDTO {
     private String description;
     private String photo;
     private Category category;
-    private EventDate eventDate;
+    private DateEvent dateEvent;
 }

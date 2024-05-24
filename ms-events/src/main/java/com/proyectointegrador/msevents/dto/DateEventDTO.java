@@ -8,7 +8,7 @@ import java.util.Date;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class EventDateDTO {
+public class DateEventDTO {
     private Long id;
     private Date date;
 }
