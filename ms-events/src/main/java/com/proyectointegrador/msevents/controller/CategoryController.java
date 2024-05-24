@@ -21,7 +21,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @GetMapping("/getById/{id}")
-    ResponseEntity<?> getCategoryById(@PathVariable Long id) {
+    public ResponseEntity<?> getCategoryById(@PathVariable Long id) {
         ResponseEntity response = null;
         Optional<CategoryDTO> category = categoryService.getCategoryById(id);
         if (category.isPresent()) {
@@ -34,7 +34,7 @@ public class CategoryController {
     }
 
     @GetMapping("/getByName/{name}")
-    ResponseEntity<?> getCategoryByName(@PathVariable String name) {
+    public ResponseEntity<?> getCategoryByName(@PathVariable String name) {
         ResponseEntity response = null;
         Optional<CategoryDTO> category = categoryService.getCategoryByName(name);
         if (category.isPresent()) {
@@ -47,7 +47,7 @@ public class CategoryController {
     }
 
     @GetMapping("/get/all")
-    ResponseEntity<?> getAllCategories() {
+    public ResponseEntity<?> getAllCategories() {
         ResponseEntity response = null;
         Set<CategoryDTO> categories = categoryService.getAllCategories();
         if (categories.isEmpty()) {
@@ -60,7 +60,7 @@ public class CategoryController {
     }
 
     @PostMapping("/add")
-    ResponseEntity<?> addCategory(@RequestBody CategoryDTO categoryDTO) {
+    public ResponseEntity<?> addCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.addCategory(categoryDTO);
             return new ResponseEntity<>("Category created successfully" + newCategoryDTO, HttpStatus.CREATED);
@@ -70,7 +70,7 @@ public class CategoryController {
     }
 
     @PutMapping("/update")
-    ResponseEntity<?> updateCategory(@RequestBody CategoryDTO categoryDTO) {
+    public ResponseEntity<?> updateCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.updateCategory(categoryDTO);
             return new ResponseEntity<>("Category updated successfully" + newCategoryDTO, HttpStatus.OK);
@@ -80,7 +80,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    ResponseEntity<?> deleteCategoryById(@PathVariable Long id) {
+    public ResponseEntity<?> deleteCategoryById(@PathVariable Long id) {
         try {
             categoryService.deleteCategoryById(id);
             return new ResponseEntity<>("Category with the id of: " + id + " successfully deleted", HttpStatus.OK);
@@ -90,7 +90,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/deleteByName/{name}")
-    ResponseEntity<?> deleteCategoryByName(@PathVariable String name) {
+    public ResponseEntity<?> deleteCategoryByName(@PathVariable String name) {
         try {
             categoryService.deleteCategoryByName(name);
             return new ResponseEntity<>("Category with the name: " + name + " successfully deleted", HttpStatus.OK);
