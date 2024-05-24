@@ -16,7 +16,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/eventos")
+@RequestMapping("/event")
 public class EventController {
 
     private final EventService eventService;
