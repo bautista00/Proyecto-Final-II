@@ -1,5 +1,6 @@
 package com.proyectointegrador.msplace.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.HashSet;
@@ -21,13 +22,14 @@ public class Zone {
     private Long id;
     private String name;
     @Column(name = "quantity_seat")
-    private Integer quantitySeats;
+    private Integer quantitySeat;
     private Integer availability;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "place_id")
     private Place place;
 
-    @OneToMany (mappedBy = "zone", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany (mappedBy = "zone", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Seat> seats;
 }

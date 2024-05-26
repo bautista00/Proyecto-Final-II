@@ -2,7 +2,8 @@ package com.proyectointegrador.msplace.controller;
 
 import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
-import com.proyectointegrador.msplace.service.implement.ZoneService;
+import com.proyectointegrador.msplace.service.interfaces.ISeatService;
+import com.proyectointegrador.msplace.service.interfaces.IZoneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +16,15 @@ import java.util.Set;
 @RequestMapping("/zone")
 public class ZoneController {
 
-    private final ZoneService zoneService;
+    private final IZoneService zoneService;
 
     @GetMapping("/id/{id}")
     public Optional<ZoneDTO> getZoneById(@PathVariable Long id) {
         return zoneService.getZoneById(id);
     }
 
-    @GetMapping("/name/{name}")
-    public Optional<ZoneDTO> getZoneByName(@PathVariable String name) {
+    @GetMapping("/name")
+    public Optional<ZoneDTO> getZoneByName(@RequestParam("name") String name) {
         return zoneService.getZoneByName(name);
     }
 
@@ -35,26 +36,6 @@ public class ZoneController {
     @GetMapping("/availability/{id}")
     public Integer getAvailability(@PathVariable Long id) {
         return zoneService.getAvailability(id);
-    }
-
-    @GetMapping("/seats/id/{id}")
-    public Set<SeatDTO> getSeatsByZoneId(@PathVariable Long id) {
-        return zoneService.getSeatsByZoneId(id);
-    }
-
-    @GetMapping("/seats/name/{name}")
-    public Set<SeatDTO> getSeatsByZoneName(@PathVariable String name) {
-        return zoneService.getSeatsByZoneName(name);
-    }
-
-    @GetMapping("/seats/availability/{id}")
-    public Set<SeatDTO> getSeatsAvailableByZoneId(@PathVariable Long id) {
-        return zoneService.getSeatsAvailableByZoneId(id);
-    }
-
-    @GetMapping("/seats/noAvailability/{id}")
-    public Set<SeatDTO> getSeatsNotAvailableByZoneId(@PathVariable Long id) {
-        return zoneService.getSeatsNotAvailableByZoneId(id);
     }
 
     @PostMapping("/add")
@@ -87,8 +68,8 @@ public class ZoneController {
         }
     }
 
-    @DeleteMapping("/delete/{name}")
-    public ResponseEntity<String> deleteZoneByName(@PathVariable String name) {
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteZoneByName(@RequestParam("name") String name) {
         try {
             zoneService.deleteZoneByName(name);
             return ResponseEntity.status(HttpStatus.OK).body("Zona eliminada con éxito: " + name);

@@ -2,7 +2,10 @@ package com.proyectointegrador.msplace.controller;
 
 import com.proyectointegrador.msplace.dto.CityDTO;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
+import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
 import com.proyectointegrador.msplace.service.implement.CityService;
+import com.proyectointegrador.msplace.service.interfaces.ICityService;
+import jakarta.ws.rs.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +18,15 @@ import java.util.Set;
 @RequestMapping("/city")
 public class CityController {
 
-    private final CityService cityService;
+    private final ICityService cityService;
 
     @GetMapping("/id/{id}")
     public Optional<CityDTO> getCityById(@PathVariable Long id) {
         return cityService.getCityById(id);
     }
 
-    @GetMapping("/name/{name}")
-    public Optional<CityDTO> getCityByName(@PathVariable String name) {
+    @GetMapping("/name")
+    public Optional<CityDTO> getCityByName(@RequestParam("name") String name) {
         return cityService.getCityByName(name);
     }
 
@@ -38,12 +41,12 @@ public class CityController {
     }
 
     @GetMapping("/places/{id}")
-    public Set<PlaceDTO> getAllPlacesByCityId(@PathVariable Long id) {
+    public Set<PlaceOnlyDTO> getAllPlacesByCityId(@PathVariable Long id) {
         return cityService.getAllPlacesByCityId(id);
     }
 
-    @GetMapping("/places/{name}")
-    public Set<PlaceDTO> getAllPlacesByCityName(@PathVariable String name) {
+    @GetMapping("/places/name")
+    public Set<PlaceOnlyDTO> getAllPlacesByCityName(@RequestParam("name") String name) {
         return cityService.getAllPlacesByCityName(name);
     }
 
@@ -77,8 +80,8 @@ public class CityController {
         }
     }
 
-    @DeleteMapping("/delete/{name}")
-    public ResponseEntity<String> deleteCityByName(@PathVariable String name) {
+    @DeleteMapping("/delete/name")
+    public ResponseEntity<String> deleteCityByName(@RequestParam("name") String name) {
         try {
             cityService.deleteCityByName(name);
             return ResponseEntity.status(HttpStatus.OK).body("Ciudad eliminada con éxito: " + name);

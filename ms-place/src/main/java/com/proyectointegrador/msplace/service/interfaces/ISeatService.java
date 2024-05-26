@@ -1,6 +1,8 @@
 package com.proyectointegrador.msplace.service.interfaces;
 
 import com.proyectointegrador.msplace.dto.SeatDTO;
+import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
+
 import java.util.Optional;
 import java.util.Set;
 
@@ -12,5 +14,8 @@ public interface ISeatService {
     void deleteSeatById(Long id);
     Integer getAvailability(Long id);
     SeatDTO putAvailability(Long id);
-    Set<SeatDTO> getAllSeatsByZoneId(Long id);
+    Set<SeatOnlyDTO> getAllSeatsByZoneId(Long id);
+    Set<SeatOnlyDTO> getSeatsByZoneName(String name);
+    Set<SeatOnlyDTO> getSeatsAvailableByZoneId(Long id);
+    Set<SeatOnlyDTO> getSeatsNotAvailableByZoneId(Long id);
 }

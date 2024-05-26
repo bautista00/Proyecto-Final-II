@@ -2,8 +2,9 @@ package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msplace.domain.Place;
-import com.proyectointegrador.msplace.dto.PlaceDTO;
-import com.proyectointegrador.msplace.dto.ZoneDTO;
+import com.proyectointegrador.msplace.domain.Seat;
+import com.proyectointegrador.msplace.domain.Zone;
+import com.proyectointegrador.msplace.dto.*;
 import com.proyectointegrador.msplace.repository.IPlaceRepository;
 import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -29,12 +31,27 @@ public class PlaceService implements IPlaceService {
         return mapper.convertValue(place, PlaceDTO.class);
     }
 
+    private Set<ZoneOnlyDTO> addInfoZones(Set<Zone> zones) {
+        Set<ZoneOnlyDTO> zonesDTO = new HashSet<>();
+        for (Zone zone : zones) {
+            ZoneOnlyDTO zoneDTO = mapper.convertValue(zone, ZoneOnlyDTO.class);
+            Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+            for (Seat seat : zone.getSeats()) {
+                seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
+            }
+            zoneDTO.setSeats(seatsDTO);
+            zonesDTO.add(zoneDTO);
+        }
+        return zonesDTO;
+    }
+
     @Override
     public Optional<PlaceDTO> getPlaceById(Long id) {
         Optional<Place> place = placeRepository.findById(id);
-        PlaceDTO placeDTO = null;
         if (place.isPresent()) {
-            placeDTO = mapper.convertValue(place, PlaceDTO.class);
+            PlaceDTO placeDTO = mapper.convertValue(place.get(), PlaceDTO.class);
+            Set<ZoneOnlyDTO> zonesDTO = addInfoZones(place.get().getZones());
+            placeDTO.setZones(zonesDTO);
             return Optional.ofNullable(placeDTO);
         } else {
             return Optional.empty();
@@ -45,7 +62,9 @@ public class PlaceService implements IPlaceService {
     public Optional<PlaceDTO> getPlaceByName(String name) {
         Optional<Place> place = placeRepository.findByName(name);
         if (place.isPresent()) {
-           PlaceDTO placeDTO = mapper.convertValue(place, PlaceDTO.class);
+            PlaceDTO placeDTO = mapper.convertValue(place.get(), PlaceDTO.class);
+            Set<ZoneOnlyDTO> zonesDTO = addInfoZones(place.get().getZones());
+            placeDTO.setZones(zonesDTO);
             return Optional.ofNullable(placeDTO);
         } else {
             return Optional.empty();
@@ -57,7 +76,10 @@ public class PlaceService implements IPlaceService {
         List<Place> places = placeRepository.findAll();
         Set<PlaceDTO> placesDTO = new HashSet<>();
         for (Place place : places) {
-            placesDTO.add(mapper.convertValue(place, PlaceDTO.class));
+            PlaceDTO placeDTO = mapper.convertValue(place, PlaceDTO.class);
+            Set<ZoneOnlyDTO> zonesDTO = addInfoZones(place.getZones());
+            placeDTO.setZones(zonesDTO);
+            placesDTO.add(placeDTO);
         }
         return placesDTO;
     }
@@ -84,12 +106,12 @@ public class PlaceService implements IPlaceService {
     }
 
     @Override
-    public Set<ZoneDTO> getAllZonesByPlaceId(Long id) {
+    public Set<ZoneOnlyDTO> getAllZonesByPlaceId(Long id) {
         return zoneService.getAllZonesByPlaceId(id);
     }
 
     @Override
-    public Set<ZoneDTO> getAllZonesByPlaceName(String name) {
+    public Set<ZoneOnlyDTO> getAllZonesByPlaceName(String name) {
         Optional<PlaceDTO> place = getPlaceByName(name);
         if (place.isPresent()) {
             return zoneService.getAllZonesByPlaceId(place.get().getId());
@@ -99,12 +121,24 @@ public class PlaceService implements IPlaceService {
     }
 
     @Override
-    public Set<PlaceDTO> getAllPlacesByCityId(Long id) {
+    public Set<PlaceOnlyDTO> getAllPlacesByCityId(Long id) {
         List<Place> places = placeRepository.findAll();
-        Set<PlaceDTO> placesDTO = new HashSet<>();
+        Set<PlaceOnlyDTO> placesDTO = new HashSet<>();
         for (Place place : places) {
             if (place.getCity().getId().equals(id)) {
-                placesDTO.add(mapper.convertValue(place, PlaceDTO.class));
+                PlaceOnlyDTO placeDTO = mapper.convertValue(place, PlaceOnlyDTO.class);
+                Set<ZoneOnlyDTO> zonesDTO = new HashSet<>();
+                for (Zone zone : place.getZones()) {
+                    ZoneOnlyDTO zoneDTO = mapper.convertValue(zone, ZoneOnlyDTO.class);
+                    Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+                    for (Seat seat : zone.getSeats()) {
+                        seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
+                    }
+                    zoneDTO.setSeats(seatsDTO);
+                    zonesDTO.add(zoneDTO);
+                }
+                placeDTO.setZones(zonesDTO);
+                placesDTO.add(placeDTO);
             }
         }
         return placesDTO;

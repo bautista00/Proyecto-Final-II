@@ -1,5 +1,6 @@
 package com.proyectointegrador.msplace.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.HashSet;
@@ -28,6 +29,7 @@ public class Place {
     @JoinColumn(name = "city_id")
     private City city;
 
-    @OneToMany (mappedBy = "place", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany (mappedBy = "place", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Zone> zones;
 }

@@ -3,6 +3,7 @@ package com.proyectointegrador.msplace.service.implement;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.dto.SeatDTO;
+import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
 import com.proyectointegrador.msplace.repository.ISeatRepository;
 import com.proyectointegrador.msplace.service.interfaces.ISeatService;
 import lombok.RequiredArgsConstructor;
@@ -83,9 +84,11 @@ public class SeatService implements ISeatService {
         if (seat.isPresent()) {
             if (seat.get().getAvailability() == 1) {
                 seat.get().setAvailability(0);
+                seatRepository.save(seat.get());
                 zoneService.putAvailability(0, seat.get().getZone().getId());
             } else if (seat.get().getAvailability() == 0) {
                 seat.get().setAvailability(1);
+                seatRepository.save(seat.get());
                 zoneService.putAvailability(1, seat.get().getZone().getId());
             }
             SeatDTO seatDTO = mapper.convertValue(seat, SeatDTO.class);
@@ -96,14 +99,50 @@ public class SeatService implements ISeatService {
     }
 
     @Override
-    public Set<SeatDTO> getAllSeatsByZoneId(Long id) {
+    public Set<SeatOnlyDTO> getAllSeatsByZoneId(Long id) {
         List<Seat> seats = seatRepository.findAll();
-        Set<SeatDTO> seatsDTO = new HashSet<>();
+        Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
         for (Seat seat : seats) {
             if (seat.getZone().getId().equals(id)) {
-                seatsDTO.add(mapper.convertValue(seat, SeatDTO.class));
+                seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
             }
         }
         return seatsDTO;
+    }
+
+    @Override
+    public Set<SeatOnlyDTO> getSeatsByZoneName(String name) {
+        List<Seat> seats = seatRepository.findAll();
+        Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+        for (Seat seat : seats) {
+            if (seat.getZone().getName().equals(name)) {
+                seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
+            }
+        }
+        return seatsDTO;
+    }
+
+    @Override
+    public Set<SeatOnlyDTO> getSeatsAvailableByZoneId(Long id) {
+        Set<SeatOnlyDTO> seatDTOs = getAllSeatsByZoneId(id);
+        Set<SeatOnlyDTO> availableSeatDTOs = new HashSet<>();
+        for (SeatOnlyDTO seatDTO : seatDTOs) {
+            if (seatDTO.getAvailability() == 1) {
+                availableSeatDTOs.add(seatDTO);
+            }
+        }
+        return availableSeatDTOs;
+    }
+
+    @Override
+    public Set<SeatOnlyDTO> getSeatsNotAvailableByZoneId(Long id) {
+        Set<SeatOnlyDTO> seatDTOs = getAllSeatsByZoneId(id);
+        Set<SeatOnlyDTO> availableSeatDTOs = new HashSet<>();
+        for (SeatOnlyDTO seatDTO : seatDTOs) {
+            if (seatDTO.getAvailability() == 0) {
+                availableSeatDTOs.add(seatDTO);
+            }
+        }
+        return availableSeatDTOs;
     }
 }

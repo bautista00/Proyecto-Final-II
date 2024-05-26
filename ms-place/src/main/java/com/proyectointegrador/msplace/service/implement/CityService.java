@@ -2,8 +2,10 @@ package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msplace.domain.City;
-import com.proyectointegrador.msplace.dto.CityDTO;
-import com.proyectointegrador.msplace.dto.PlaceDTO;
+import com.proyectointegrador.msplace.domain.Place;
+import com.proyectointegrador.msplace.domain.Seat;
+import com.proyectointegrador.msplace.domain.Zone;
+import com.proyectointegrador.msplace.dto.*;
 import com.proyectointegrador.msplace.repository.ICityRepository;
 import com.proyectointegrador.msplace.service.interfaces.ICityService;
 import lombok.RequiredArgsConstructor;
@@ -29,12 +31,34 @@ public class CityService implements ICityService {
         return mapper.convertValue(city, CityDTO.class);
     }
 
+    private Set<PlaceOnlyDTO> addInfoPlace(Set<Place> places) {
+        Set<PlaceOnlyDTO> placesDTO = new HashSet<>();
+        for (Place place : places) {
+            PlaceOnlyDTO placeDTO = mapper.convertValue(place, PlaceOnlyDTO.class);
+            Set<ZoneOnlyDTO> zonesDTO = new HashSet<>();
+            for (Zone zone : place.getZones()) {
+                ZoneOnlyDTO zoneDTO = mapper.convertValue(zone, ZoneOnlyDTO.class);
+                Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+                for (Seat seat : zone.getSeats()) {
+                    seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
+                }
+                zoneDTO.setSeats(seatsDTO);
+                zonesDTO.add(zoneDTO);
+            }
+            placeDTO.setZones(zonesDTO);
+            placesDTO.add(placeDTO);
+        }
+        return placesDTO;
+    }
+
     @Override
     public Optional<CityDTO> getCityById(Long id) {
         Optional<City> city = cityRepository.findById(id);
         CityDTO cityDTO = null;
         if (city.isPresent()) {
             cityDTO = mapper.convertValue(city, CityDTO.class);
+            Set<PlaceOnlyDTO> placesDTO = addInfoPlace(city.get().getPlaces());
+            cityDTO.setPlaces(placesDTO);
             return Optional.ofNullable(cityDTO);
         } else {
             return Optional.empty();
@@ -46,6 +70,8 @@ public class CityService implements ICityService {
         Optional<City> city = cityRepository.findByName(name);
         if (city.isPresent()) {
             CityDTO cityDTO = mapper.convertValue(city, CityDTO.class);
+            Set<PlaceOnlyDTO> placesDTO = addInfoPlace(city.get().getPlaces());
+            cityDTO.setPlaces(placesDTO);
             return Optional.ofNullable(cityDTO);
         } else {
             return Optional.empty();
@@ -57,7 +83,10 @@ public class CityService implements ICityService {
         List<City> cities = cityRepository.findAll();
         Set<CityDTO> citiesDTO = new HashSet<>();
         for (City city : cities) {
-            citiesDTO.add(mapper.convertValue(city, CityDTO.class));
+            CityDTO cityDTO = mapper.convertValue(city, CityDTO.class);
+            Set<PlaceOnlyDTO> placesDTO = addInfoPlace(city.getPlaces());
+            cityDTO.setPlaces(placesDTO);
+            citiesDTO.add(cityDTO);
         }
         return citiesDTO;
     }
@@ -67,7 +96,10 @@ public class CityService implements ICityService {
         Set<City> cities = cityRepository.findByZipCode(zipCode);
         Set<CityDTO> citiesDTO = new HashSet<>();
         for (City city : cities) {
-            citiesDTO.add(mapper.convertValue(city, CityDTO.class));
+            CityDTO cityDTO = mapper.convertValue(city, CityDTO.class);
+            Set<PlaceOnlyDTO> placesDTO = addInfoPlace(city.getPlaces());
+            cityDTO.setPlaces(placesDTO);
+            citiesDTO.add(cityDTO);
         }
         return citiesDTO;
     }
@@ -94,12 +126,12 @@ public class CityService implements ICityService {
     }
 
     @Override
-    public Set<PlaceDTO> getAllPlacesByCityId(Long id) {
+    public Set<PlaceOnlyDTO> getAllPlacesByCityId(Long id) {
         return placeService.getAllPlacesByCityId(id);
     }
 
     @Override
-    public Set<PlaceDTO> getAllPlacesByCityName(String name) {
+    public Set<PlaceOnlyDTO> getAllPlacesByCityName(String name) {
         Optional<CityDTO> city = getCityByName(name);
         if (city.isPresent()) {
             return placeService.getAllPlacesByCityId(city.get().getId());

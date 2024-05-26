@@ -2,7 +2,9 @@ package com.proyectointegrador.msplace.controller;
 
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
+import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;
 import com.proyectointegrador.msplace.service.implement.PlaceService;
+import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +17,15 @@ import java.util.Set;
 @RequestMapping("/place")
 public class PlaceController {
 
-    private final PlaceService placeService;
+    private final IPlaceService placeService;
 
     @GetMapping("/id/{id}")
     public Optional<PlaceDTO> getPlaceById(@PathVariable Long id) {
         return placeService.getPlaceById(id);
     }
 
-    @GetMapping("/name/{name}")
-    public Optional<PlaceDTO> getPlaceByName(@PathVariable String name) {
+    @GetMapping("/name")
+    public Optional<PlaceDTO> getPlaceByName(@RequestParam("name") String name) {
         return placeService.getPlaceByName(name);
     }
 
@@ -33,12 +35,12 @@ public class PlaceController {
     }
 
     @GetMapping("/zones/{id}")
-    public Set<ZoneDTO> getAllZonesByPlaceId(@PathVariable Long id) {
+    public Set<ZoneOnlyDTO> getAllZonesByPlaceId(@PathVariable Long id) {
         return placeService.getAllZonesByPlaceId(id);
     }
 
-    @GetMapping("/zones/{name}")
-    public Set<ZoneDTO> getAllZonesByPlaceName(@PathVariable String name) {
+    @GetMapping("/zones/name")
+    public Set<ZoneOnlyDTO> getAllZonesByPlaceName(@RequestParam("name") String name) {
         return placeService.getAllZonesByPlaceName(name);
     }
 
@@ -72,8 +74,8 @@ public class PlaceController {
         }
     }
 
-    @DeleteMapping("/delete/{name}")
-    public ResponseEntity<String> deletePlaceByName(@PathVariable String name) {
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deletePlaceByName(@RequestParam("name") String name) {
         try {
             placeService.deletePlaceByName(name);
             return ResponseEntity.status(HttpStatus.OK).body("Estadio eliminado con éxito: " + name);

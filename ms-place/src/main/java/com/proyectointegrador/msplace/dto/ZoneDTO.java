@@ -15,8 +15,8 @@ import java.util.Set;
 public class ZoneDTO {
     private Long id;
     private String name;
-    private Integer numberSeats;
+    private Integer quantitySeat;
     private Integer availability;
     private Place place;
-    private Set<Seat> seats;
+    private Set<SeatOnlyDTO> seats;
 }

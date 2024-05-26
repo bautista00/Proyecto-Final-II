@@ -1,9 +1,12 @@
 package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.domain.Zone;
 import com.proyectointegrador.msplace.dto.SeatDTO;
+import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
+import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;
 import com.proyectointegrador.msplace.repository.IZoneRepository;
 import com.proyectointegrador.msplace.service.interfaces.IZoneService;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +22,6 @@ public class ZoneService implements IZoneService {
 
     private final IZoneRepository zoneRepository;
 
-    private final SeatService seatService;
-
     // averiguar si se sigue usando el mapper o usar stream
     private final ObjectMapper mapper;
 
@@ -30,13 +31,22 @@ public class ZoneService implements IZoneService {
         return mapper.convertValue(zone, ZoneDTO.class);
     }
 
+    private Set<SeatOnlyDTO> addInfoSeats(Set<Seat> seats) {
+        Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+        for (Seat seat : seats) {
+            seatsDTO.add(mapper.convertValue(seat, SeatOnlyDTO.class));
+        }
+        return seatsDTO;
+    }
+
     @Override
     public Optional<ZoneDTO> getZoneById(Long id) {
         Optional<Zone> zone = zoneRepository.findById(id);
-        ZoneDTO zoneDTO = null;
         if (zone.isPresent()) {
-            zoneDTO = mapper.convertValue(zone, ZoneDTO.class);
-            return Optional.ofNullable(zoneDTO);
+            ZoneDTO zoneDTO = mapper.convertValue(zone.get(), ZoneDTO.class);
+            Set<SeatOnlyDTO> seatsDTO = addInfoSeats(zone.get().getSeats());
+            zoneDTO.setSeats(seatsDTO);
+            return Optional.of(zoneDTO);
         } else {
             return Optional.empty();
         }
@@ -46,8 +56,10 @@ public class ZoneService implements IZoneService {
     public Optional<ZoneDTO> getZoneByName(String name) {
         Optional<Zone> zone = zoneRepository.findByName(name);
         if (zone.isPresent()) {
-            ZoneDTO zoneDTO = mapper.convertValue(zone, ZoneDTO.class);
-            return Optional.ofNullable(zoneDTO);
+            ZoneDTO zoneDTO = mapper.convertValue(zone.get(), ZoneDTO.class);
+            Set<SeatOnlyDTO> seatsDTO = addInfoSeats(zone.get().getSeats());
+            zoneDTO.setSeats(seatsDTO);
+            return Optional.of(zoneDTO);
         } else {
             return Optional.empty();
         }
@@ -58,7 +70,10 @@ public class ZoneService implements IZoneService {
         List<Zone> zones = zoneRepository.findAll();
         Set<ZoneDTO> zonesDTO = new HashSet<>();
         for (Zone zone : zones) {
-            zonesDTO.add(mapper.convertValue(zone, ZoneDTO.class));
+            ZoneDTO zoneDTO = mapper.convertValue(zone, ZoneDTO.class);
+            Set<SeatOnlyDTO> seatsDTO = addInfoSeats(zone.getSeats());
+            zoneDTO.setSeats(seatsDTO);
+            zonesDTO.add(zoneDTO);
         }
         return zonesDTO;
     }
@@ -109,51 +124,19 @@ public class ZoneService implements IZoneService {
     }
 
     @Override
-    public Set<SeatDTO> getSeatsByZoneId(Long id) {
-        return seatService.getAllSeatsByZoneId(id);
-    }
-
-    @Override
-    public Set<SeatDTO> getSeatsByZoneName(String name) {
-        Optional<ZoneDTO> zone = getZoneByName(name);
-        if (zone.isPresent()) {
-            return seatService.getAllSeatsByZoneId(zone.get().getId());
-        } else {
-            return new HashSet<>();
-        }
-    }
-
-    @Override
-    public Set<SeatDTO> getSeatsAvailableByZoneId(Long id) {
-        Set<SeatDTO> seatDTOs = getSeatsByZoneId(id);
-        Set<SeatDTO> availableSeatDTOs = new HashSet<>();
-        for (SeatDTO seatDTO : seatDTOs) {
-            if (seatDTO.getAvailability() == 1) {
-                availableSeatDTOs.add(seatDTO);
-            }
-        }
-        return availableSeatDTOs;
-    }
-
-    @Override
-    public Set<SeatDTO> getSeatsNotAvailableByZoneId(Long id) {
-        Set<SeatDTO> seatDTOs = getSeatsByZoneId(id);
-        Set<SeatDTO> availableSeatDTOs = new HashSet<>();
-        for (SeatDTO seatDTO : seatDTOs) {
-            if (seatDTO.getAvailability() == 0) {
-                availableSeatDTOs.add(seatDTO);
-            }
-        }
-        return availableSeatDTOs;
-    }
-
-    @Override
-    public Set<ZoneDTO> getAllZonesByPlaceId(Long id) {
+    public Set<ZoneOnlyDTO> getAllZonesByPlaceId(Long id) {
         List<Zone> zones = zoneRepository.findAll();
-        Set<ZoneDTO> zonesDTO = new HashSet<>();
+        Set<ZoneOnlyDTO> zonesDTO = new HashSet<>();
         for (Zone zone : zones) {
             if (zone.getPlace().getId().equals(id)) {
-                zonesDTO.add(mapper.convertValue(zone, ZoneDTO.class));
+                ZoneOnlyDTO zoneDTO = mapper.convertValue(zone, ZoneOnlyDTO.class);
+                Set<SeatOnlyDTO> seatsDTO = new HashSet<>();
+                for (Seat seat : zone.getSeats()) {
+                    SeatOnlyDTO seatDTO = mapper.convertValue(seat, SeatOnlyDTO.class);
+                    seatsDTO.add(seatDTO);
+                }
+                zoneDTO.setSeats(seatsDTO);
+                zonesDTO.add(zoneDTO);
             }
         }
         return zonesDTO;

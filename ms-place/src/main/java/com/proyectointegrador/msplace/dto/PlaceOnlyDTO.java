@@ -13,12 +13,11 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class PlaceDTO {
+public class PlaceOnlyDTO {
     private Long id;
     private String name;
     private String neighborhood;
     private String street;
     private Integer number;
-    private City city;
     private Set<ZoneOnlyDTO> zones;
 }

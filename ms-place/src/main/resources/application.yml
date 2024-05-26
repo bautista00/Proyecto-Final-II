@@ -2,6 +2,17 @@ spring:
   application:
     name: ms-place
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/ticketrek
+    username: root
+    password: lmcpauli1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 eureka:
   instance:
     hostname: localhost

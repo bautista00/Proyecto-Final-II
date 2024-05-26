@@ -855,6 +855,936 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "zone",
+			"item": [
+				{
+					"name": "getZoneById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/id/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"id",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getZoneByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/name?name=Popular Norte",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Popular Norte"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllZones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/availability/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"availability",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addZone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 3\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/zone/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateZone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"Popular\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 1,\r\n    \"place\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/zone/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteZoneById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/delete/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"delete",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteZoneByName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/zone/delete?name=Popular Sur",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"zone",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Popular Sur"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "place",
+			"item": [
+				{
+					"name": "getPlaceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlaceByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/name?name=Arthur Ashe Stadium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Arthur Ashe Stadium"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllZonesByPlaceId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/zones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"zones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllZonesByPlaceName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/zones/name?name=Arthur Ashe Stadium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"zones",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Arthur Ashe Stadium"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPlace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/place/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePlace",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 456,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/place/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlaceById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlaceByName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/place/delete?name=Arthur Ashe Stadium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"place",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Arthur Ashe Stadium"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city",
+			"item": [
+				{
+					"name": "getCityById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCityByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/name?name=New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New York"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCityByZipCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/zipCode/12345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"zipCode",
+								"12345"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlacesByCityId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/places/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"places",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlacesByCityName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/places/name?name=New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"places",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New York"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New York\",\r\n    \"zipCode\": \"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/city/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"New York\",\r\n    \"zipCode\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/city/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCityById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCityByName",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/city/delete/name?name=New York\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"city",
+								"delete",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New York\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seat",
+			"item": [
+				{
+					"name": "getSeatbyID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSeats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSeatAvailabilitybyID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/availability/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"availability",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSeatsbyZoneID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/zone/id/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"zone",
+								"id",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSeatsbyZoneName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/zone/name?name=Popular",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"zone",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Popular"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailableSeatsbyZoneID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/zone/availability/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"zone",
+								"availability",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNotAvailableSeatsbyZoneID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/zone/noAvailability/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"zone",
+								"noAvailability",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSeat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 13\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/seat/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSeat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/seat/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSeatAvailabilitybyID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/availability/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"availability",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSeat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
