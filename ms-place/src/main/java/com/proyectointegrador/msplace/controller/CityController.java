@@ -9,6 +9,7 @@ import jakarta.ws.rs.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.Set;
@@ -50,6 +51,7 @@ public class CityController {
         return cityService.getAllPlacesByCityName(name);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<String> addCity(@RequestBody CityDTO cityDTO) {
         try {
@@ -60,6 +62,7 @@ public class CityController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<String> updateCity(@RequestBody CityDTO cityDTO) {
         try {
@@ -70,6 +73,7 @@ public class CityController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteCityById(@PathVariable Long id) {
         try {
@@ -80,6 +84,7 @@ public class CityController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/name")
     public ResponseEntity<String> deleteCityByName(@RequestParam("name") String name) {
         try {

@@ -8,6 +8,7 @@ import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.Set;
@@ -44,6 +45,7 @@ public class PlaceController {
         return placeService.getAllZonesByPlaceName(name);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<String> addPlace(@RequestBody PlaceDTO placeDTO) {
         try {
@@ -54,6 +56,7 @@ public class PlaceController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<String> updatePlace(@RequestBody PlaceDTO placeDTO) {
         try {
@@ -64,6 +67,7 @@ public class PlaceController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deletePlaceById(@PathVariable Long id) {
         try {
@@ -74,7 +78,8 @@ public class PlaceController {
         }
     }
 
-    @DeleteMapping("/delete")
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/delete/name")
     public ResponseEntity<String> deletePlaceByName(@RequestParam("name") String name) {
         try {
             placeService.deletePlaceByName(name);

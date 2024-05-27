@@ -865,7 +865,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/id/13",
+							"raw": "http://localhost:8084/zone/id/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -874,7 +874,7 @@
 							"path": [
 								"zone",
 								"id",
-								"13"
+								"17"
 							]
 						}
 					},
@@ -932,7 +932,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/availability/13",
+							"raw": "http://localhost:8084/zone/availability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -941,7 +941,7 @@
 							"path": [
 								"zone",
 								"availability",
-								"13"
+								"17"
 							]
 						}
 					},
@@ -950,11 +950,71 @@
 				{
 					"name": "addZone",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 3\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -979,11 +1039,71 @@
 				{
 					"name": "updateZone",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"Popular\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 1,\r\n    \"place\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 15,\r\n    \"name\": \"Popular\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 1,\r\n    \"place\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1008,10 +1128,70 @@
 				{
 					"name": "deleteZoneById",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/delete/12",
+							"raw": "http://localhost:8084/zone/delete/15",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1020,7 +1200,7 @@
 							"path": [
 								"zone",
 								"delete",
-								"12"
+								"15"
 							]
 						}
 					},
@@ -1029,10 +1209,70 @@
 				{
 					"name": "deleteZoneByName",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/delete?name=Popular Sur",
+							"raw": "http://localhost:8084/zone/delete/name?name=Popular Norte",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1040,12 +1280,13 @@
 							"port": "8084",
 							"path": [
 								"zone",
-								"delete"
+								"delete",
+								"name"
 							],
 							"query": [
 								{
 									"key": "name",
-									"value": "Popular Sur"
+									"value": "Popular Norte"
 								}
 							]
 						}
@@ -1063,7 +1304,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/id/1",
+							"raw": "http://localhost:8084/place/id/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1072,7 +1313,7 @@
 							"path": [
 								"place",
 								"id",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -1130,7 +1371,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/zones/1",
+							"raw": "http://localhost:8084/place/zones/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1139,7 +1380,7 @@
 							"path": [
 								"place",
 								"zones",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -1175,11 +1416,71 @@
 				{
 					"name": "addPlace",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium 3\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1204,11 +1505,71 @@
 				{
 					"name": "updatePlace",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 456,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 4567,\r\n    \"city\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1233,10 +1594,70 @@
 				{
 					"name": "deletePlaceById",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/delete/2",
+							"raw": "http://localhost:8084/place/delete/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1245,7 +1666,7 @@
 							"path": [
 								"place",
 								"delete",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -1254,10 +1675,70 @@
 				{
 					"name": "deletePlaceByName",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/delete?name=Arthur Ashe Stadium",
+							"raw": "http://localhost:8084/place/delete/name?name=Arthur Ashe Stadium 3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1265,12 +1746,13 @@
 							"port": "8084",
 							"path": [
 								"place",
-								"delete"
+								"delete",
+								"name"
 							],
 							"query": [
 								{
 									"key": "name",
-									"value": "Arthur Ashe Stadium"
+									"value": "Arthur Ashe Stadium 3"
 								}
 							]
 						}
@@ -1288,7 +1770,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/id/1",
+							"raw": "http://localhost:8084/city/id/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1297,7 +1779,7 @@
 							"path": [
 								"city",
 								"id",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -1355,7 +1837,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/zipCode/12345",
+							"raw": "http://localhost:8084/city/zipCode/54321",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1364,7 +1846,7 @@
 							"path": [
 								"city",
 								"zipCode",
-								"12345"
+								"54321"
 							]
 						}
 					},
@@ -1376,7 +1858,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/places/1",
+							"raw": "http://localhost:8084/city/places/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1385,7 +1867,7 @@
 							"path": [
 								"city",
 								"places",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -1421,6 +1903,66 @@
 				{
 					"name": "addCity",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1450,6 +1992,66 @@
 				{
 					"name": "updateCity",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -1479,10 +2081,70 @@
 				{
 					"name": "deleteCityById",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/delete/1",
+							"raw": "http://localhost:8084/city/delete/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1491,7 +2153,7 @@
 							"path": [
 								"city",
 								"delete",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -1500,10 +2162,70 @@
 				{
 					"name": "deleteCityByName",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/delete/name?name=New York\n",
+							"raw": "http://localhost:8084/city/delete/name?name=New York",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1517,7 +2239,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "New York\n"
+									"value": "New York"
 								}
 							]
 						}
@@ -1535,7 +2257,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/id/1",
+							"raw": "http://localhost:8084/seat/id/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1544,7 +2266,7 @@
 							"path": [
 								"seat",
 								"id",
-								"1"
+								"9"
 							]
 						}
 					},
@@ -1576,7 +2298,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/availability/5",
+							"raw": "http://localhost:8084/seat/availability/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1585,7 +2307,7 @@
 							"path": [
 								"seat",
 								"availability",
-								"5"
+								"9"
 							]
 						}
 					},
@@ -1597,7 +2319,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/id/10",
+							"raw": "http://localhost:8084/seat/zone/id/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1607,7 +2329,7 @@
 								"seat",
 								"zone",
 								"id",
-								"10"
+								"17"
 							]
 						}
 					},
@@ -1619,7 +2341,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/name?name=Popular",
+							"raw": "http://localhost:8084/seat/zone/name?name=Popular Norte",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1633,7 +2355,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Popular"
+									"value": "Popular Norte"
 								}
 							]
 						}
@@ -1646,7 +2368,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/availability/13",
+							"raw": "http://localhost:8084/seat/zone/availability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1656,7 +2378,7 @@
 								"seat",
 								"zone",
 								"availability",
-								"13"
+								"17"
 							]
 						}
 					},
@@ -1668,7 +2390,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/noAvailability/10",
+							"raw": "http://localhost:8084/seat/zone/noAvailability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1678,7 +2400,7 @@
 								"seat",
 								"zone",
 								"noAvailability",
-								"10"
+								"17"
 							]
 						}
 					},
@@ -1687,11 +2409,71 @@
 				{
 					"name": "addSeat",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 13\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 17\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1716,11 +2498,71 @@
 				{
 					"name": "updateSeat",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 10\r\n    }\r\n}",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 17\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1745,10 +2587,70 @@
 				{
 					"name": "updateSeatAvailabilitybyID",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/availability/2",
+							"raw": "http://localhost:8084/seat/availability/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1757,7 +2659,7 @@
 							"path": [
 								"seat",
 								"availability",
-								"2"
+								"8"
 							]
 						}
 					},
@@ -1766,10 +2668,70 @@
 				{
 					"name": "deleteSeat",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/delete/1",
+							"raw": "http://localhost:8084/seat/delete/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1778,7 +2740,7 @@
 							"path": [
 								"seat",
 								"delete",
-								"1"
+								"8"
 							]
 						}
 					},

@@ -7,6 +7,7 @@ import com.proyectointegrador.msplace.service.interfaces.ISeatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.Set;
@@ -53,6 +54,7 @@ public class SeatController {
         return seatService.getSeatsNotAvailableByZoneId(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<String> addSeat(@RequestBody SeatDTO seatDTO) {
         try {
@@ -63,6 +65,7 @@ public class SeatController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<String> updateZone(@RequestBody SeatDTO seatDTO) {
         try {
@@ -73,11 +76,13 @@ public class SeatController {
         }
     }
 
+    @PreAuthorize("hasRole('USER')")
     @PutMapping("/availability/{id}")
     public SeatDTO updateAvailability(@PathVariable Long id) {
         return seatService.putAvailability(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteSeat(@PathVariable Long id) {
         try {

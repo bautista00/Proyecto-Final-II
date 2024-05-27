@@ -23,6 +23,12 @@ spring:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
+        - id: ms-place
+          uri: lb://ms-place
+          predicates:
+            - Path=/api/place/**
+          filters:
+            - StripPrefix=2
       default-filters:
         - TokenRelay
   security:
