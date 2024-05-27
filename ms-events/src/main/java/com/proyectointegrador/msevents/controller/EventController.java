@@ -21,7 +21,7 @@ public class EventController {
 
     private final EventService eventService;
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getEventById(@PathVariable Long id) {
         ResponseEntity response = null;
         Optional<EventDTO> event = eventService.getEventById(id);
@@ -34,7 +34,7 @@ public class EventController {
         return response;
     }
 
-    @GetMapping("/getByName/{name}")
+    @GetMapping("/public/getByName/{name}")
     public ResponseEntity<?> getEventByName(@PathVariable String name) {
         ResponseEntity response = null;
         Optional<EventDTO> event = eventService.getEventByName(name);
@@ -47,7 +47,7 @@ public class EventController {
         return response;
     }
 
-    @GetMapping("/get/all")
+    @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllEvents() {
         ResponseEntity response = null;
         Set<EventDTO> events = eventService.getAllEvents();
@@ -60,7 +60,7 @@ public class EventController {
         return response;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.addEvent(eventDTO);
@@ -70,7 +70,7 @@ public class EventController {
         }
     }
 
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.updateEvent(eventDTO);
@@ -80,7 +80,7 @@ public class EventController {
         }
     }
 
-    @DeleteMapping("/deleteById/{id}")
+    @DeleteMapping("/private/deleteById/{id}")
     public ResponseEntity<?> deleteEventById(@PathVariable Long id) {
         try {
             eventService.deleteEventById(id);
@@ -90,7 +90,7 @@ public class EventController {
         }
     }
 
-    @DeleteMapping("/deleteByName/{name}")
+    @DeleteMapping("/private/deleteByName/{name}")
     public ResponseEntity<?> deleteEventByName(@PathVariable String name) {
         try {
             eventService.deleteEventByName(name);

@@ -20,7 +20,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getCategoryById(@PathVariable Long id) {
         ResponseEntity response = null;
         Optional<CategoryDTO> category = categoryService.getCategoryById(id);
@@ -33,7 +33,7 @@ public class CategoryController {
         return response;
     }
 
-    @GetMapping("/getByName/{name}")
+    @GetMapping("/public/getByName/{name}")
     public ResponseEntity<?> getCategoryByName(@PathVariable String name) {
         ResponseEntity response = null;
         Optional<CategoryDTO> category = categoryService.getCategoryByName(name);
@@ -46,7 +46,7 @@ public class CategoryController {
         return response;
     }
 
-    @GetMapping("/get/all")
+    @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllCategories() {
         ResponseEntity response = null;
         Set<CategoryDTO> categories = categoryService.getAllCategories();
@@ -59,7 +59,7 @@ public class CategoryController {
         return response;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<?> addCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.addCategory(categoryDTO);
@@ -69,7 +69,7 @@ public class CategoryController {
         }
     }
 
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<?> updateCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.updateCategory(categoryDTO);
@@ -79,7 +79,7 @@ public class CategoryController {
         }
     }
 
-    @DeleteMapping("/deleteById/{id}")
+    @DeleteMapping("/private/deleteById/{id}")
     public ResponseEntity<?> deleteCategoryById(@PathVariable Long id) {
         try {
             categoryService.deleteCategoryById(id);
@@ -89,7 +89,7 @@ public class CategoryController {
         }
     }
 
-    @DeleteMapping("/deleteByName/{name}")
+    @DeleteMapping("/private/deleteByName/{name}")
     public ResponseEntity<?> deleteCategoryByName(@PathVariable String name) {
         try {
             categoryService.deleteCategoryByName(name);

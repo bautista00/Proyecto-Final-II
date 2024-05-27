@@ -19,7 +19,7 @@ public class DateEventController {
 
     private final DateEventService dateEventService;
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getDateEventById(@PathVariable Long id) {
         ResponseEntity response = null;
         Optional<DateEventDTO> eventDate = dateEventService.getDateEventById(id);
@@ -32,7 +32,7 @@ public class DateEventController {
         return response;
     }
 
-    @GetMapping("/getByDate/{date}")
+    @GetMapping("/public/getByDate/{date}")
     public ResponseEntity<?> getDateEventByDate(@PathVariable Date date) {
         ResponseEntity response = null;
         Optional<DateEventDTO> eventDate = dateEventService.getDateEventByDate(date);
@@ -45,7 +45,7 @@ public class DateEventController {
         return response;
     }
 
-    @GetMapping("/get/all")
+    @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllDateEvents() {
         ResponseEntity response = null;
         Set<DateEventDTO> eventDates = dateEventService.getAllDateEvents();
@@ -58,7 +58,7 @@ public class DateEventController {
         return response;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<?> addDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
             DateEventDTO newEventDate = dateEventService.addDateEvent(dateEventDTO);
@@ -68,7 +68,7 @@ public class DateEventController {
         }
     }
 
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<?> updateDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
             DateEventDTO newEventDate = dateEventService.updateDateEvent(dateEventDTO);
@@ -78,7 +78,7 @@ public class DateEventController {
         }
     }
 
-    @DeleteMapping("/deleteById/{id}")
+    @DeleteMapping("/private/deleteById/{id}")
     public ResponseEntity<?> deleteDateEventById(@PathVariable Long id) {
         try {
             dateEventService.deleteDateEventById(id);
@@ -88,7 +88,7 @@ public class DateEventController {
         }
     }
 
-    @DeleteMapping("/deleteByDate/{date}")
+    @DeleteMapping("/private/deleteByDate/{date}")
     public ResponseEntity<?> deleteDateEventByDate(@PathVariable Date date) {
         try {
             dateEventService.deleteDateEventByDate(date);
