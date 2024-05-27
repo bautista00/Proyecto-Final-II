@@ -4,8 +4,6 @@ import com.proyectointegrador.msusers.domain.User;
 import com.proyectointegrador.msusers.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Optional;
 

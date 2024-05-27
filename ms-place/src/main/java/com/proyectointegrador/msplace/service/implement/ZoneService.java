@@ -3,7 +3,6 @@ package com.proyectointegrador.msplace.service.implement;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.domain.Zone;
-import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
 import com.proyectointegrador.msplace.dto.ZoneDTO;
 import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;

@@ -1,8 +1,8 @@
 package com.proyectointegrador.msplace.domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor

@@ -1,7 +1,5 @@
 package com.proyectointegrador.msplace.dto;
 
-import com.proyectointegrador.msplace.domain.City;
-import com.proyectointegrador.msplace.domain.Zone;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

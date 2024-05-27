@@ -1,9 +1,7 @@
 package com.proyectointegrador.msplace.service.interfaces;
 
 import com.proyectointegrador.msplace.dto.CityDTO;
-import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
-
 import java.util.Optional;
 import java.util.Set;
 

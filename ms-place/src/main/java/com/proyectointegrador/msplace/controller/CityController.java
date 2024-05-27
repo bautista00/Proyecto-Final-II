@@ -1,11 +1,8 @@
 package com.proyectointegrador.msplace.controller;
 
 import com.proyectointegrador.msplace.dto.CityDTO;
-import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
-import com.proyectointegrador.msplace.service.implement.CityService;
 import com.proyectointegrador.msplace.service.interfaces.ICityService;
-import jakarta.ws.rs.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

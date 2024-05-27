@@ -1,8 +1,6 @@
 package com.proyectointegrador.msusers.repository;
 
 import com.proyectointegrador.msusers.domain.User;
-
-import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Optional;
 

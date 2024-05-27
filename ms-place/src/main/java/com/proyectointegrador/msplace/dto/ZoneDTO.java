@@ -1,7 +1,6 @@
 package com.proyectointegrador.msplace.dto;
 
 import com.proyectointegrador.msplace.domain.Place;
-import com.proyectointegrador.msplace.domain.Seat;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

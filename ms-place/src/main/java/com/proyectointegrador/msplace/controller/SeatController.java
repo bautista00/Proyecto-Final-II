@@ -2,7 +2,6 @@ package com.proyectointegrador.msplace.controller;
 
 import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
-import com.proyectointegrador.msplace.service.implement.SeatService;
 import com.proyectointegrador.msplace.service.interfaces.ISeatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

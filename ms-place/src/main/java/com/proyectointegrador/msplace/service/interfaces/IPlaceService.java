@@ -2,9 +2,7 @@ package com.proyectointegrador.msplace.service.interfaces;
 
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
-import com.proyectointegrador.msplace.dto.ZoneDTO;
 import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;
-
 import java.util.Optional;
 import java.util.Set;
 
