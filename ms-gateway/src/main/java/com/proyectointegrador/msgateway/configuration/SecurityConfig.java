@@ -12,7 +12,7 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity server) {
         server
                 .authorizeExchange(authorize -> authorize
-                        .anyExchange().permitAll()
+                        .anyExchange().authenticated()
                 )
                 .oauth2Login();
         return server.build();
