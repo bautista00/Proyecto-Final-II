@@ -18,38 +18,38 @@ public class CityController {
 
     private final ICityService cityService;
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/public/id/{id}")
     public Optional<CityDTO> getCityById(@PathVariable Long id) {
         return cityService.getCityById(id);
     }
 
-    @GetMapping("/name")
+    @GetMapping("/public/name")
     public Optional<CityDTO> getCityByName(@RequestParam("name") String name) {
         return cityService.getCityByName(name);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     public Set<CityDTO> getAllCities() {
         return cityService.getAllCities();
     }
 
-    @GetMapping("/zipCode/{zipCode}")
+    @GetMapping("/public/zipCode/{zipCode}")
     public Set<CityDTO> getCityByZipCode(@PathVariable String zipCode) {
         return cityService.getCityByZipCode(zipCode);
     }
 
-    @GetMapping("/places/{id}")
+    @GetMapping("/public/places/{id}")
     public Set<PlaceOnlyDTO> getAllPlacesByCityId(@PathVariable Long id) {
         return cityService.getAllPlacesByCityId(id);
     }
 
-    @GetMapping("/places/name")
+    @GetMapping("/public/places/name")
     public Set<PlaceOnlyDTO> getAllPlacesByCityName(@RequestParam("name") String name) {
         return cityService.getAllPlacesByCityName(name);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<String> addCity(@RequestBody CityDTO cityDTO) {
         try {
             CityDTO cityDTOR = cityService.addCity(cityDTO);
@@ -60,7 +60,7 @@ public class CityController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<String> updateCity(@RequestBody CityDTO cityDTO) {
         try {
             CityDTO cityDTOR = cityService.updateCity(cityDTO);
@@ -71,7 +71,7 @@ public class CityController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/private/delete/{id}")
     public ResponseEntity<String> deleteCityById(@PathVariable Long id) {
         try {
             cityService.deleteCityById(id);
@@ -82,7 +82,7 @@ public class CityController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/name")
+    @DeleteMapping("/private/delete/name")
     public ResponseEntity<String> deleteCityByName(@RequestParam("name") String name) {
         try {
             cityService.deleteCityByName(name);

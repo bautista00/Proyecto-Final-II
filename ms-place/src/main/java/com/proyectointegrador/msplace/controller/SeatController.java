@@ -18,43 +18,43 @@ public class SeatController {
 
     private final ISeatService seatService;
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/public/id/{id}")
     public Optional<SeatDTO> getSeatById(@PathVariable Long id) {
         return seatService.getSeatById(id);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     public Set<SeatDTO> getAllSeats() {
         return seatService.getAllSeats();
     }
 
-    @GetMapping("/availability/{id}")
+    @GetMapping("/public/availability/{id}")
     public Integer getAvailability(@PathVariable Long id) {
         return seatService.getAvailability(id);
     }
 
-    @GetMapping("/zone/id/{id}")
+    @GetMapping("/public/zone/id/{id}")
     public Set<SeatOnlyDTO> getSeatsByZoneId(@PathVariable Long id) {
         return seatService.getAllSeatsByZoneId(id);
     }
 
-    @GetMapping("/zone/name")
+    @GetMapping("/public/zone/name")
     public Set<SeatOnlyDTO> getSeatsByZoneName(@RequestParam("name") String name) {
         return seatService.getSeatsByZoneName(name);
     }
 
-    @GetMapping("/zone/availability/{id}")
+    @GetMapping("/public/zone/availability/{id}")
     public Set<SeatOnlyDTO> getSeatsAvailableByZoneId(@PathVariable Long id) {
         return seatService.getSeatsAvailableByZoneId(id);
     }
 
-    @GetMapping("/zone/noAvailability/{id}")
+    @GetMapping("/public/zone/noAvailability/{id}")
     public Set<SeatOnlyDTO> getSeatsNotAvailableByZoneId(@PathVariable Long id) {
         return seatService.getSeatsNotAvailableByZoneId(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<String> addSeat(@RequestBody SeatDTO seatDTO) {
         try {
             SeatDTO seatDTOR = seatService.addSeat(seatDTO);
@@ -65,7 +65,7 @@ public class SeatController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<String> updateZone(@RequestBody SeatDTO seatDTO) {
         try {
             SeatDTO seatDTOR = seatService.updateSeat(seatDTO);
@@ -76,13 +76,13 @@ public class SeatController {
     }
 
     @PreAuthorize("hasRole('USER')")
-    @PutMapping("/availability/{id}")
+    @PutMapping("/private/availability/{id}")
     public SeatDTO updateAvailability(@PathVariable Long id) {
         return seatService.putAvailability(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/private/delete/{id}")
     public ResponseEntity<String> deleteSeat(@PathVariable Long id) {
         try {
             seatService.deleteSeatById(id);

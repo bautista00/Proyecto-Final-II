@@ -17,28 +17,28 @@ public class ZoneController {
 
     private final IZoneService zoneService;
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/public/id/{id}")
     public Optional<ZoneDTO> getZoneById(@PathVariable Long id) {
         return zoneService.getZoneById(id);
     }
 
-    @GetMapping("/name")
+    @GetMapping("/public/name")
     public Optional<ZoneDTO> getZoneByName(@RequestParam("name") String name) {
         return zoneService.getZoneByName(name);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     public Set<ZoneDTO> getAllZones() {
         return zoneService.getAllZones();
     }
 
-    @GetMapping("/availability/{id}")
+    @GetMapping("/public/availability/{id}")
     public Integer getAvailability(@PathVariable Long id) {
         return zoneService.getAvailability(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<String> addZone(@RequestBody ZoneDTO zoneDTO) {
         try {
             ZoneDTO zoneDTOR = zoneService.addZone(zoneDTO);
@@ -49,7 +49,7 @@ public class ZoneController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<String> updateZone(@RequestBody ZoneDTO zoneDTO) {
         try {
             ZoneDTO zoneDTOR = zoneService.updateZone(zoneDTO);
@@ -60,7 +60,7 @@ public class ZoneController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/private/delete/{id}")
     public ResponseEntity<String> deleteZoneById(@PathVariable Long id) {
         try {
             zoneService.deleteZoneById(id);
@@ -71,7 +71,7 @@ public class ZoneController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/name")
+    @DeleteMapping("/private/delete/name")
     public ResponseEntity<String> deleteZoneByName(@RequestParam("name") String name) {
         try {
             zoneService.deleteZoneByName(name);

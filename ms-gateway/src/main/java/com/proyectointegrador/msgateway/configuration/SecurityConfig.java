@@ -12,6 +12,15 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity server) {
         server
                 .authorizeExchange(authorize -> authorize
+                        .pathMatchers("api/user/**").authenticated()
+                        .pathMatchers("api/place/city/public/**").permitAll()
+                        .pathMatchers("api/place/city/private/**").authenticated()
+                        .pathMatchers("api/place/place/public/**").permitAll()
+                        .pathMatchers("api/place/place/private/**").authenticated()
+                        .pathMatchers("api/place/zone/public/**").permitAll()
+                        .pathMatchers("api/place/zone/private/**").authenticated()
+                        .pathMatchers("api/place/seat/public/**").permitAll()
+                        .pathMatchers("api/place/seat/private/**").authenticated()
                         .anyExchange().authenticated()
                 )
                 .oauth2Login();

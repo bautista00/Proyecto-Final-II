@@ -945,7 +945,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/id/17",
+							"raw": "http://localhost:8084/zone/public/id/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -953,6 +953,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"public",
 								"id",
 								"17"
 							]
@@ -966,7 +967,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/name?name=Popular Norte",
+							"raw": "http://localhost:8084/zone/public/name?name=Popular Norte",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -974,6 +975,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"public",
 								"name"
 							],
 							"query": [
@@ -992,7 +994,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/all",
+							"raw": "http://localhost:8084/zone/public/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1000,6 +1002,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"public",
 								"all"
 							]
 						}
@@ -1012,7 +1015,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/availability/17",
+							"raw": "http://localhost:8084/zone/public/availability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1020,6 +1023,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"public",
 								"availability",
 								"17"
 							]
@@ -1102,7 +1106,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/zone/add",
+							"raw": "http://localhost:8084/zone/private/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1110,6 +1114,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"private",
 								"add"
 							]
 						}
@@ -1191,7 +1196,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/zone/update",
+							"raw": "http://localhost:8084/zone/private/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1199,6 +1204,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"private",
 								"update"
 							]
 						}
@@ -1271,7 +1277,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/delete/15",
+							"raw": "http://localhost:8084/zone/private/delete/15",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1279,6 +1285,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"private",
 								"delete",
 								"15"
 							]
@@ -1352,7 +1359,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/delete/name?name=Popular Norte",
+							"raw": "http://localhost:8084/zone/private/delete/name?name=Popular Norte",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1360,6 +1367,7 @@
 							"port": "8084",
 							"path": [
 								"zone",
+								"private",
 								"delete",
 								"name"
 							],
@@ -1384,7 +1392,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/id/5",
+							"raw": "http://localhost:8084/place/public/id/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1392,6 +1400,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"public",
 								"id",
 								"5"
 							]
@@ -1405,7 +1414,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/name?name=Arthur Ashe Stadium",
+							"raw": "http://localhost:8084/place/public/name?name=Arthur Ashe Stadium",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1413,6 +1422,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"public",
 								"name"
 							],
 							"query": [
@@ -1431,7 +1441,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/all",
+							"raw": "http://localhost:8084/place/public/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1439,6 +1449,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"public",
 								"all"
 							]
 						}
@@ -1451,7 +1462,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/zones/5",
+							"raw": "http://localhost:8084/place/public/zones/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1459,6 +1470,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"public",
 								"zones",
 								"5"
 							]
@@ -1472,7 +1484,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/zones/name?name=Arthur Ashe Stadium",
+							"raw": "http://localhost:8084/place/public/zones/name?name=Arthur Ashe Stadium",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1480,6 +1492,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"public",
 								"zones",
 								"name"
 							],
@@ -1568,7 +1581,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/place/add",
+							"raw": "http://localhost:8084/place/private/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1576,6 +1589,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"private",
 								"add"
 							]
 						}
@@ -1657,7 +1671,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/place/update",
+							"raw": "http://localhost:8084/place/private/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1665,6 +1679,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"private",
 								"update"
 							]
 						}
@@ -1737,7 +1752,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/delete/6",
+							"raw": "http://localhost:8084/place/private/delete/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1745,6 +1760,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"private",
 								"delete",
 								"6"
 							]
@@ -1818,7 +1834,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/delete/name?name=Arthur Ashe Stadium 3",
+							"raw": "http://localhost:8084/place/private/delete/name?name=Arthur Ashe Stadium 3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1826,6 +1842,7 @@
 							"port": "8084",
 							"path": [
 								"place",
+								"private",
 								"delete",
 								"name"
 							],
@@ -1850,7 +1867,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/id/2",
+							"raw": "http://localhost:8084/city/public/id/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1858,6 +1875,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"public",
 								"id",
 								"2"
 							]
@@ -1871,7 +1889,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/name?name=New York",
+							"raw": "http://localhost:8084/city/public/name?name=New York",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1879,6 +1897,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"public",
 								"name"
 							],
 							"query": [
@@ -1897,7 +1916,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/all",
+							"raw": "http://localhost:8084/city/public/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1905,6 +1924,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"public",
 								"all"
 							]
 						}
@@ -1917,7 +1937,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/zipCode/54321",
+							"raw": "http://localhost:8084/city/zipCode/public/54321",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1926,6 +1946,7 @@
 							"path": [
 								"city",
 								"zipCode",
+								"public",
 								"54321"
 							]
 						}
@@ -1938,7 +1959,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/places/5",
+							"raw": "http://localhost:8084/city/public/places/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1946,6 +1967,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"public",
 								"places",
 								"5"
 							]
@@ -1959,7 +1981,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/places/name?name=New York",
+							"raw": "http://localhost:8084/city/public/places/name?name=New York",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1967,6 +1989,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"public",
 								"places",
 								"name"
 							],
@@ -2055,7 +2078,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/city/add",
+							"raw": "http://localhost:8084/city/private/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2063,6 +2086,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"private",
 								"add"
 							]
 						}
@@ -2144,7 +2168,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/city/update",
+							"raw": "http://localhost:8084/city/private/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2152,6 +2176,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"private",
 								"update"
 							]
 						}
@@ -2224,7 +2249,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/delete/4",
+							"raw": "http://localhost:8084/city/private/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2232,8 +2257,9 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"private",
 								"delete",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -2305,7 +2331,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/delete/name?name=New York",
+							"raw": "http://localhost:8084/city/private/delete/name?name=New York",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2313,6 +2339,7 @@
 							"port": "8084",
 							"path": [
 								"city",
+								"private",
 								"delete",
 								"name"
 							],
@@ -2337,7 +2364,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/id/9",
+							"raw": "http://localhost:8084/seat/public/id/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2345,6 +2372,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"id",
 								"9"
 							]
@@ -2358,7 +2386,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/all",
+							"raw": "http://localhost:8084/seat/public/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2366,6 +2394,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"all"
 							]
 						}
@@ -2378,7 +2407,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/availability/9",
+							"raw": "http://localhost:8084/seat/public/availability/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2386,6 +2415,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"availability",
 								"9"
 							]
@@ -2399,7 +2429,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/id/17",
+							"raw": "http://localhost:8084/seat/public/zone/id/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2407,6 +2437,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"zone",
 								"id",
 								"17"
@@ -2421,7 +2452,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/name?name=Popular Norte",
+							"raw": "http://localhost:8084/seat/public/zone/name?name=Popular Norte",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2429,6 +2460,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"zone",
 								"name"
 							],
@@ -2448,7 +2480,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/availability/17",
+							"raw": "http://localhost:8084/seat/public/zone/availability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2456,6 +2488,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"zone",
 								"availability",
 								"17"
@@ -2470,7 +2503,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/zone/noAvailability/17",
+							"raw": "http://localhost:8084/seat/public/zone/noAvailability/17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2478,6 +2511,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"public",
 								"zone",
 								"noAvailability",
 								"17"
@@ -2561,7 +2595,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/seat/add",
+							"raw": "http://localhost:8084/seat/private/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2569,6 +2603,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"private",
 								"add"
 							]
 						}
@@ -2650,7 +2685,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/seat/update",
+							"raw": "http://localhost:8084/seat/private/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2658,6 +2693,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"private",
 								"update"
 							]
 						}
@@ -2730,7 +2766,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/availability/8",
+							"raw": "http://localhost:8084/seat/private/availability/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2738,6 +2774,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"private",
 								"availability",
 								"8"
 							]
@@ -2811,7 +2848,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/delete/8",
+							"raw": "http://localhost:8084/seat/private/delete/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2819,6 +2856,7 @@
 							"port": "8084",
 							"path": [
 								"seat",
+								"private",
 								"delete",
 								"8"
 							]

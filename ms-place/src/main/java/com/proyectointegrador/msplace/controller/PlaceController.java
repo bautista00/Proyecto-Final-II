@@ -18,33 +18,33 @@ public class PlaceController {
 
     private final IPlaceService placeService;
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/public/id/{id}")
     public Optional<PlaceDTO> getPlaceById(@PathVariable Long id) {
         return placeService.getPlaceById(id);
     }
 
-    @GetMapping("/name")
+    @GetMapping("/public/name")
     public Optional<PlaceDTO> getPlaceByName(@RequestParam("name") String name) {
         return placeService.getPlaceByName(name);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     public Set<PlaceDTO> getAllPlaces() {
         return placeService.getAllPlaces();
     }
 
-    @GetMapping("/zones/{id}")
+    @GetMapping("/public/zones/{id}")
     public Set<ZoneOnlyDTO> getAllZonesByPlaceId(@PathVariable Long id) {
         return placeService.getAllZonesByPlaceId(id);
     }
 
-    @GetMapping("/zones/name")
+    @GetMapping("/public/zones/name")
     public Set<ZoneOnlyDTO> getAllZonesByPlaceName(@RequestParam("name") String name) {
         return placeService.getAllZonesByPlaceName(name);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/add")
+    @PostMapping("/private/add")
     public ResponseEntity<String> addPlace(@RequestBody PlaceDTO placeDTO) {
         try {
             PlaceDTO placeDTOR = placeService.addPlace(placeDTO);
@@ -55,7 +55,7 @@ public class PlaceController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
+    @PutMapping("/private/update")
     public ResponseEntity<String> updatePlace(@RequestBody PlaceDTO placeDTO) {
         try {
             PlaceDTO placeDTOR = placeService.updatePlace(placeDTO);
@@ -66,7 +66,7 @@ public class PlaceController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/private/delete/{id}")
     public ResponseEntity<String> deletePlaceById(@PathVariable Long id) {
         try {
             placeService.deletePlaceById(id);
@@ -77,7 +77,7 @@ public class PlaceController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/name")
+    @DeleteMapping("/private/delete/name")
     public ResponseEntity<String> deletePlaceByName(@RequestParam("name") String name) {
         try {
             placeService.deletePlaceByName(name);
