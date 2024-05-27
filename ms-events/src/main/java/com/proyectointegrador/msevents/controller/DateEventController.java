@@ -5,6 +5,7 @@ import com.proyectointegrador.msevents.service.implement.DateEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -58,6 +59,7 @@ public class DateEventController {
         return response;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
     public ResponseEntity<?> addDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
@@ -68,6 +70,7 @@ public class DateEventController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
     public ResponseEntity<?> updateDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
@@ -78,6 +81,7 @@ public class DateEventController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
     public ResponseEntity<?> deleteDateEventById(@PathVariable Long id) {
         try {
@@ -88,6 +92,7 @@ public class DateEventController {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteByDate/{date}")
     public ResponseEntity<?> deleteDateEventByDate(@PathVariable Date date) {
         try {
