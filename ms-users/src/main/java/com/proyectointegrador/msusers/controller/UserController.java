@@ -5,11 +5,10 @@ import com.proyectointegrador.msusers.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
-
-import javax.ws.rs.core.Response;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/users")
@@ -17,6 +16,22 @@ import java.util.Optional;
 public class UserController {
 
     private final UserService userService;
+
+    @GetMapping("/info")
+    public Map<String, String> getUserInfo(@AuthenticationPrincipal Jwt jwt) {
+        String id = jwt.getClaimAsString("sub");
+        String userName = jwt.getClaimAsString("preferred_username");
+        String name = jwt.getClaimAsString("given_name");
+        String lastName = jwt.getClaimAsString("family_name");
+        String email = jwt.getClaimAsString("email");
+        Map<String, String> userInfo = new LinkedHashMap<>();
+        userInfo.put("id", id);
+        userInfo.put("userName", userName);
+        userInfo.put("name", name);
+        userInfo.put("lastName", lastName);
+        userInfo.put("email", email);
+        return userInfo;
+    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
