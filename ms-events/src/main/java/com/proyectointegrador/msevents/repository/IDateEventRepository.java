@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface IDateEventRepository extends JpaRepository<DateEvent, Long> {
 
-    @Query("SELECT ed FROM EventDate ev WHERE ev.id = ?1 ORDER BY ev.date")
+    @Query("SELECT de FROM DateEvent de WHERE de.id = ?1 ORDER BY de.date")
     Optional<DateEvent> findDateEventById(Long id);
 
-    @Query("SELECT ed FROM EventDate ev WHERE ev.date = ?1")
+    @Query("SELECT de FROM DateEvent de WHERE de.date = ?1")
     Optional<DateEvent> findDateEventByDate(Date date);
 
 }

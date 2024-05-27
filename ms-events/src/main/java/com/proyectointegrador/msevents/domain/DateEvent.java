@@ -1,8 +1,10 @@
 package com.proyectointegrador.msevents.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -15,8 +17,7 @@ import java.util.Date;
 @Table(name = "DateEvent")
 public class DateEvent {
     @Id
-    @SequenceGenerator(name = "dateEvent-sequence", sequenceName = "dateEvent-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "dateEvent-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
 }

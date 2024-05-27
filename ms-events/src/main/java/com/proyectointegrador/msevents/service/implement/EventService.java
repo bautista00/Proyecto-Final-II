@@ -6,7 +6,6 @@ import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.repository.IEventRepository;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

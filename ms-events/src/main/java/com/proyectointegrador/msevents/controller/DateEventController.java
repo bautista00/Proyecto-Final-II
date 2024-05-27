@@ -7,13 +7,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 import java.util.Set;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/eventDate")
+@RequestMapping("/dateEvent")
 public class DateEventController {
 
     private final DateEventService dateEventService;
@@ -61,7 +62,7 @@ public class DateEventController {
     public ResponseEntity<?> addDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
             DateEventDTO newEventDate = dateEventService.addDateEvent(dateEventDTO);
-            return new ResponseEntity<>("Event date created successfully " + newEventDate, HttpStatus.CREATED);
+            return new ResponseEntity<>("Event date created successfully - " + newEventDate, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while creating an event date: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -71,7 +72,7 @@ public class DateEventController {
     public ResponseEntity<?> updateDateEvent(@RequestBody DateEventDTO dateEventDTO) {
         try {
             DateEventDTO newEventDate = dateEventService.updateDateEvent(dateEventDTO);
-            return new ResponseEntity<>("Event date updated successfully " + newEventDate, HttpStatus.OK);
+            return new ResponseEntity<>("Event date updated successfully - " + newEventDate, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while updating the event date: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }

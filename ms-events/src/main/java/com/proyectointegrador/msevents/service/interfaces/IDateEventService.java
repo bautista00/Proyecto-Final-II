@@ -2,6 +2,7 @@ package com.proyectointegrador.msevents.service.interfaces;
 
 import com.proyectointegrador.msevents.dto.DateEventDTO;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 import java.util.Set;

@@ -63,7 +63,7 @@ public class CategoryController {
     public ResponseEntity<?> addCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.addCategory(categoryDTO);
-            return new ResponseEntity<>("Category created successfully" + newCategoryDTO, HttpStatus.CREATED);
+            return new ResponseEntity<>("Category created successfully - " + newCategoryDTO, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while creating a category: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -73,7 +73,7 @@ public class CategoryController {
     public ResponseEntity<?> updateCategory(@RequestBody CategoryDTO categoryDTO) {
         try {
             CategoryDTO newCategoryDTO = categoryService.updateCategory(categoryDTO);
-            return new ResponseEntity<>("Category updated successfully" + newCategoryDTO, HttpStatus.OK);
+            return new ResponseEntity<>("Category updated successfully - " + newCategoryDTO, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while updating the category: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }

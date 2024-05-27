@@ -8,6 +8,7 @@ import com.proyectointegrador.msevents.service.interfaces.IDateEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @RequiredArgsConstructor

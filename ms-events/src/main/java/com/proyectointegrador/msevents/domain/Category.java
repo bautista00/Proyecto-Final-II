@@ -3,6 +3,9 @@ package com.proyectointegrador.msevents.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -13,8 +16,7 @@ import lombok.*;
 @Table(name = "Category")
 public class Category {
     @Id
-    @SequenceGenerator(name = "category-sequence", sequenceName = "category-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "category-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 }
