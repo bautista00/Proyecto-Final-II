@@ -8,6 +8,7 @@ import com.proyectointegrador.msticket.service.implement.TicketServiceImpl;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,14 +37,19 @@ public class TicketController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Ticket>> getAllTickets() {
         List<Ticket> tickets = ticketService.getAllTickets();
         return ResponseEntity.ok(tickets);
     }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
         return ResponseEntity.noContent().build();
     }
 }
+
+// editar ticket?
+// obtener ticket por id de usuario
