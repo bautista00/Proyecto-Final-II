@@ -1,23 +1,12 @@
 spring:
   application:
-    name: ms-place
-
+    name: ms-ticket
   datasource:
     url: jdbc:mysql://localhost:3306/ticketrek
     username: root
-    password: contra
+    password: lmcpauli1
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/ticketrek
 
 eureka:
   instance:
@@ -28,4 +17,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 server:
-  port: 8084
+  port: 8085
