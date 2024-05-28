@@ -23,7 +23,7 @@ public class Event {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JoinColumn(name = "dateEvent_id")
     private DateEvent dateEvent;
 }
