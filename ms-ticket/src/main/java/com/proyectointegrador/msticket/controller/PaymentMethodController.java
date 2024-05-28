@@ -4,6 +4,7 @@ import com.proyectointegrador.msticket.domain.PaymentMethod;
 import com.proyectointegrador.msticket.service.interfaces.IPaymentMethodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,12 +17,14 @@ public class PaymentMethodController {
 
     private final IPaymentMethodService paymentMethodService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<PaymentMethod> createPaymentMethod(@RequestBody PaymentMethod paymentMethod) {
         PaymentMethod paymentMethodCreated = paymentMethodService.createPayment(paymentMethod);
         return ResponseEntity.ok(paymentMethodCreated);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<PaymentMethod> updatePaymentMethod(@RequestBody PaymentMethod paymentMethod) {
         PaymentMethod paymentMethodUpdated= paymentMethodService.updatePayment(paymentMethod);
@@ -41,6 +44,7 @@ public class PaymentMethodController {
         return ResponseEntity.ok(paymentMethodList);
     }
 
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/ticket/{id}")
     public ResponseEntity<Optional<PaymentMethod>> getPaymentsByTicketId(@PathVariable Long id) {
         Optional<PaymentMethod> paymentMethod = paymentMethodService.getPaymentsByTicketId(id);
@@ -53,6 +57,7 @@ public class PaymentMethodController {
         return ResponseEntity.ok(paymentMethod);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deletePaymentMethod(@PathVariable Long id) {
         paymentMethodService.deletePayment(id);
