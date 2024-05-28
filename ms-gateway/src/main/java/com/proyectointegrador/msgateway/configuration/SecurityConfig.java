@@ -23,6 +23,12 @@ public class SecurityConfig {
                         .pathMatchers("api/place/zone/private/**").authenticated()
                         .pathMatchers("api/place/seat/public/**").permitAll()
                         .pathMatchers("api/place/seat/private/**").authenticated()
+                        .pathMatchers("api/events/category/public/**").permitAll()
+                        .pathMatchers("api/events/category/private/**").authenticated()
+                        .pathMatchers("api/events/event/public/**").permitAll()
+                        .pathMatchers("api/events/event/private/**").authenticated()
+                        .pathMatchers("api/events/dateEvent/public/**").permitAll()
+                        .pathMatchers("api/events/dateEvent/private/**").authenticated()
                         .anyExchange().authenticated()
                 )
                 .oauth2Login();
