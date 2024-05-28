@@ -21,7 +21,7 @@ public class Ticket {
     private String userId;
 
 //    ManyToOne no va pero me lo pide para q no rompa
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "payment_method_id", nullable = false)
     private PaymentMethod paymentMethod;
 

@@ -5,6 +5,7 @@ import com.proyectointegrador.msticket.domain.PaymentMethod;
 import com.proyectointegrador.msticket.domain.Ticket;
 import com.proyectointegrador.msticket.dto.TicketRequest;
 import com.proyectointegrador.msticket.service.implement.TicketServiceImpl;
+import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +18,12 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TicketController {
 
-    private TicketServiceImpl ticketService;
+    private final ITicketService ticketService;
 
-
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Ticket> createTicket(@RequestBody TicketRequest ticketRequest) {
-//        String userId=
         Ticket ticket = new Ticket();
-//        ticket.setUserId();
+        ticket.setUserId(String.valueOf(ticketRequest.getUserId()));
         ticket.setPaymentMethod(new PaymentMethod(ticketRequest.getPaymentMethodId()));
         Ticket ticketCreated = ticketService.createTicket(ticket);
         return ResponseEntity.ok(ticketCreated);
@@ -37,12 +36,12 @@ public class TicketController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Ticket>> getAllTickets() {
         List<Ticket> tickets = ticketService.getAllTickets();
         return ResponseEntity.ok(tickets);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
         return ResponseEntity.noContent().build();
