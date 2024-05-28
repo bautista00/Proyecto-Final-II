@@ -13,6 +13,7 @@ public class SecurityConfig {
         server
                 .authorizeExchange(authorize -> authorize
                         .pathMatchers("api/user/**").authenticated()
+                        .pathMatchers("api/ticket/**").authenticated()
                         .pathMatchers("api/place/city/public/**").permitAll()
                         .pathMatchers("api/place/city/private/**").authenticated()
                         .pathMatchers("api/place/place/public/**").permitAll()

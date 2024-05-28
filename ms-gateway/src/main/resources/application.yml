@@ -23,6 +23,12 @@ spring:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
+        - id: ms-ticket
+          uri: lb://ms-ticket
+          predicates:
+            - Path=/api/ticket/**
+          filters:
+            - StripPrefix=2
         - id: ms-place
           uri: lb://ms-place
           predicates:
