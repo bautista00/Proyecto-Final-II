@@ -1,0 +1,28 @@
+package com.proyectointegrador.msticket.domain;
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Table(name = "Ticket")
+public class Ticket {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+
+    @Column(name ="user_id",nullable = false)
+    private String userId;
+
+//    ManyToOne no va pero me lo pide para q no rompa
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "payment_method_id", nullable = false)
+    private PaymentMethod paymentMethod;
+
+}
