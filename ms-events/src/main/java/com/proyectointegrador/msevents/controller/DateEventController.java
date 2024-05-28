@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
@@ -34,14 +36,19 @@ public class DateEventController {
     }
 
     @GetMapping("/public/getByDate/{date}")
-    public ResponseEntity<?> getDateEventByDate(@PathVariable Date date) {
+    public ResponseEntity<?> getDateEventByDate(@PathVariable String date) {
         ResponseEntity response = null;
-        Optional<DateEventDTO> eventDate = dateEventService.getDateEventByDate(date);
-        if (eventDate.isPresent()) {
-            response = new ResponseEntity<>(eventDate, HttpStatus.OK);
-        }
-        else {
-            response = new ResponseEntity<>("Event date with date of: " + date + " not found", HttpStatus.NOT_FOUND);
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            Date dateObj = dateFormat.parse(date);
+            Optional<DateEventDTO> eventDate = dateEventService.getDateEventByDate(dateObj);
+            if (eventDate.isPresent()) {
+                response = new ResponseEntity<>(eventDate, HttpStatus.OK);
+            } else {
+                response = new ResponseEntity<>("Event date with date of: " + dateObj + " not found", HttpStatus.NOT_FOUND);
+            }
+        } catch (ParseException e) {
+            response = new ResponseEntity<>("Invalid date format: " + date, HttpStatus.BAD_REQUEST);
         }
         return response;
     }
@@ -93,14 +100,22 @@ public class DateEventController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/private/deleteByDate/{date}")
-    public ResponseEntity<?> deleteDateEventByDate(@PathVariable Date date) {
+    @DeleteMapping("/private/deleteByDate/{dateStr}")
+    public ResponseEntity<?> deleteDateEventByDate(@PathVariable String dateStr) {
+        ResponseEntity response = null;
         try {
-            dateEventService.deleteDateEventByDate(date);
-            return new ResponseEntity<>("Event date with date of: " + date + " deleted successfully", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error while deleting the event date with date of: " + date + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            Date dateObj = dateFormat.parse(dateStr);
+            Optional<DateEventDTO> eventDate = dateEventService.getDateEventByDate(dateObj);
+            if (eventDate.isPresent()) {
+                dateEventService.deleteDateEventByDate(dateObj);
+                response = new ResponseEntity<>(eventDate, HttpStatus.OK);
+            } else {
+                response = new ResponseEntity<>("Event date with date of: " + dateObj + " not found", HttpStatus.NOT_FOUND);
+            }
+        } catch (ParseException e) {
+            response = new ResponseEntity<>("Invalid date format: " + dateStr, HttpStatus.BAD_REQUEST);
         }
+        return response;
     }
-
 }

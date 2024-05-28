@@ -35,6 +35,12 @@ spring:
             - Path=/api/place/**
           filters:
             - StripPrefix=2
+        - id: ms-events
+          uri: lb://ms-events
+          predicates:
+            - Path=/api/events/**
+          filters:
+            - StripPrefix=2
       default-filters:
         - TokenRelay
   security:

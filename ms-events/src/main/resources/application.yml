@@ -1,16 +1,20 @@
 spring:
   application:
     name: ms-events
+  datasource:
+    url: jdbc:mysql://localhost:3306/ticketrek
+    username: root
+    password: lmcpauli1
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/events
-    username: root
-    password: mceastermako2002
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/ticketrek
 
 eureka:
   instance:
