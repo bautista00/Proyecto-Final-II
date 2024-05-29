@@ -1,7 +1,9 @@
 package com.proyectointegrador.msevents.service.interfaces;
 
+import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -17,4 +19,6 @@ public interface IEventService {
 
     void deleteEventById(Long id);
     void deleteEventByName(String name);
+
+    List<Event> findByPlaceId(Long id);
 }

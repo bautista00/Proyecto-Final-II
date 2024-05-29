@@ -1,13 +1,18 @@
 package com.proyectointegrador.msplace.controller;
 
+import com.proyectointegrador.msplace.domain.Event;
+import com.proyectointegrador.msplace.domain.Place;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;
+import com.proyectointegrador.msplace.repository.EventRepository;
 import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 

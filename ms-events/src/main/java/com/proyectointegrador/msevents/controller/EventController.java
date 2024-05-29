@@ -61,6 +61,11 @@ public class EventController {
         return response;
     }
 
+    @GetMapping("/findByPlaceId/{id}")
+    public ResponseEntity<List<Event>> findByPlaceId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(eventService.findByPlaceId(id));
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
     public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {

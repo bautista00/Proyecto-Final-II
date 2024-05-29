@@ -18,6 +18,8 @@ public class Event {
     private String name;
     private String description;
     private String photo;
+    @Column(name ="place_id",nullable = false)
+    private Long placeId;
 
     @ManyToOne
     @JoinColumn(name = "category_id")

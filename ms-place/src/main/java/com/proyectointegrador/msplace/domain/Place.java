@@ -3,6 +3,8 @@ package com.proyectointegrador.msplace.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -31,4 +33,7 @@ public class Place {
     @OneToMany (mappedBy = "place", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Zone> zones;
+
+    @Transient
+    protected List<Event> events;
 }

@@ -14,4 +14,5 @@ public class EventDTO {
     private String photo;
     private Category category;
     private DateEvent dateEvent;
+    private Long placeId;
 }

@@ -101,3 +101,6 @@ public class SeatController {
         }
     }
 }
+
+// eventos que tengo en una ciudad ???
+//eventos que tengo en un estadio (findByPlaceId)

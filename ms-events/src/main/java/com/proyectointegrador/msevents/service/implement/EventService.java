@@ -83,4 +83,9 @@ public class EventService implements IEventService {
         Optional<Event> event = eventRepository.findEventByName(name);
         event.ifPresent(eventRepository::delete);
     }
+
+    @Override
+    public List<Event> findByPlaceId(Long id) {
+        return eventRepository.findByPlaceId(id);
+    }
 }

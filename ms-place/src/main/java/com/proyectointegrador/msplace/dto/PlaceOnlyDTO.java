@@ -1,10 +1,12 @@
 package com.proyectointegrador.msplace.dto;
 
+import com.proyectointegrador.msplace.domain.Event;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -18,4 +20,5 @@ public class PlaceOnlyDTO {
     private String street;
     private Integer number;
     private Set<ZoneOnlyDTO> zones;
+    protected List<Event> events;
 }
