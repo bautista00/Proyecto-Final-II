@@ -13,6 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TicketRequest {
-    private Long userId;
+    private String userId;
     private Long paymentMethodId;
 }

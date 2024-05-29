@@ -2,6 +2,8 @@ package com.proyectointegrador.msusers.domain;
 
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -14,4 +16,5 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    protected List<Ticket> tickets;
 }

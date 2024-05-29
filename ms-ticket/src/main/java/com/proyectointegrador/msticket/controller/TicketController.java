@@ -24,7 +24,7 @@ public class TicketController {
     @PostMapping("/create")
     public ResponseEntity<Ticket> createTicket(@RequestBody TicketRequest ticketRequest) {
         Ticket ticket = new Ticket();
-        ticket.setUserId(String.valueOf(ticketRequest.getUserId()));
+        ticket.setUserId(ticketRequest.getUserId());
         ticket.setPaymentMethod(new PaymentMethod(ticketRequest.getPaymentMethodId()));
         Ticket ticketCreated = ticketService.createTicket(ticket);
         return ResponseEntity.ok(ticketCreated);
@@ -44,12 +44,15 @@ public class TicketController {
         return ResponseEntity.ok(tickets);
     }
 
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/findByUserId/{id}")
+    public ResponseEntity<List<Ticket>> findByUserId(@PathVariable String id) {
+        return ResponseEntity.ok().body(ticketService.findByUserId(id));
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
         return ResponseEntity.noContent().build();
     }
 }
-
-// editar ticket?
-// obtener ticket por id de usuario

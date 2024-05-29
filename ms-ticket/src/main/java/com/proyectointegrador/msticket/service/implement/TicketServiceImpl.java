@@ -46,4 +46,9 @@ public class TicketServiceImpl implements ITicketService {
         }
         ticketRepository.deleteById(id);
     }
+
+    @Override
+    public List<Ticket> findByUserId(String id) {
+        return ticketRepository.findByUserId(id);
+    }
 }

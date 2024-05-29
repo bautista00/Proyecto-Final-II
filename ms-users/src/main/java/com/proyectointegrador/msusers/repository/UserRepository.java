@@ -1,5 +1,6 @@
 package com.proyectointegrador.msusers.repository;
 
+import com.proyectointegrador.msusers.domain.Ticket;
 import com.proyectointegrador.msusers.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.keycloak.admin.client.Keycloak;
@@ -20,11 +21,19 @@ public class UserRepository implements IUserRepository{
 
     private final Keycloak keycloak;
 
+    private final TicketRepository ticketRepository;
+
     @Value("${backend.keycloak.realm}")
     private String realm;
 
     private User toUser(UserRepresentation userRepresentation) {
-        return new User(userRepresentation.getId(), userRepresentation.getUsername(), userRepresentation.getFirstName(), userRepresentation.getLastName(), userRepresentation.getEmail());
+        List<Ticket> tickets = null;
+        try {
+            tickets = ticketRepository.findByUserId(userRepresentation.getId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new User(userRepresentation.getId(), userRepresentation.getUsername(), userRepresentation.getFirstName(), userRepresentation.getLastName(), userRepresentation.getEmail(), tickets);
     }
 
     @Override
@@ -35,7 +44,6 @@ public class UserRepository implements IUserRepository{
                 .search(username);
         return userRepresentation.stream().map(this::toUser).collect(Collectors.toList());
     }
-
 
     @Override
     public Optional<User> findUserById(String id) {
