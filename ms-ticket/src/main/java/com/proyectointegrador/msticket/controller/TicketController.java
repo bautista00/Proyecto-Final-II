@@ -3,6 +3,7 @@ package com.proyectointegrador.msticket.controller;
 
 import com.proyectointegrador.msticket.domain.PaymentMethod;
 import com.proyectointegrador.msticket.domain.Ticket;
+import com.proyectointegrador.msticket.dto.TicketCreateDTO;
 import com.proyectointegrador.msticket.dto.TicketRequest;
 import com.proyectointegrador.msticket.service.implement.TicketServiceImpl;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
@@ -22,11 +23,8 @@ public class TicketController {
     private final ITicketService ticketService;
 
     @PostMapping("/create")
-    public ResponseEntity<Ticket> createTicket(@RequestBody TicketRequest ticketRequest) {
-        Ticket ticket = new Ticket();
-        ticket.setUserId(ticketRequest.getUserId());
-        ticket.setPaymentMethod(new PaymentMethod(ticketRequest.getPaymentMethodId()));
-        Ticket ticketCreated = ticketService.createTicket(ticket);
+    public ResponseEntity<Ticket> createTicket(@RequestBody TicketCreateDTO ticketRequest) {
+        Ticket ticketCreated = ticketService.createTicket(ticketRequest);
         return ResponseEntity.ok(ticketCreated);
     }
 
@@ -44,7 +42,6 @@ public class TicketController {
         return ResponseEntity.ok(tickets);
     }
 
-    @PreAuthorize("hasRole('USER')")
     @GetMapping("/findByUserId/{id}")
     public ResponseEntity<List<Ticket>> findByUserId(@PathVariable String id) {
         return ResponseEntity.ok().body(ticketService.findByUserId(id));

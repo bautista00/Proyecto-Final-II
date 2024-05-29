@@ -148,4 +148,20 @@ public class SeatService implements ISeatService {
     public List<Seat> findByTicketId(Long id) {
         return seatRepository.findByTicketId(id);
     }
+
+    @Override
+    public Optional<Seat> updateSeatByTicket(Seat seat) {
+        Optional<Seat> seatUpdated = seatRepository.findById(seat.getId());
+        if (seatUpdated.isPresent()) {
+            Seat existingSeat = seatUpdated.get();
+            if (existingSeat.getAvailability() == null) {
+                throw new IllegalStateException("Availability is null for seat with ID: " + existingSeat.getId());
+            }
+            existingSeat.setTicketId(seat.getTicketId());
+            putAvailability(existingSeat.getId());
+            return seatUpdated;
+        } else {
+            return Optional.empty();
+        }
+    }
 }

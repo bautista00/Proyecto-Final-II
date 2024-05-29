@@ -1098,7 +1098,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 8\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1392,7 +1392,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/public/id/5",
+							"raw": "http://localhost:8084/place/public/id/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1402,7 +1402,7 @@
 								"place",
 								"public",
 								"id",
-								"5"
+								"8"
 							]
 						}
 					},
@@ -1573,7 +1573,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium 3\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium 3\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 6\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2364,7 +2364,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/id/9",
+							"raw": "http://localhost:8084/seat/public/id/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2374,7 +2374,7 @@
 								"seat",
 								"public",
 								"id",
-								"9"
+								"13"
 							]
 						}
 					},
@@ -2587,7 +2587,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 17\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 19\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2677,7 +2677,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 8,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 17\r\n    }\r\n}",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 19\r\n    },\r\n    \"ticketId\" : 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2859,6 +2859,88 @@
 								"private",
 								"delete",
 								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByTicketId",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/seat/private/ticket/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"seat",
+								"private",
+								"ticket",
+								"6"
 							]
 						}
 					},
@@ -3096,7 +3178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": 1,\r\n  \"paymentMethodId\": 2\r\n}\r\n",
+							"raw": "{\r\n    \"userId\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"paymentMethodId\": 2,\r\n    \"seatsId\": [13, 16]\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3198,6 +3280,87 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getByUserId",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "pi2",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/tickets/findByUserId/f7049e0e-0a21-4e19-819d-bf8915f2998f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"tickets",
+								"findByUserId",
+								"f7049e0e-0a21-4e19-819d-bf8915f2998f"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3210,7 +3373,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/2",
+							"raw": "http://localhost:8085/paymentMethod/public/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3218,6 +3381,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"public",
 								"2"
 							]
 						}
@@ -3233,7 +3397,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/all",
+							"raw": "http://localhost:8085/paymentMethod/public/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3241,6 +3405,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"public",
 								"all"
 							]
 						}
@@ -3313,7 +3478,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/ticket/2",
+							"raw": "http://localhost:8085/paymentMethod/private/ticket/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3321,6 +3486,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"private",
 								"ticket",
 								"2"
 							]
@@ -3334,7 +3500,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/category?category=Credit Card",
+							"raw": "http://localhost:8085/paymentMethod/private/category?category=Credit Card",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3342,6 +3508,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"private",
 								"category"
 							],
 							"query": [
@@ -3429,7 +3596,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/create",
+							"raw": "http://localhost:8085/paymentMethod/private/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3437,6 +3604,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"private",
 								"create"
 							]
 						}
@@ -3518,7 +3686,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/update",
+							"raw": "http://localhost:8085/paymentMethod/private/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3526,6 +3694,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"private",
 								"update"
 							]
 						}
@@ -3598,7 +3767,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/delete/3",
+							"raw": "http://localhost:8085/paymentMethod/private/delete/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3606,6 +3775,7 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
+								"private",
 								"delete",
 								"3"
 							]
@@ -4546,7 +4716,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Dave Chappele\",\n    \"description\": \"Dave Chappele Comedy Stand Up\",\n    \"photo\": \"davechappele.jpg\",\n    \"category\": {\n        \"id\": 3\n    },\n    \"dateEvent\": {\n        \"id\": 2\n    }\n}",
+							"raw": "{\n    \"name\": \"Dave Chappele\",\n    \"description\": \"Dave Chappele Comedy Stand Up\",\n    \"photo\": \"davechappele.jpg\",\n    \"category\": {\n        \"id\": 3\n    },\n    \"dateEvent\": {\n        \"id\": 5\n    },\n    \"placeId\": 8\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4884,6 +5054,27 @@
 								"private",
 								"deleteByName",
 								"Twelve Carat Toothache World Tour - Post Malone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPlaceId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/event/findByPlaceId/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"event",
+								"findByPlaceId",
+								"8"
 							]
 						}
 					},

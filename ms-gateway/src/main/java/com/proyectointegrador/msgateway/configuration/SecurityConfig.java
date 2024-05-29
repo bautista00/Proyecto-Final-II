@@ -14,7 +14,8 @@ public class SecurityConfig {
                 .authorizeExchange(authorize -> authorize
                         .pathMatchers("api/user/**").authenticated()
                         .pathMatchers("api/ticket/tickets/**").authenticated()
-                        .pathMatchers("api/ticket/paymentMethod/**").permitAll()
+                        .pathMatchers("api/ticket/paymentMethod/private").authenticated()
+                        .pathMatchers("api/ticket/paymentMethod/public").permitAll()
                         .pathMatchers("api/place/city/public/**").permitAll()
                         .pathMatchers("api/place/city/private/**").authenticated()
                         .pathMatchers("api/place/place/public/**").permitAll()

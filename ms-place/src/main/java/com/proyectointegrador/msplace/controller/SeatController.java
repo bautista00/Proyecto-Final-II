@@ -56,10 +56,14 @@ public class SeatController {
         return seatService.getSeatsNotAvailableByZoneId(id);
     }
 
-    @PreAuthorize("hasRole('USER')")
     @GetMapping("/private/ticket/{id}")
     public List<Seat> findByTicketId(@PathVariable Long id) {
         return seatService.findByTicketId(id);
+    }
+
+    @PutMapping("/updateSeatByTicket")
+    public Optional<Seat> updateSeatByTicket(@RequestBody Seat seat){
+        return seatService.updateSeatByTicket(seat);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -75,7 +79,7 @@ public class SeatController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
-    public ResponseEntity<String> updateZone(@RequestBody SeatDTO seatDTO) {
+    public ResponseEntity<String> updateSeat(@RequestBody SeatDTO seatDTO) {
         try {
             SeatDTO seatDTOR = seatService.updateSeat(seatDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body("Asiento actualizado con éxito: " + seatDTOR);
@@ -84,7 +88,6 @@ public class SeatController {
         }
     }
 
-    @PreAuthorize("hasRole('USER')")
     @PutMapping("/private/availability/{id}")
     public SeatDTO updateAvailability(@PathVariable Long id) {
         return seatService.putAvailability(id);
@@ -101,6 +104,3 @@ public class SeatController {
         }
     }
 }
-
-// eventos que tengo en una ciudad ???
-//eventos que tengo en un estadio (findByPlaceId)

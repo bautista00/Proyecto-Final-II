@@ -21,4 +21,5 @@ public interface ISeatService {
     Set<SeatOnlyDTO> getSeatsAvailableByZoneId(Long id);
     Set<SeatOnlyDTO> getSeatsNotAvailableByZoneId(Long id);
     List<Seat> findByTicketId(Long id);
+    Optional<Seat> updateSeatByTicket(Seat seat);
 }
