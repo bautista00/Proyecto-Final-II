@@ -1,5 +1,6 @@
 package com.proyectointegrador.msplace.controller;
 
+import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
 import com.proyectointegrador.msplace.service.interfaces.ISeatService;
@@ -8,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -51,6 +54,12 @@ public class SeatController {
     @GetMapping("/public/zone/noAvailability/{id}")
     public Set<SeatOnlyDTO> getSeatsNotAvailableByZoneId(@PathVariable Long id) {
         return seatService.getSeatsNotAvailableByZoneId(id);
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/private/ticket/{id}")
+    public List<Seat> findByTicketId(@PathVariable Long id) {
+        return seatService.findByTicketId(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")

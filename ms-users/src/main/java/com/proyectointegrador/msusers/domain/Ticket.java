@@ -7,5 +7,4 @@ import lombok.*;
 public class Ticket {
     private Long Id;
     private String userId;
-    private Long paymentMethodId;
 }

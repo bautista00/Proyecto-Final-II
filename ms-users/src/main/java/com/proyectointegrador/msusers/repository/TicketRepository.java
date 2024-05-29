@@ -17,9 +17,4 @@ public class TicketRepository {
         ResponseEntity<List<Ticket>> response = ticketRepository.findByUserId(id);
         return response.getBody();
     }
-
-    public List<Ticket> findByUserName(String userName) {
-        ResponseEntity<List<Ticket>> response = ticketRepository.findByUserName(userName);
-        return response.getBody();
-    }
 }

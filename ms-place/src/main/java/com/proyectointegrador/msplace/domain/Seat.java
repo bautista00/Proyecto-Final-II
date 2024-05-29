@@ -19,13 +19,10 @@ public class Seat {
     private Long id;
     private Integer availability;
     private Double price;
+    @Column(name = "ticket_id")
+    private Long ticketId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "zone_id")
     private Zone zone;
 }
-
-// falta el id de la entrada acá
-// estamos haciendo relaciones bidireccionales
-// una entrada puede tener muchos asientos One to many
-// un asiento pertenece a una sola entrada Many to One

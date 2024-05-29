@@ -15,4 +15,5 @@ public class SeatDTO {
     private Integer availability;
     private Double price;
     private Zone zone;
+    private Long ticketId;
 }

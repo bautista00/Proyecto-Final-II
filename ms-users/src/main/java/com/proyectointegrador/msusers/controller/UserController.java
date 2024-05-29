@@ -1,5 +1,6 @@
 package com.proyectointegrador.msusers.controller;
 
+import com.proyectointegrador.msusers.domain.Ticket;
 import com.proyectointegrador.msusers.domain.User;
 import com.proyectointegrador.msusers.service.UserService;
 import lombok.RequiredArgsConstructor;

@@ -23,8 +23,6 @@ public class SeatService implements ISeatService {
 
     private final ObjectMapper mapper;
 
-    // yo recibo un json, y lo tengo que convertir en una instancia de mi clase
-    // DTO es el objeto tipo json
     private SeatDTO saveSeat(SeatDTO seatDTO) {
         Seat seat = mapper.convertValue(seatDTO, Seat.class);
         seatRepository.save(seat);
@@ -144,5 +142,10 @@ public class SeatService implements ISeatService {
             }
         }
         return availableSeatDTOs;
+    }
+
+    @Override
+    public List<Seat> findByTicketId(Long id) {
+        return seatRepository.findByTicketId(id);
     }
 }

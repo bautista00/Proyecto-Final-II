@@ -13,4 +13,5 @@ public class SeatOnlyDTO {
     private Long id;
     private Integer availability;
     private Double price;
+    private Long ticketId;
 }

@@ -11,10 +11,6 @@ import java.util.List;
 
 @FeignClient( name= "ms-ticket", url="http://localhost:8085", configuration = FeignInterceptor.class)
 public interface FeignTicketRepository {
-
     @RequestMapping(method = RequestMethod.GET, value = "/tickets/findByUserId/{id}")
     ResponseEntity<List<Ticket>> findByUserId(@PathVariable String id);
-
-    @RequestMapping(method = RequestMethod.GET, value = "/tickets/findByUserName/{userName}")
-    ResponseEntity<List<Ticket>> findByUserName(@PathVariable String userName);
 }
