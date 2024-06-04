@@ -12,6 +12,6 @@ public interface IAwsService {
 
     InputStream downloadFile(String key);
 
-    List<String>generateImageUrls(List<String> fileName);
+    List<String>generateImageUrls(List<String> fileNames);
 
 }
