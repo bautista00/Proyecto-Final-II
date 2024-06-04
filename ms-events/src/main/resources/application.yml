@@ -26,3 +26,10 @@ eureka:
 
 server:
   port: 8083
+
+  aws:
+    access_key_id: AKIA47CR2X2EHHGPHUHO
+    secret_access_key: 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
+    s3:
+      bucket: ticketrek-pi-img-bucket
+      region: sa-east-1
