@@ -3,10 +3,12 @@ package com.proyectointegrador.msticket.controller;
 
 import com.proyectointegrador.msticket.domain.PaymentMethod;
 import com.proyectointegrador.msticket.domain.Ticket;
+import com.proyectointegrador.msticket.dto.TicketAllDTO;
 import com.proyectointegrador.msticket.dto.TicketCreateDTO;
 import com.proyectointegrador.msticket.dto.TicketRequest;
 import com.proyectointegrador.msticket.service.implement.TicketServiceImpl;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,7 +25,7 @@ public class TicketController {
     private final ITicketService ticketService;
 
     @PostMapping("/create")
-    public ResponseEntity<Ticket> createTicket(@RequestBody TicketCreateDTO ticketRequest) {
+    public ResponseEntity<Ticket> createTicket(@RequestBody TicketCreateDTO ticketRequest) throws MessagingException {
         Ticket ticketCreated = ticketService.createTicket(ticketRequest);
         return ResponseEntity.ok(ticketCreated);
     }
@@ -37,8 +39,8 @@ public class TicketController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
-    public ResponseEntity<List<Ticket>> getAllTickets() {
-        List<Ticket> tickets = ticketService.getAllTickets();
+    public ResponseEntity<List<TicketAllDTO>> getAllTickets() {
+        List<TicketAllDTO> tickets = ticketService.getAllTickets();
         return ResponseEntity.ok(tickets);
     }
 

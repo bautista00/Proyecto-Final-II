@@ -12,6 +12,10 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/ticketrek
 
+email:
+  username: ticketrekpi@gmail.com
+  password: xueb lzgg bjmh plxv
+
 eureka:
   instance:
     hostname: localhost

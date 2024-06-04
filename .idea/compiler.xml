@@ -10,7 +10,6 @@
         <module name="ms-events" />
         <module name="ms-place" />
         <module name="ms-users" />
-        <module name="eureka-server" />
         <module name="ms-gateway" />
       </profile>
     </annotationProcessing>

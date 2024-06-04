@@ -2,6 +2,7 @@ package com.proyectointegrador.msevents.controller;
 
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import com.proyectointegrador.msevents.dto.EventGetDTO;
 import com.proyectointegrador.msevents.service.implement.EventService;
 import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,7 @@ public class EventController {
     @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getEventById(@PathVariable Long id) {
         ResponseEntity response = null;
-        Optional<EventDTO> event = eventService.getEventById(id);
+        Optional<EventGetDTO> event = eventService.getEventById(id);
         if (event.isPresent()) {
             response = new ResponseEntity<>(event, HttpStatus.OK);
         }
@@ -38,7 +39,7 @@ public class EventController {
     @GetMapping("/public/getByName/{name}")
     public ResponseEntity<?> getEventByName(@PathVariable String name) {
         ResponseEntity response = null;
-        Optional<EventDTO> event = eventService.getEventByName(name);
+        Optional<EventGetDTO> event = eventService.getEventByName(name);
         if (event.isPresent()) {
             response = new ResponseEntity<>(event, HttpStatus.OK);
         }
@@ -51,7 +52,7 @@ public class EventController {
     @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllEvents() {
         ResponseEntity response = null;
-        Set<EventDTO> events = eventService.getAllEvents();
+        Set<EventGetDTO> events = eventService.getAllEvents();
         if (events.isEmpty()) {
             response = new ResponseEntity<>("No events", HttpStatus.NO_CONTENT);
         }

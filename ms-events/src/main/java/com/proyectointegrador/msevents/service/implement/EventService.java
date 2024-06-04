@@ -2,8 +2,11 @@ package com.proyectointegrador.msevents.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msevents.domain.Event;
+import com.proyectointegrador.msevents.domain.Place;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import com.proyectointegrador.msevents.dto.EventGetDTO;
 import com.proyectointegrador.msevents.repository.IEventRepository;
+import com.proyectointegrador.msevents.repository.PlaceRepository;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,8 @@ public class EventService implements IEventService {
 
     private final IEventRepository eventRepository;
 
+    private final PlaceRepository placeRepository;
+
     private final ObjectMapper mapper;
 
     private EventDTO saveEvent(EventDTO eventDTO) {
@@ -28,11 +33,13 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public Optional<EventDTO> getEventById(Long id) {
+    public Optional<EventGetDTO> getEventById(Long id) {
         Optional<Event> event = eventRepository.findEventById(id);
-        EventDTO eventDTO = null;
+        EventGetDTO eventDTO;
         if (event.isPresent()) {
-            eventDTO = mapper.convertValue(event, EventDTO.class);
+            eventDTO = mapper.convertValue(event, EventGetDTO.class);
+            Optional<Place> place = placeRepository.getPlaceById(id);
+            place.ifPresent(eventDTO::setPlace);
             return Optional.ofNullable(eventDTO);
         }
         else {
@@ -41,11 +48,13 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public Optional<EventDTO> getEventByName(String name) {
+    public Optional<EventGetDTO> getEventByName(String name) {
         Optional<Event> event = eventRepository.findEventByName(name);
-        EventDTO eventDTO = null;
+        EventGetDTO eventDTO;
         if (event.isPresent()) {
-            eventDTO = mapper.convertValue(event, EventDTO.class);
+            eventDTO = mapper.convertValue(event, EventGetDTO.class);
+            Optional<Place> place = placeRepository.getPlaceById(event.get().getPlaceId());
+            place.ifPresent(eventDTO::setPlace);
             return Optional.ofNullable(eventDTO);
         }
         else {
@@ -54,11 +63,15 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public Set<EventDTO> getAllEvents() {
+    public Set<EventGetDTO> getAllEvents() {
         List<Event> events = eventRepository.findAll();
-        Set<EventDTO> eventsDTO = new HashSet<>();
+        Set<EventGetDTO> eventsDTO = new HashSet<>();
         for (Event event : events) {
-            eventsDTO.add(mapper.convertValue(event, EventDTO.class));
+            eventsDTO.add(mapper.convertValue(event, EventGetDTO.class));
+            for (EventGetDTO eventGetDTO : eventsDTO) {
+                Optional<Place> place = placeRepository.getPlaceById(event.getPlaceId());
+                place.ifPresent(eventGetDTO::setPlace);
+            }
         }
         return eventsDTO;
     }
