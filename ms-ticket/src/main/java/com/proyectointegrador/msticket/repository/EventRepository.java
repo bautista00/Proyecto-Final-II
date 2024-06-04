@@ -1,0 +1,17 @@
+package com.proyectointegrador.msticket.repository;
+
+import com.proyectointegrador.msticket.domain.Event;
+import com.proyectointegrador.msticket.repository.feign.FeignEventRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@RequiredArgsConstructor
+public class EventRepository {
+
+    private final FeignEventRepository eventRepository;
+
+    public Event findEventById(Long id) {
+        return eventRepository.findEventById(id);
+    }
+}

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.List;
 
 @AllArgsConstructor
@@ -15,4 +14,5 @@ public class TicketCreateDTO {
     private String userId;
     private Long paymentMethodId;
     private List<Long> seatsId;
+    private Long eventId;
 }

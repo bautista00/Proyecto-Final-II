@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ITicketService {
-    Optional<Ticket> getTicketById(Long id);
+    Optional<TicketAllDTO> getTicketById(Long id);
     List<TicketAllDTO> getAllTickets();
     Ticket createTicket(TicketCreateDTO ticket) throws MessagingException;
     void deleteTicket(Long id);

@@ -17,10 +17,15 @@ public class Ticket {
     private Long Id;
     @Column(name ="user_id",nullable = false)
     private String userId;
+    @Column(name ="event_id",nullable = false)
+    private Long eventId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "payment_method_id", nullable = false)
     private PaymentMethod paymentMethod;
+
+    @Transient
+    protected Event event;
 
     @Transient
     protected List<Seat> seats;

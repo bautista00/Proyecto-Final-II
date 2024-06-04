@@ -1,25 +1,18 @@
 package com.proyectointegrador.msticket.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyectointegrador.msticket.domain.PaymentMethod;
-import com.proyectointegrador.msticket.domain.Seat;
-import com.proyectointegrador.msticket.domain.Ticket;
-import com.proyectointegrador.msticket.domain.User;
+import com.proyectointegrador.msticket.domain.*;
 import com.proyectointegrador.msticket.dto.TicketAllDTO;
 import com.proyectointegrador.msticket.dto.TicketCreateDTO;
 import com.proyectointegrador.msticket.dto.EmailDTO;
 import com.proyectointegrador.msticket.exception.PaymentMethodNotFoundException;
 import com.proyectointegrador.msticket.exception.TicketNotFoundException;
-import com.proyectointegrador.msticket.repository.IPaymentMethodRepository;
-import com.proyectointegrador.msticket.repository.ITicketRepository;
-import com.proyectointegrador.msticket.repository.SeatRepository;
-import com.proyectointegrador.msticket.repository.UserRepository;
+import com.proyectointegrador.msticket.repository.*;
 import com.proyectointegrador.msticket.service.interfaces.IEmailService;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +28,7 @@ public class TicketServiceImpl implements ITicketService {
     private final ObjectMapper mapper;
     private final IEmailService emailService;
     private final UserRepository userRepository;
+    private final EventRepository eventRepository;
 
     private void findSeatsByTicket(Ticket ticket) {
         List<Seat> seats = seatRepository.findByTicketId(ticket.getId());
@@ -42,10 +36,28 @@ public class TicketServiceImpl implements ITicketService {
     }
 
     @Override
-    public Optional<Ticket> getTicketById(Long id) {
+    public Optional<TicketAllDTO> getTicketById(Long id) {
         Optional<Ticket> optionalTicket = ticketRepository.findById(id);
-        optionalTicket.ifPresent(this::findSeatsByTicket);
-        return optionalTicket;
+        if (optionalTicket.isPresent()) {
+            Optional<TicketAllDTO> ticketAllDTO = Optional.ofNullable(mapper.convertValue(optionalTicket.get(), TicketAllDTO.class));
+            findSeatsByTicket(optionalTicket.get());
+            Optional<User> user = userRepository.findUserById(optionalTicket.get().getUserId());
+            Event event = eventRepository.findEventById(optionalTicket.get().getEventId());
+            if (user.isPresent()) {
+                if (ticketAllDTO.isPresent()) {
+                    ticketAllDTO.get().setUser(user.get());
+                    ticketAllDTO.get().setEvent(event);
+                    ticketAllDTO.get().setPaymentMethodId(optionalTicket.get().getPaymentMethod().getId());
+                    List<Long> seatsId = new ArrayList<>();
+                    for (Seat seat : optionalTicket.get().getSeats()) {
+                        seatsId.add(seat.getId());
+                    }
+                    ticketAllDTO.get().setSeatsId(seatsId);
+                    return ticketAllDTO;
+                }
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
@@ -57,25 +69,30 @@ public class TicketServiceImpl implements ITicketService {
                     TicketAllDTO ticketDTO = mapper.convertValue(ticket, TicketAllDTO.class);
                     Optional<User> user = userRepository.findUserById(ticket.getUserId());
                     user.ifPresent(ticketDTO::setUser);
+                    Event event = eventRepository.findEventById(ticket.getEventId());
                     ticketDTO.setSeatsId(ticket.getSeats().stream().map(Seat::getId).collect(Collectors.toList()));
                     ticketDTO.setPaymentMethodId(ticket.getPaymentMethod().getId());
+                    ticketDTO.setEvent(event);
                     return ticketDTO;
                 })
                 .collect(Collectors.toList());
     }
 
-    private String buildEmailMessage(User user, Ticket ticket, List<Seat> seats) {
+    private String buildEmailMessage(User user, Ticket ticket, List<Seat> seats, Event event) {
         StringBuilder message = new StringBuilder();
         message.append("<h3><strong>¡Muchas gracias por tu compra, ").append(user.getFirstName()).append("!</strong></h3><br>")
                 .append("<strong>Detalles de su compra:</strong><br><br>")
                 .append("<strong>Número de compra:</strong> ").append(ticket.getId()).append("<br>")
+                .append("<strong>Evento:</strong> ").append(event.getName()).append("<br>")
+                .append("<strong>Fecha:</strong> ").append(event.getDateEvent().getDate()).append("<br>")
+                .append("<strong>Lugar:</strong> ").append(event.getPlace().getName()).append("<br>")
                 .append("<strong>Método de Pago:</strong> ").append(ticket.getPaymentMethod().getCategory()).append("<br>")
                 .append("<strong>Tarjeta:</strong> ").append(ticket.getPaymentMethod().getDetail()).append("<br><br>")
                 .append("<strong>Asientos:</strong><br>");
         for (Seat seat : seats) {
             message.append("- Número de asiento: ").append(seat.getId()).append("<br>");
         }
-        message.append("<br>¡Que lo disfrutes!");
+        message.append("<br><strong>¡Que lo disfrutes!</strong>");
         return message.toString();
     }
 
@@ -93,6 +110,8 @@ public class TicketServiceImpl implements ITicketService {
             seats.add(seat);
         }
         ticket.setSeats(seats);
+        Event event = eventRepository.findEventById(ticketDTO.getEventId());
+        ticket.setEvent(event);
         ticket = ticketRepository.save(ticket);
         for (Seat seat : seats) {
             seat.setTicketId(ticket.getId());
@@ -102,7 +121,7 @@ public class TicketServiceImpl implements ITicketService {
         if (user.isPresent()) {
             String receiver = user.get().getEmail();
             String subject = "Confirmación de compra";
-            String message = buildEmailMessage(user.get(), ticket, seats);
+            String message = buildEmailMessage(user.get(), ticket, seats, event);
             EmailDTO emailDTO = new EmailDTO(receiver, subject, message);
             emailService.sendMail(emailDTO);
         }

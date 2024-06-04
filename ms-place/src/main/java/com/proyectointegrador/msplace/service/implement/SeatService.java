@@ -1,9 +1,11 @@
 package com.proyectointegrador.msplace.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.proyectointegrador.msplace.domain.Event;
 import com.proyectointegrador.msplace.domain.Seat;
 import com.proyectointegrador.msplace.dto.SeatDTO;
 import com.proyectointegrador.msplace.dto.SeatOnlyDTO;
+import com.proyectointegrador.msplace.repository.EventRepository;
 import com.proyectointegrador.msplace.repository.ISeatRepository;
 import com.proyectointegrador.msplace.service.interfaces.ISeatService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,8 @@ public class SeatService implements ISeatService {
     private final ISeatRepository seatRepository;
 
     private final ZoneService zoneService;
+
+    private final EventRepository eventRepository;
 
     private final ObjectMapper mapper;
 

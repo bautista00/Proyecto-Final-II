@@ -1,12 +1,9 @@
 package com.proyectointegrador.msticket.controller;
 
 
-import com.proyectointegrador.msticket.domain.PaymentMethod;
 import com.proyectointegrador.msticket.domain.Ticket;
 import com.proyectointegrador.msticket.dto.TicketAllDTO;
 import com.proyectointegrador.msticket.dto.TicketCreateDTO;
-import com.proyectointegrador.msticket.dto.TicketRequest;
-import com.proyectointegrador.msticket.service.implement.TicketServiceImpl;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +28,9 @@ public class TicketController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Ticket> getTicketsById(@PathVariable Long id) {
-        Optional<Ticket> ticket = ticketService.getTicketById(id);
-        return ticket.map(ResponseEntity::ok)
+    public ResponseEntity<TicketAllDTO> getTicketsById(@PathVariable Long id) {
+        Optional<TicketAllDTO> ticketAllDTO = ticketService.getTicketById(id);
+        return ticketAllDTO.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 

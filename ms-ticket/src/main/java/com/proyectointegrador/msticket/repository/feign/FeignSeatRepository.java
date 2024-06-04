@@ -18,4 +18,6 @@ public interface FeignSeatRepository {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/seat/updateSeatByTicket")
     Optional<Seat> updateSeatByTicket(@RequestBody Seat seat);
+
+
 }
