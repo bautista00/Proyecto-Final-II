@@ -3,7 +3,11 @@ package com.proyectointegrador.msevents.controller;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.service.implement.EventService;
-import jakarta.ws.rs.Path;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,12 +22,14 @@ import java.util.Set;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/event")
+@Tag(name = "Event Controller", description = "Operaciones relacionadas a los eventos")
 public class EventController {
 
     private final EventService eventService;
 
+    @Operation(summary = "Obtener evento por Id", description = "Devuelve un evento basado en Id")
     @GetMapping("/public/getById/{id}")
-    public ResponseEntity<?> getEventById(@PathVariable Long id) {
+    public ResponseEntity<?> getEventById(@Parameter(description = "ID del evento a obtener", example = "1") @PathVariable Long id) {
         ResponseEntity response = null;
         Optional<EventDTO> event = eventService.getEventById(id);
         if (event.isPresent()) {
@@ -35,8 +41,9 @@ public class EventController {
         return response;
     }
 
+    @Operation(summary = "Obtener evento por Nombre", description = "Devuelve un evento basado en el Nombre")
     @GetMapping("/public/getByName/{name}")
-    public ResponseEntity<?> getEventByName(@PathVariable String name) {
+    public ResponseEntity<?> getEventByName(@Parameter(description = "Nombre del evento", example = "After Hours til Dawn Tour") @PathVariable String name) {
         ResponseEntity response = null;
         Optional<EventDTO> event = eventService.getEventByName(name);
         if (event.isPresent()) {
@@ -48,6 +55,7 @@ public class EventController {
         return response;
     }
 
+    @Operation(summary = "Obtener todos los eventos", description = "Devuelve un Set de todos los eventos")
     @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllEvents() {
         ResponseEntity response = null;
@@ -61,14 +69,39 @@ public class EventController {
         return response;
     }
 
+    @Operation(summary = "Obtener evento por ID de estadio", description = "Devuelve una lista de eventos por ID de Place(Estadio)")
     @GetMapping("/findByPlaceId/{id}")
-    public ResponseEntity<List<Event>> findByPlaceId(@PathVariable Long id) {
+    public ResponseEntity<List<Event>> findByPlaceId(@Parameter(description = "ID del place a obtener", example = "1")@PathVariable Long id) {
         return ResponseEntity.ok().body(eventService.findByPlaceId(id));
     }
 
+
+    @Operation(summary = "Crear un evento", description = "Crea un nuevo evento",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    content = @Content(
+                            mediaType = "application/json",
+                            examples = @ExampleObject(
+                                    value = """
+                                            {
+                                                 "name": "After Hours til Dawn World Tour",
+                                                 "description": "The Weeknd's presents his two albums After Hours and Dawn FM in a world tour",
+                                                 "photo": "theweeknd.jpg",
+                                                 "placeId": 1,
+                                                 "category": {
+                                                     "id": 1
+                                                 },
+                                                 "dateEvent": {
+                                                     "date": "2024-05-26T23:47:00Z"
+                                                 }
+                                            }
+                                            """
+                            )
+                    )
+            )
+    )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
-    public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> addEvent(@Parameter(description = "Detalles del evento a crear") @RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.addEvent(eventDTO);
             return new ResponseEntity<>("Event created successfully - " + newEventDTO, HttpStatus.CREATED);
@@ -77,9 +110,35 @@ public class EventController {
         }
     }
 
+
+    @Operation(summary = "Actualizar un evento", description = "Actualiza un evento existente",
+        requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                content = @Content(
+                        examples = @ExampleObject(
+                                value = """
+                                        {
+                                            "id": 1,
+                                            "name": "Twelve Carat Toothache World Tour - Post Malone",
+                                            "description": "Post Malone's world tour presenting his album Twelve Carat Toothache",
+                                            "photo": "postmalone.jpg",
+                                            "placeId": "1"
+                                            "category": {
+                                                "id": 1,
+                                                "name": "Música"
+                                            },
+                                            "dateEvent": {
+                                                "id": 1,
+                                                "date": "2024-05-26T23:47:00Z"
+                                            }
+                                        }
+                                        """
+                        )
+                )
+        )
+    )
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
-    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> updateEvent(@Parameter(description = "Detalles del evento a actualizar") @RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.updateEvent(eventDTO);
             return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
@@ -88,9 +147,10 @@ public class EventController {
         }
     }
 
+    @Operation(summary = "Eliminar evento", description = "Elimina el evento basado en su ID")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
-    public ResponseEntity<?> deleteEventById(@PathVariable Long id) {
+    public ResponseEntity<?> deleteEventById(@Parameter(description = "ID del evento a eliminar", example = "1") @PathVariable Long id) {
         try {
             eventService.deleteEventById(id);
             return new ResponseEntity<>("Event deleted with the id: " + id + " deleted successfully", HttpStatus.OK);
@@ -99,9 +159,10 @@ public class EventController {
         }
     }
 
+    @Operation(summary = "Eliminar evento", description = "Elimina el evento basado en el Nombre")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteByName/{name}")
-    public ResponseEntity<?> deleteEventByName(@PathVariable String name) {
+    public ResponseEntity<?> deleteEventByName(@Parameter(description = "Nombre del evento a eliminar", example = "After Hours til Dawn World Tour") @PathVariable String name) {
         try {
             eventService.deleteEventByName(name);
             return new ResponseEntity<>("Event deleted with the name: " + name + " deleted successfully", HttpStatus.OK);
