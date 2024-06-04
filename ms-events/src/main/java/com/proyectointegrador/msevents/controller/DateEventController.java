@@ -2,6 +2,13 @@ package com.proyectointegrador.msevents.controller;
 
 import com.proyectointegrador.msevents.dto.DateEventDTO;
 import com.proyectointegrador.msevents.service.implement.DateEventService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +25,18 @@ import java.util.Set;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/dateEvent")
+@Tag(name = "DateEvent Controller", description = "Operaciones relacionadas a los DateEvents")
 public class DateEventController {
 
     private final DateEventService dateEventService;
 
+    @Operation(summary = "Obtener DateEvent por Id", description = "Devuelve un DateEvent basado en Id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "DateEvent encontrado"),
+            @ApiResponse(responseCode = "404", description = "DateEvent no encontrado")
+    })
     @GetMapping("/public/getById/{id}")
-    public ResponseEntity<?> getDateEventById(@PathVariable Long id) {
+    public ResponseEntity<?> getDateEventById(@Parameter(description = "ID del DateEvent a obtener", example = "1") @PathVariable Long id) {
         ResponseEntity response = null;
         Optional<DateEventDTO> eventDate = dateEventService.getDateEventById(id);
         if (eventDate.isPresent()) {
@@ -35,8 +48,14 @@ public class DateEventController {
         return response;
     }
 
+    @Operation(summary = "Obtener DateEvent por Date", description = "Devuelve un DateEvent basado en Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "DateEvent encontrado"),
+            @ApiResponse(responseCode = "404", description = "DateEvent no encontrado"),
+            @ApiResponse(responseCode = "400", description = "Formato de fecha ingresado incorrecto")
+    })
     @GetMapping("/public/getByDate/{date}")
-    public ResponseEntity<?> getDateEventByDate(@PathVariable String date) {
+    public ResponseEntity<?> getDateEventByDate(@Parameter(description = "Date del DateEvent a encontrar", example = "") @PathVariable String date) {
         ResponseEntity response = null;
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
@@ -53,6 +72,11 @@ public class DateEventController {
         return response;
     }
 
+    @Operation(summary = "Obtener todos los DateEvents", description = "Devuelve un Set de todos los DateEvents")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "DateEvents encontrados"),
+            @ApiResponse(responseCode = "204", description = "Sin contenido")
+    })
     @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllDateEvents() {
         ResponseEntity response = null;
@@ -66,6 +90,24 @@ public class DateEventController {
         return response;
     }
 
+    @Operation(summary = "Crear un DateEvent", description = "Crea un nuevo DateEvent",
+        requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                content = @Content(
+                        mediaType = "application/json",
+                        examples = @ExampleObject(
+                                value = """
+                                        {
+                                            "date": "2024-05-26T23:47:00Z"
+                                        }
+                                        """
+                        )
+                )
+        )
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "DateEvent creado"),
+            @ApiResponse(responseCode = "500", description = "Error al crear el DateEvent")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
     public ResponseEntity<?> addDateEvent(@RequestBody DateEventDTO dateEventDTO) {
@@ -77,6 +119,25 @@ public class DateEventController {
         }
     }
 
+    @Operation(summary = "Actualizar un DateEvent", description = "Actualiza un DateEvent existente",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    content = @Content(
+                            mediaType = "application/json",
+                            examples = @ExampleObject(
+                                    value = """
+                                        {
+                                            "id": 1,
+                                            "date": "2024-05-26T23:47:00Z"
+                                        }
+                                        """
+                            )
+                    )
+            )
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "DateEvent actualizado"),
+            @ApiResponse(responseCode = "500", description = "Error al actualizar el DateEvent")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
     public ResponseEntity<?> updateDateEvent(@RequestBody DateEventDTO dateEventDTO) {
@@ -88,9 +149,14 @@ public class DateEventController {
         }
     }
 
+    @Operation(summary = "Eliminar DateEvent", description = "Elimina el DateEvent basado en su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "DateEvent eliminado"),
+            @ApiResponse(responseCode = "500", description = "Error al eliminar el DateEvent")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
-    public ResponseEntity<?> deleteDateEventById(@PathVariable Long id) {
+    public ResponseEntity<?> deleteDateEventById(@Parameter(description = "ID del DateEvent a eliminar", example = "1") @PathVariable Long id) {
         try {
             dateEventService.deleteDateEventById(id);
             return new ResponseEntity<>("Event date with id of: " + id + " deleted successfully", HttpStatus.OK);
@@ -99,9 +165,15 @@ public class DateEventController {
         }
     }
 
+    @Operation(summary = "Eliminar DateEvent", description = "Elimina el DateEvent basado en Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "DateEvent eliminado"),
+            @ApiResponse(responseCode = "404", description = "DateEvent no encontrado"),
+            @ApiResponse(responseCode = "500", description = "Error al eliminar el DateEvent")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteByDate/{dateStr}")
-    public ResponseEntity<?> deleteDateEventByDate(@PathVariable String dateStr) {
+    public ResponseEntity<?> deleteDateEventByDate(@Parameter(description = "Date del DateEvent a eliminar", example = "2024-05-26T23:47:00Z") @PathVariable String dateStr) {
         ResponseEntity response = null;
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");

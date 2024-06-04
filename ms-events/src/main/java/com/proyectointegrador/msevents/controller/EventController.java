@@ -7,6 +7,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,10 @@ public class EventController {
     private final EventService eventService;
 
     @Operation(summary = "Obtener evento por Id", description = "Devuelve un evento basado en Id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Evento encontrado"),
+            @ApiResponse(responseCode = "404", description = "Evento no encontrado")
+    })
     @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getEventById(@Parameter(description = "ID del evento a obtener", example = "1") @PathVariable Long id) {
         ResponseEntity response = null;
@@ -42,6 +48,10 @@ public class EventController {
     }
 
     @Operation(summary = "Obtener evento por Nombre", description = "Devuelve un evento basado en el Nombre")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Evento encontrado"),
+            @ApiResponse(responseCode = "404", description = "Evento no encontrado")
+    })
     @GetMapping("/public/getByName/{name}")
     public ResponseEntity<?> getEventByName(@Parameter(description = "Nombre del evento", example = "After Hours til Dawn Tour") @PathVariable String name) {
         ResponseEntity response = null;
@@ -56,6 +66,10 @@ public class EventController {
     }
 
     @Operation(summary = "Obtener todos los eventos", description = "Devuelve un Set de todos los eventos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Eventos encontrados"),
+            @ApiResponse(responseCode = "204", description = "Sin contenido")
+    })
     @GetMapping("/public/get/all")
     public ResponseEntity<?> getAllEvents() {
         ResponseEntity response = null;
@@ -74,7 +88,6 @@ public class EventController {
     public ResponseEntity<List<Event>> findByPlaceId(@Parameter(description = "ID del place a obtener", example = "1")@PathVariable Long id) {
         return ResponseEntity.ok().body(eventService.findByPlaceId(id));
     }
-
 
     @Operation(summary = "Crear un evento", description = "Crea un nuevo evento",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -99,9 +112,13 @@ public class EventController {
                     )
             )
     )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Evento creado"),
+            @ApiResponse(responseCode = "500", description = "Error al crear el evento")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
-    public ResponseEntity<?> addEvent(@Parameter(description = "Detalles del evento a crear") @RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.addEvent(eventDTO);
             return new ResponseEntity<>("Event created successfully - " + newEventDTO, HttpStatus.CREATED);
@@ -114,6 +131,7 @@ public class EventController {
     @Operation(summary = "Actualizar un evento", description = "Actualiza un evento existente",
         requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                 content = @Content(
+                        mediaType = "application/json",
                         examples = @ExampleObject(
                                 value = """
                                         {
@@ -121,7 +139,7 @@ public class EventController {
                                             "name": "Twelve Carat Toothache World Tour - Post Malone",
                                             "description": "Post Malone's world tour presenting his album Twelve Carat Toothache",
                                             "photo": "postmalone.jpg",
-                                            "placeId": "1"
+                                            "placeId": 1
                                             "category": {
                                                 "id": 1,
                                                 "name": "Música"
@@ -136,9 +154,13 @@ public class EventController {
                 )
         )
     )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Evento actualizado"),
+            @ApiResponse(responseCode = "500", description = "Error al actualizar el evento")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
-    public ResponseEntity<?> updateEvent(@Parameter(description = "Detalles del evento a actualizar") @RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
         try {
             EventDTO newEventDTO = eventService.updateEvent(eventDTO);
             return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
@@ -148,6 +170,10 @@ public class EventController {
     }
 
     @Operation(summary = "Eliminar evento", description = "Elimina el evento basado en su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Evento eliminado"),
+            @ApiResponse(responseCode = "500", description = "Error al eliminar el evento")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
     public ResponseEntity<?> deleteEventById(@Parameter(description = "ID del evento a eliminar", example = "1") @PathVariable Long id) {
@@ -160,6 +186,10 @@ public class EventController {
     }
 
     @Operation(summary = "Eliminar evento", description = "Elimina el evento basado en el Nombre")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Evento eliminado"),
+            @ApiResponse(responseCode = "500", description = "Error al eliminar el evento")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteByName/{name}")
     public ResponseEntity<?> deleteEventByName(@Parameter(description = "Nombre del evento a eliminar", example = "After Hours til Dawn World Tour") @PathVariable String name) {
