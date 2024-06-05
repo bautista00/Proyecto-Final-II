@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "94d4b388-6bfa-495c-8431-f2950974ab49",
-		"name": "proyecto-integrador-2",
+		"_postman_id": "e52d6003-dbb3-4528-ab23-517345c597cb",
+		"name": "proyecto-integrador-2 Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29131553"
 	},
@@ -3178,7 +3178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"paymentMethodId\": 2,\r\n    \"seatsId\": [13, 16]\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"userId\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"paymentMethodId\": 2,\r\n    \"seatsId\": [36]\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4716,7 +4716,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Dave Chappele\",\n    \"description\": \"Dave Chappele Comedy Stand Up\",\n    \"photo\": \"davechappele.jpg\",\n    \"category\": {\n        \"id\": 3\n    },\n    \"dateEvent\": {\n        \"id\": 5\n    },\n    \"placeId\": 8\n}",
+							"raw": "{\n    \"name\": \"After Hours til Dawn World Tour\",\n    \"description\": \"The Weeknd's presents his two albums After Hours and Dawn FM in a world tour\",\n    \"photo\": \"theweeknd.jpg\",\n    \"category\": {\n        \"id\": 1\n    },\n    \"dateEvent\": {\n        \"date\": \"2024-05-26T23:47:00Z\"\n    },\n    \"placeId\": 1\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"

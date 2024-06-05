@@ -1,15 +1,18 @@
 package com.proyectointegrador.msevents.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.proyectointegrador.msevents.domain.DateEvent;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.domain.Place;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.dto.EventGetDTO;
+import com.proyectointegrador.msevents.repository.IDateEventRepository;
 import com.proyectointegrador.msevents.repository.IEventRepository;
 import com.proyectointegrador.msevents.repository.PlaceRepository;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
@@ -22,12 +25,22 @@ public class EventService implements IEventService {
 
     private final IEventRepository eventRepository;
 
+    private final IDateEventRepository dateEventRepository;
+
     private final PlaceRepository placeRepository;
 
     private final ObjectMapper mapper;
 
+    @Transactional
     private EventDTO saveEvent(EventDTO eventDTO) {
+        DateEvent dateEvent = eventDTO.getDateEvent();
+        if (dateEvent == null) {
+            throw new IllegalArgumentException("DateEvent is required");
+        }
+        dateEventRepository.save(dateEvent);
+
         Event event = mapper.convertValue(eventDTO, Event.class);
+        event.setDateEvent(dateEvent);
         eventRepository.save(event);
         return mapper.convertValue(event, EventDTO.class);
     }
