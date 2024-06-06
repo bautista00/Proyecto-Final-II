@@ -1,11 +1,14 @@
 package com.proyectointegrador.msevents.service.implement;
 
+import com.amazonaws.services.dlm.model.ResourceNotFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msevents.domain.DateEvent;
 import com.proyectointegrador.msevents.domain.Event;
+import com.proyectointegrador.msevents.domain.Images;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.repository.IDateEventRepository;
 import com.proyectointegrador.msevents.repository.IEventRepository;
+import com.proyectointegrador.msevents.repository.IImagesRepository;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +27,7 @@ public class EventService implements IEventService {
     private final IEventRepository eventRepository;
     private final IDateEventRepository dateEventRepository;
     private final AwsService awsService;
+    private final IImagesRepository imagesRepository;
 
     private final ObjectMapper mapper;
 
@@ -34,9 +38,13 @@ public class EventService implements IEventService {
             throw new IllegalArgumentException("DateEvent is required");
         }
         dateEventRepository.save(dateEvent);
+
         List<String> imageUrls = awsService.generateImageUrls(awsService.uploadFiles(files));
         Images images = new Images();
+        images.setUrl(imageUrls);
+        imagesRepository.save(images);
 
+        eventDTO.setImages(images);
 
         Event event = mapper.convertValue(eventDTO, Event.class);
         event.setDateEvent(dateEvent);
@@ -86,9 +94,20 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public EventDTO updateEvent(EventDTO eventDTO) {
-        return saveEvent(eventDTO);
+    public void updateEvent(EventDTO eventDTO, Long id) throws ResourceNotFoundException {
+        if (eventRepository.findEventById(id).isPresent()) {
+            Event event = eventRepository.findEventById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Event not found"));
+            if (eventDTO.getImages() != null) {
+                event.setImages(eventDTO.getImages());
+            }
+            eventRepository.save(event);
+        }
+        else {
+            throw new ResourceNotFoundException("Event cannot be update");
+        }
     }
+
 
     @Override
     public void deleteEventById(Long id) {

@@ -1,5 +1,6 @@
 package com.proyectointegrador.msevents.service.interfaces;
 
+import com.amazonaws.services.dlm.model.ResourceNotFoundException;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
 
@@ -15,7 +16,7 @@ public interface IEventService {
     Set<EventDTO> getAllEvents();
 
     EventDTO addEvent(EventDTO eventDTO);
-    EventDTO updateEvent(EventDTO eventDTO);
+    void updateEvent(EventDTO eventDTO, Long id) throws ResourceNotFoundException;
 
     void deleteEventById(Long id);
     void deleteEventByName(String name);

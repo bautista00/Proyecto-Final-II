@@ -77,16 +77,16 @@ public class EventController {
         }
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/private/update")
-    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
-        try {
-            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
-            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @PreAuthorize("hasRole('ADMIN')")
+//    @PutMapping("/private/update")
+//    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
+//        try {
+//            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
+//            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
+//        } catch (Exception e) {
+//            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
