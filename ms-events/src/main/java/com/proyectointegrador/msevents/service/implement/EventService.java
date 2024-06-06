@@ -10,6 +10,7 @@ import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashSet;
 import java.util.List;
@@ -22,16 +23,20 @@ public class EventService implements IEventService {
 
     private final IEventRepository eventRepository;
     private final IDateEventRepository dateEventRepository;
+    private final AwsService awsService;
 
     private final ObjectMapper mapper;
 
     @Transactional
-    private EventDTO saveEvent(EventDTO eventDTO) {
+    private EventDTO saveEvent(EventDTO eventDTO, List<MultipartFile> files) {
         DateEvent dateEvent = eventDTO.getDateEvent();
         if (dateEvent == null) {
             throw new IllegalArgumentException("DateEvent is required");
         }
         dateEventRepository.save(dateEvent);
+        List<String> imageUrls = awsService.generateImageUrls(awsService.uploadFiles(files));
+        Images images = new Images();
+
 
         Event event = mapper.convertValue(eventDTO, Event.class);
         event.setDateEvent(dateEvent);

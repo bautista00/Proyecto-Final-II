@@ -17,7 +17,11 @@ public class Event {
     private Long id;
     private String name;
     private String description;
-    private String photo;
+
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "images_id", referencedColumnName = "id")
+    private Images images;
+
     @Column(name ="place_id",nullable = false)
     private Long placeId;
 
