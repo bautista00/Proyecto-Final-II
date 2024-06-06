@@ -77,7 +77,7 @@ public class EventController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
     public ResponseEntity<?> addEvent(@RequestParam(value="eventDTO") String eventDTOStr,@RequestPart(value = "file") List<MultipartFile> files) throws Exception {
-        
+
         if (files == null || files.isEmpty()) {
             return new ResponseEntity<>("At least one photo is required", HttpStatus.BAD_REQUEST);
         }
@@ -105,14 +105,15 @@ public class EventController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
-    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO,@RequestParam(value = "id") Long id) {
         try {
-            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
-            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
+            eventService.updateEvent(eventDTO, id);
+            return ResponseEntity.ok("Event updated successfully");
         } catch (Exception e) {
-            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Error while updating event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")

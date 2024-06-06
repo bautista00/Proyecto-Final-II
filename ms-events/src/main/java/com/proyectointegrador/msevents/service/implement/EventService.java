@@ -95,16 +95,19 @@ public class EventService implements IEventService {
 
     @Override
     public void updateEvent(EventDTO eventDTO, Long id) throws ResourceNotFoundException {
-        if (eventRepository.findEventById(id).isPresent()) {
-            Event event = eventRepository.findEventById(id)
-                    .orElseThrow(() -> new ResourceNotFoundException("Event not found"));
-            if (eventDTO.getImages() != null) {
-                event.setImages(eventDTO.getImages());
-            }
+        Optional<Event> optionalEvent = eventRepository.findEventById(id);
+        if (optionalEvent.isPresent()) {
+            Event event = optionalEvent.get();
+            event.setName(eventDTO.getName());
+            event.setDescription(eventDTO.getDescription());
+            event.setImages(eventDTO.getImages());
+            event.setCategory(eventDTO.getCategory());
+            event.setDateEvent(eventDTO.getDateEvent());
+            event.setPlaceId(eventDTO.getPlaceId());
             eventRepository.save(event);
         }
         else {
-            throw new ResourceNotFoundException("Event cannot be update");
+            throw new ResourceNotFoundException("Event not found with id: " + id);
         }
     }
 
