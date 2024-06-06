@@ -33,6 +33,9 @@ public class Zone {
     @Schema(description = "Cantidad de asientos disponibles en la zona", example = "150")
     private Integer availability;
 
+    @Schema(description = "Descripcion de la entrada")
+    private String description;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "place_id")
     @Schema(description = "ID del estadio", example = "1")

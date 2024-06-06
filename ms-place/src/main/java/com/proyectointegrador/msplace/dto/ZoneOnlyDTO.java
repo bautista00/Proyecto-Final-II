@@ -26,6 +26,9 @@ public class ZoneOnlyDTO {
     @Schema(description = "Cantidad de asientos disponibles en la zona", example = "150")
     private Integer availability;
 
+    @Schema(description = "Descripcion de la entrada")
+    private String description;
+
     @Schema(description = "Asientos")
     private Set<SeatOnlyDTO> seats;
 }

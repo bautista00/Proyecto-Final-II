@@ -15,7 +15,7 @@ import java.util.Set;
 @ToString
 @Entity
 @Table(name = "Category")
-@Schema(description = "Detalles de la Categoria", example = "1")
+@Schema(description = "Detalles de la Categoria")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
