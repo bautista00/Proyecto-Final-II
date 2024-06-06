@@ -1,7 +1,10 @@
 package com.proyectointegrador.msevents.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import com.proyectointegrador.msevents.service.implement.AwsService;
 import com.proyectointegrador.msevents.service.implement.EventService;
 import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +25,10 @@ import java.util.Set;
 public class EventController {
 
     private final EventService eventService;
+
+    private final ObjectMapper objectMapper;
+
+    private AwsService awsService;
 
     @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getEventById(@PathVariable Long id) {
@@ -68,25 +76,43 @@ public class EventController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
-    public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> addEvent(@RequestParam(value="eventDTO") String eventDTOStr,@RequestPart(value = "file") List<MultipartFile> files) throws Exception {
+        
+        if (files == null || files.isEmpty()) {
+            return new ResponseEntity<>("At least one photo is required", HttpStatus.BAD_REQUEST);
+        }
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        EventDTO eventDTO = objectMapper.readValue(eventDTOStr, EventDTO.class);
+
         try {
+            awsService.uploadFiles(files);
+            StringBuilder response = new StringBuilder("The following files were successfully uploaded to the s3 bucket:\n");
+            for (MultipartFile file : files) {
+                response.append(file.getOriginalFilename()).append("\n");
+            }
+
             EventDTO newEventDTO = eventService.addEvent(eventDTO);
-            return new ResponseEntity<>("Event created successfully - " + newEventDTO, HttpStatus.CREATED);
+            response.append("Event created successfully - ").append(newEventDTO);
+
+            return new ResponseEntity<>(response.toString(), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while creating an event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-//    @PreAuthorize("hasRole('ADMIN')")
-//    @PutMapping("/private/update")
-//    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
-//        try {
-//            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
-//            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/private/update")
+    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
+        try {
+            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
+            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/private/deleteById/{id}")
