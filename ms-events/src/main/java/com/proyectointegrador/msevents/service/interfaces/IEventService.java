@@ -15,7 +15,7 @@ public interface IEventService {
 
     Set<EventDTO> getAllEvents();
 
-    EventDTO addEvent(EventDTO eventDTO);
+    EventDTO addEvent(EventDTO eventDTO) throws Exception;
     void updateEvent(EventDTO eventDTO, Long id) throws ResourceNotFoundException;
 
     void deleteEventById(Long id);

@@ -37,14 +37,14 @@ public class AwsService implements IAwsService {
                 String newFileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
                 PutObjectRequest request = new PutObjectRequest(bucketName, newFileName, file.getInputStream(), null);
                 amazonS3.putObject(request);
-                LOGGER.info("Se sube archivo con el nombre... " + newFileName);
+                LOGGER.info("File uploaded with the name..." + newFileName);
                 uploadedFiles.add(newFileName);
             }
             return uploadedFiles;
         } catch (IOException e) {
-            LOGGER.info("Error subiendo archivo");
+            LOGGER.info("Error uploading file");
         }
-        throw new Exception("No se subio el archivo correctamente");
+        throw new Exception("The file was not uploaded correctly");
     }
 
 
