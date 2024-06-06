@@ -13,6 +13,7 @@ import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashSet;
 import java.util.List;
@@ -31,7 +32,7 @@ public class EventService implements IEventService {
     private final ObjectMapper mapper;
 
     @Transactional
-    private EventDTO saveEvent(EventDTO eventDTO) throws Exception{
+    private EventDTO saveEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception{
         DateEvent dateEvent = eventDTO.getDateEvent();
         if (dateEvent == null) {
             throw new IllegalArgumentException("DateEvent is required");
@@ -89,7 +90,7 @@ public class EventService implements IEventService {
 
     @Override
     public EventDTO addEvent(EventDTO eventDTO) throws Exception {
-        return saveEvent(eventDTO);
+        return saveEvent(eventDTO, files);
     }
 
     @Override
