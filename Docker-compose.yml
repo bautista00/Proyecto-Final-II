@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  ms-eureka:
+    image: eureka-image
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+    # Add other configuration options as needed
+
+  ms-users:
+    image: users-image
+    networks:
+      - app-network
+    # Add other configuration options as needed
+
+  ms-events:
+    image: events-image
+    networks:
+      - app-network
+    # Add other configuration options as needed
+
+  ms-place:
+    image: place-image
+    networks:
+      - app-network
+    # Add other configuration options as needed
+
+  ms-gateway:
+    image: gateway-image
+    networks:
+      - app-network
+    # Add other configuration options as needed
+
+networks:
+  app-network:
+    driver: bridge

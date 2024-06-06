@@ -2,17 +2,26 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ms-ticket" />
         <module name="ms-events" />
         <module name="ms-place" />
         <module name="ms-users" />
+        <module name="eureka-server" />
         <module name="ms-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-server" target="17" />
+      <module name="ms-events" target="17" />
+      <module name="ms-gateway" target="17" />
+      <module name="ms-place" target="17" />
+      <module name="ms-ticket" target="17" />
+      <module name="ms-users" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -20,6 +29,7 @@
       <module name="ms-events" options="-parameters" />
       <module name="ms-gateway" options="-parameters" />
       <module name="ms-place" options="-parameters" />
+      <module name="ms-ticket" options="-parameters" />
       <module name="ms-users" options="-parameters" />
     </option>
   </component>

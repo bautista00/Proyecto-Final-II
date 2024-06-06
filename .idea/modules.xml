@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-events/ms-events.iml" filepath="$PROJECT_DIR$/ms-events/ms-events.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-gateway/ms-gateway.iml" filepath="$PROJECT_DIR$/ms-gateway/ms-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms-place/ms-place.iml" filepath="$PROJECT_DIR$/ms-place/ms-place.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-ticket/ms-ticket.iml" filepath="$PROJECT_DIR$/ms-ticket/ms-ticket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-users/ms-users.iml" filepath="$PROJECT_DIR$/ms-users/ms-users.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pi_v2_back.iml" filepath="$PROJECT_DIR$/.idea/pi_v2_back.iml" />
     </modules>
   </component>
