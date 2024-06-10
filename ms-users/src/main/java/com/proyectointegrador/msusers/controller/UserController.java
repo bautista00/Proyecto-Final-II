@@ -3,15 +3,11 @@ package com.proyectointegrador.msusers.controller;
 import com.proyectointegrador.msusers.domain.User;
 import com.proyectointegrador.msusers.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
@@ -21,42 +17,6 @@ import java.util.*;
 public class UserController {
 
     private final UserService userService;
-
-    @Value("${backend.keycloak.realm}")
-    private String realm;
-
-    @Value("${backend.keycloak.clientId}")
-    private String clientId;
-
-    @Value("${backend.keycloak.clientSecret}")
-    private String clientSecret;
-
-    @Value("${backend.keycloak.serverUrl}")
-    private String serverUrl;
-
-    @PostMapping("/token")
-    public ResponseEntity<Map<String, String>> getToken() {
-        RestTemplate restTemplate = new RestTemplate();
-
-        String tokenEndpoint = serverUrl + "/realms/" + realm + "/protocol/openid-connect/token";
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-
-        MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
-        body.add("grant_type", "client_credentials");
-        body.add("client_id", clientId);
-        body.add("client_secret", clientSecret);
-
-        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(body, headers);
-
-        ResponseEntity<Map> response = restTemplate.exchange(tokenEndpoint, HttpMethod.POST, request, Map.class);
-
-        Map<String, String> responseBody = new HashMap<>();
-        responseBody.put("access_token", (String) response.getBody().get("access_token"));
-
-        return ResponseEntity.ok(responseBody);
-    }
 
     @GetMapping("/info")
     public Map<String, String> getUserInfo(@AuthenticationPrincipal Jwt jwt) {

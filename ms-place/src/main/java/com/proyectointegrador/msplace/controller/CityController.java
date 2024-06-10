@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.Set;
@@ -46,6 +49,20 @@ public class CityController {
     @GetMapping("/public/places/name")
     public Set<PlaceOnlyDTO> getAllPlacesByCityName(@RequestParam("name") String name) {
         return cityService.getAllPlacesByCityName(name);
+    }
+
+    @PostMapping("/public/token")
+    public String getToken() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String token = null;
+        if (authentication != null) {
+            try {
+                token = ((JwtAuthenticationToken) authentication).getToken().getTokenValue();
+            } catch (Exception ignored) {
+
+            }
+        }
+        return token;
     }
 
     @PreAuthorize("hasRole('ADMIN')")
