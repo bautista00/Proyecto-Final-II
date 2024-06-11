@@ -1,8 +1,9 @@
 package com.proyectointegrador.msevents.service.interfaces;
 
-import com.amazonaws.services.dlm.model.ResourceNotFoundException;
+
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import com.proyectointegrador.msevents.exceptions.ResourceNotFoundException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

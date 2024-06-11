@@ -1,11 +1,12 @@
 package com.proyectointegrador.msevents.service.implement;
 
-import com.amazonaws.services.dlm.model.ResourceNotFoundException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msevents.domain.DateEvent;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.domain.Images;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import com.proyectointegrador.msevents.exceptions.ResourceNotFoundException;
 import com.proyectointegrador.msevents.repository.IDateEventRepository;
 import com.proyectointegrador.msevents.repository.IEventRepository;
 import com.proyectointegrador.msevents.repository.IImagesRepository;

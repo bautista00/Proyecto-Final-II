@@ -27,7 +27,7 @@ eureka:
 server:
   port: 8083
 
-aws:
-  s3:
-  bucket: ticketrek-pi-img-bucket
-  region: sa-east-1
+  aws:
+    s3:
+      bucket: ticketrek-pi-img-bucket
+      region: sa-east-1
