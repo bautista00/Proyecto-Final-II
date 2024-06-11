@@ -2,9 +2,9 @@ spring:
   application:
     name: ms-events
   datasource:
-    url: jdbc:mysql://localhost:3306/ticketrek
-    username: root
-    password: lmcpauli1
+    url: jdbc:mysql://ticketreck-db-mysql.cf4gakmqo0vw.us-east-1.rds.amazonaws.com:3306/ticketreckDB
+    username: admin
+    password: xWwbbN9sYkKlLJJb6jz5
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -26,3 +26,8 @@ eureka:
 
 server:
   port: 8083
+
+aws:
+  s3:
+  bucket: ticketrek-pi-img-bucket
+  region: sa-east-1

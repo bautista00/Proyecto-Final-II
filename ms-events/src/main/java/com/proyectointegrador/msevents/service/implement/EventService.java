@@ -89,7 +89,7 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public EventDTO addEvent(EventDTO eventDTO) throws Exception {
+    public EventDTO addEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception {
         return saveEvent(eventDTO, files);
     }
 

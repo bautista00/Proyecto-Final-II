@@ -28,7 +28,7 @@ public class EventController {
 
     private final ObjectMapper objectMapper;
 
-    private AwsService awsService;
+    private final AwsService awsService;
 
     @GetMapping("/public/getById/{id}")
     public ResponseEntity<?> getEventById(@PathVariable Long id) {
@@ -93,7 +93,7 @@ public class EventController {
                 response.append(file.getOriginalFilename()).append("\n");
             }
 
-            EventDTO newEventDTO = eventService.addEvent(eventDTO);
+            EventDTO newEventDTO = eventService.addEvent(eventDTO,files);
             response.append("Event created successfully - ").append(newEventDTO);
 
             return new ResponseEntity<>(response.toString(), HttpStatus.CREATED);

@@ -3,6 +3,7 @@ package com.proyectointegrador.msevents.service.interfaces;
 import com.amazonaws.services.dlm.model.ResourceNotFoundException;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +16,7 @@ public interface IEventService {
 
     Set<EventDTO> getAllEvents();
 
-    EventDTO addEvent(EventDTO eventDTO) throws Exception;
+    EventDTO addEvent(EventDTO eventDTO,List<MultipartFile> files) throws Exception;
     void updateEvent(EventDTO eventDTO, Long id) throws ResourceNotFoundException;
 
     void deleteEventById(Long id);
