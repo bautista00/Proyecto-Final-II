@@ -65,20 +65,6 @@ public class CityController {
         return cityService.getAllPlacesByCityName(name);
     }
 
-    @PostMapping("/public/token")
-    public String getToken() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String token = null;
-        if (authentication != null) {
-            try {
-                token = ((JwtAuthenticationToken) authentication).getToken().getTokenValue();
-            } catch (Exception ignored) {
-
-            }
-        }
-        return token;
-    }
-
     @Operation(summary = "Crear una ciudad", description = "Crea una nueva ciudad",
         requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                 content = @Content(
