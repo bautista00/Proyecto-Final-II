@@ -29,6 +29,11 @@ public class Event {
     @Schema(description = "Url de la foto del evento", example = "http://www.foto.com")
     private String photo;
 
+
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "images_id", referencedColumnName = "id")
+    private Images images;
+
     @Column(name ="place_id",nullable = false)
     @Schema(description = "Id del estadio donde se lleva a cabo el evento", example = "1")
     private Long placeId;
