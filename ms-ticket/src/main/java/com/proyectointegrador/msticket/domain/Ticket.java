@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "Ticket")
+@Table(name = "ticket")
 @Schema(description = "Detalles de Ticket")
 public class Ticket {
 
