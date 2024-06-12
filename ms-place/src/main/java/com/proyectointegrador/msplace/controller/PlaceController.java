@@ -49,6 +49,14 @@ public class PlaceController {
         return placeService.getAllPlaces();
     }
 
+    @Operation(summary = "Obtener múltiples places por sus IDs", description = "Devuelve una lista de places basado en una lista de IDs")
+    @GetMapping("/public/ids")
+    public ResponseEntity<List<PlaceDTO>> getPlacesByIds(@RequestParam List<Long> ids) {
+        List<PlaceDTO> places = placeService.getPlacesByIds(ids);
+        return ResponseEntity.ok(places);
+    }
+
+
     @Operation(summary = "Obtener todas las zonas por ID de place", description = "Devuelve un set de todas las zonas por ID de place")
     @GetMapping("/public/zones/{id}")
     public Set<ZoneOnlyDTO> getAllZonesByPlaceId(@Parameter(description = "Id del place para obtener las zonas", example = "1") @PathVariable Long id) {

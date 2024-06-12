@@ -5,6 +5,8 @@ import com.proyectointegrador.msevents.repository.repository.FeignPlaceRepositor
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -15,6 +17,11 @@ public class PlaceRepository {
 
     public Optional<Place> getPlaceById(Long id){
         ResponseEntity<Optional<Place>> response = placeRepository.getPlaceById(id);
+        return response.getBody();
+    }
+
+    public List<Place> getPlacesByIds(List<Long> ids) {
+        ResponseEntity<List<Place>> response = placeRepository.getPlacesByIds(ids);
         return response.getBody();
     }
 }

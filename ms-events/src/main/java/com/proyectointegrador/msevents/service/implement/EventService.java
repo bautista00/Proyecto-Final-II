@@ -14,10 +14,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -78,14 +77,27 @@ public class EventService implements IEventService {
     @Override
     public Set<EventGetDTO> getAllEvents() {
         List<Event> events = eventRepository.findAll();
+
+        // Extraer los IDs de los lugares
+        Set<Long> placeIds = events.stream()
+                .map(Event::getPlaceId)
+                .collect(Collectors.toSet());
+
+        // Obtener todos los lugares en una sola llamada
+        List<Place> places = placeRepository.getPlacesByIds(new ArrayList<>(placeIds));
+
+        // Crear un mapa de lugar por ID para fácil acceso
+        Map<Long, Place> placeMap = places.stream()
+                .collect(Collectors.toMap(Place::getId, Function.identity()));
+
+        // Convertir los eventos a DTO y asignar los lugares
         Set<EventGetDTO> eventsDTO = new HashSet<>();
         for (Event event : events) {
-            eventsDTO.add(mapper.convertValue(event, EventGetDTO.class));
-            for (EventGetDTO eventGetDTO : eventsDTO) {
-                Optional<Place> place = placeRepository.getPlaceById(event.getPlaceId());
-                place.ifPresent(eventGetDTO::setPlace);
-            }
+            EventGetDTO eventGetDTO = mapper.convertValue(event, EventGetDTO.class);
+            eventGetDTO.setPlace(placeMap.get(event.getPlaceId()));
+            eventsDTO.add(eventGetDTO);
         }
+
         return eventsDTO;
     }
 

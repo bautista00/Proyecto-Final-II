@@ -7,10 +7,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 import java.util.Optional;
 
 @FeignClient(name= "ms-place", url="http://localhost:8084", configuration = FeignInterceptor.class)
 public interface FeignPlaceRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/place/public/id/{id}")
     ResponseEntity<Optional<Place>> getPlaceById(@PathVariable Long id);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/place/public/ids", params = "ids")
+    ResponseEntity<List<Place>> getPlacesByIds(@RequestParam("ids") List<Long> ids);
 }

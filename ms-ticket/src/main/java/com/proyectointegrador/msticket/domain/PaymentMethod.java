@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "payment-method")
+@Table(name = "paymentMethod")
 @Schema(description = "Detalles de Payment Method")
 public class PaymentMethod {
 

@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -93,6 +94,14 @@ public class PlaceService implements IPlaceService {
             placesDTO.add(placeDTO);
         }
         return placesDTO;
+    }
+
+    @Override
+    public List<PlaceDTO> getPlacesByIds(List<Long> ids) {
+        List<Place> places = placeRepository.findAllById(ids);
+        return places.stream()
+                .map(place -> mapper.convertValue(place, PlaceDTO.class))
+                .collect(Collectors.toList());
     }
 
     @Override
