@@ -35,7 +35,5 @@ deploy_eureka_server:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying eureka-server"
-    - ssh ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com "sudo systemctl stop eureka-server.service"
     - scp eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com:/home/ubuntu
-    - ssh ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com "sudo systemctl start eureka-server.service"
     - echo "Finished deploying eureka-server."
