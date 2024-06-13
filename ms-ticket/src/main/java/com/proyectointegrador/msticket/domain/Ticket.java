@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "ticket")
+@Table(name = "Ticket")
 @Schema(description = "Detalles de Ticket")
 public class Ticket {
 
@@ -22,6 +22,7 @@ public class Ticket {
     @Column(name ="user_id",nullable = false)
     @Schema(description = "ID del usuario", example = "f7049e0e-0a21-4e19-819d-bf8915f2998f")
     private String userId;
+
     @Column(name ="event_id",nullable = false)
     private Long eventId;
 
@@ -34,6 +35,5 @@ public class Ticket {
     protected Event event;
 
     @Transient
-    @Schema(description = "Lista de asientos")
     protected List<Seat> seats;
 }

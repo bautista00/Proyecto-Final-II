@@ -16,6 +16,16 @@ spring:
     name: ms-gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
       routes:
         - id: ms-users
           uri: lb://ms-users
@@ -41,19 +51,4 @@ spring:
             - Path=/api/events/**
           filters:
             - StripPrefix=2
-      default-filters:
-        - TokenRelay
-  security:
-    oauth2:
-      client:
-        provider:
-          keycloak-gateway:
-            issuer-uri: http://localhost:8080/realms/ticketrek
-        registration:
-          keycloak-gateway:
-            client-id: api-gateway-client
-            client-secret: oHRGXx5e8UpGwZnopFHfuaETeKcP2DLF
-            scope:
-              - openid
-            authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8090/login/oauth2/code/keycloak
+

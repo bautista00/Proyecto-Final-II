@@ -16,8 +16,6 @@ public interface FeignSeatRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/seat/public/id/{id}")
     Seat findSeatById(@PathVariable Long id);
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/seat/updateSeatByTicket")
+    @RequestMapping(method = RequestMethod.PUT, value = "/seat/private/updateSeatByTicket")
     Optional<Seat> updateSeatByTicket(@RequestBody Seat seat);
-
-
 }

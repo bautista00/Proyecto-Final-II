@@ -1,6 +1,7 @@
 package com.proyectointegrador.msevents.dto;
 import com.proyectointegrador.msevents.domain.Category;
 import com.proyectointegrador.msevents.domain.DateEvent;
+import com.proyectointegrador.msevents.domain.Images;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
@@ -20,7 +21,7 @@ public class EventDTO {
     private String description;
 
     @Schema(description = "Url de la foto del evento", example = "http://www.foto.com")
-    private String photo;
+    private Images images;
 
     @Schema(description = "Categoria del evento", example = "Música")
     private Category category;

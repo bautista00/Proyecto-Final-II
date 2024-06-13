@@ -20,6 +20,11 @@ public class WebSecurityConfig {
 
         http
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("category/private/**").authenticated()
+                        .requestMatchers("event/public/**").permitAll()
+                        .requestMatchers("event/private/**").authenticated()
+                        .requestMatchers("dateEvent/public/**").permitAll()
+                        .requestMatchers("dateEvent/private/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2

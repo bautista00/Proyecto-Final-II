@@ -20,8 +20,9 @@ public class WebSecurityConfig {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/tickets/**").authenticated()
-                        .requestMatchers("/paymentMethod/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/paymentMethod/private/**").authenticated()
+                        .requestMatchers("/paymentMethod/public/**").permitAll()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt

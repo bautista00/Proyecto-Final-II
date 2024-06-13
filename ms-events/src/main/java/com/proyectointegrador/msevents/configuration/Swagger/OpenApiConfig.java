@@ -1,4 +1,4 @@
-package com.proyectointegrador.msusers.configuration;
+package com.proyectointegrador.msevents.configuration.Swagger;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -12,9 +12,8 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Microservicio de Usuarios")
+                        .title("API de Microservicio de Eventos")
                         .version("1.0")
-                        .description("Documentación de la API para el Microservicio de Usuarios")
-                );
+                        .description("Documentación de la API para el Microservicio de Eventos"));
     }
 }

@@ -1,8 +1,11 @@
 package com.proyectointegrador.msevents.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.dto.EventGetDTO;
+import com.proyectointegrador.msevents.service.implement.AwsService;
 import com.proyectointegrador.msevents.service.implement.EventService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -17,7 +20,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -29,6 +34,8 @@ import java.util.Set;
 public class EventController {
 
     private final EventService eventService;
+
+    private final AwsService awsService;
 
     @Operation(summary = "Obtener evento por Id", description = "Devuelve un evento basado en Id")
     @ApiResponses(value = {
@@ -84,8 +91,17 @@ public class EventController {
         return response;
     }
 
+    @GetMapping("/public/search")
+    public List<Event> searchEvents(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String category,
+            @RequestParam(required = false) String city,
+            @RequestParam(required = false) Date date) {
+        return eventService.searchEvents(name, category, city, date);
+    }
+
     @Operation(summary = "Obtener evento por ID de estadio", description = "Devuelve una lista de eventos por ID de Place(Estadio)")
-    @GetMapping("/findByPlaceId/{id}")
+    @GetMapping("/public/findByPlaceId/{id}")
     public ResponseEntity<List<Event>> findByPlaceId(@Parameter(description = "ID del place a obtener", example = "1")@PathVariable Long id) {
         return ResponseEntity.ok().body(eventService.findByPlaceId(id));
     }
@@ -119,15 +135,26 @@ public class EventController {
     })
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
-    public ResponseEntity<?> addEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> addEvent(@RequestParam(value="eventDTO") String eventDTOStr, @RequestPart(value = "file") List<MultipartFile> files) throws Exception {
+        if (files == null || files.isEmpty()) {
+            return new ResponseEntity<>("At least one photo is required", HttpStatus.BAD_REQUEST);
+        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        EventDTO eventDTO = objectMapper.readValue(eventDTOStr, EventDTO.class);
         try {
-            EventDTO newEventDTO = eventService.addEvent(eventDTO);
-            return new ResponseEntity<>("Event created successfully - " + newEventDTO, HttpStatus.CREATED);
+            awsService.uploadFiles(files);
+            StringBuilder response = new StringBuilder("The following files were successfully uploaded to the s3 bucket:\n");
+            for (MultipartFile file : files) {
+                response.append(file.getOriginalFilename()).append("\n");
+            }
+            EventDTO newEventDTO = eventService.addEvent(eventDTO,files);
+            response.append("Event created successfully - ").append(newEventDTO);
+            return new ResponseEntity<>(response.toString(), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error while creating an event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
     @Operation(summary = "Actualizar un evento", description = "Actualiza un evento existente",
         requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
@@ -161,12 +188,12 @@ public class EventController {
     })
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/private/update")
-    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO) {
+    public ResponseEntity<?> updateEvent(@RequestBody EventDTO eventDTO,@RequestParam(value = "id") Long id) {
         try {
-            EventDTO newEventDTO = eventService.updateEvent(eventDTO);
-            return new ResponseEntity<>("Event updated successfully - " + newEventDTO, HttpStatus.OK);
+            eventService.updateEvent(eventDTO);
+            return ResponseEntity.ok("Event updated successfully");
         } catch (Exception e) {
-            return new ResponseEntity<>("Error while updating the event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Error while updating event: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

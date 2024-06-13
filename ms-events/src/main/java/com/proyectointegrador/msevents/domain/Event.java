@@ -29,7 +29,6 @@ public class Event {
     @Schema(description = "Url de la foto del evento", example = "http://www.foto.com")
     private String photo;
 
-
     @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "images_id", referencedColumnName = "id")
     private Images images;

@@ -1,4 +1,4 @@
-package com.proyectointegrador.msevents.config;
+package com.proyectointegrador.msevents.configuration.AWS;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
