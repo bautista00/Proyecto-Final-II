@@ -25,6 +25,7 @@ deploy_eureka_server:
   image: ubuntu
   before_script:
     - apt-get update && apt-get install -y openssh-client
+    - cd eureka-server
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - eval $(ssh-agent -s)
@@ -37,5 +38,5 @@ deploy_eureka_server:
     - echo "Deploying eureka-server"
     - pwd
     - ls
-    - ls eureka-server/
+    - scp target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying eureka-server."
