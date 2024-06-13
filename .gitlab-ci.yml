@@ -38,6 +38,9 @@ deploy_eureka_server:
     - echo "Current directory $(pwd)"
     - echo "Listing files:"
     - ls -l
+    - echo "Downloading artifacts..."
+    - mkdir -p eureka-server/target
+    - cp "$(pwd)/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar" eureka-server/target/
     - ls -l eureka-server/target/
     - scp eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying eureka-server."
