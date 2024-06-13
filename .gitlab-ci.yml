@@ -35,7 +35,9 @@ deploy_eureka_server:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying eureka-server"
-    - pwd
-    - ls
-    - scp ${CI_PROJECT_DIR}/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Current directory $(pwd)"
+    - echo "Listing files:"
+    - ls -l
+    - ls -l eureka-server/target/
+    - scp eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54.211.227.50.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying eureka-server."
