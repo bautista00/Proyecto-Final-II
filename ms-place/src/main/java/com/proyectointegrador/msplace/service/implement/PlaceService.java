@@ -147,6 +147,7 @@ public class PlaceService implements IPlaceService {
         for (Place place : places) {
             if (place.getCity().getId().equals(id)) {
                 PlaceOnlyDTO placeDTO = mapper.convertValue(place, PlaceOnlyDTO.class);
+                List<Event> events = eventRepository.findByPLaceId(place.getId());
                 Set<ZoneOnlyDTO> zonesDTO = new HashSet<>();
                 for (Zone zone : place.getZones()) {
                     ZoneOnlyDTO zoneDTO = mapper.convertValue(zone, ZoneOnlyDTO.class);
@@ -157,6 +158,7 @@ public class PlaceService implements IPlaceService {
                     zoneDTO.setSeats(seatsDTO);
                     zonesDTO.add(zoneDTO);
                 }
+                placeDTO.setEvents(events);
                 placeDTO.setZones(zonesDTO);
                 placesDTO.add(placeDTO);
             }

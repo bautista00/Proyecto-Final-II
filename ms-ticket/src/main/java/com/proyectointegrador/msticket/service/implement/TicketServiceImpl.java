@@ -138,6 +138,26 @@ public class TicketServiceImpl implements ITicketService {
 
     @Override
     public List<Ticket> findByUserId(String id) {
-        return ticketRepository.findByUserId(id);
+        List<Ticket> ticketsUser = ticketRepository.findByUserId(id);
+        for (Ticket ticket : ticketsUser) {
+            Optional<Ticket> ticketSearch = ticketRepository.findById(ticket.getId());
+            if (ticketSearch.isPresent()) {
+                Ticket foundTicket = ticketSearch.get();
+                List<Seat> seats = seatRepository.findByTicketId(ticket.getId());
+                List<Seat> updatedSeats = new ArrayList<>();
+                for (Seat seat : seats) {
+                    if (seat.getTicketId().equals(ticket.getId())) {
+                        Seat seatSearch = seatRepository.findSeatById(seat.getId());
+                        updatedSeats.add(seatSearch);
+                    }
+                }
+                ticket.setSeats(updatedSeats);
+                Event event = eventRepository.findEventById(foundTicket.getEventId());
+                ticket.setEvent(event);
+                ticket.setPaymentMethod(foundTicket.getPaymentMethod());
+            }
+        }
+
+        return ticketsUser;
     }
 }

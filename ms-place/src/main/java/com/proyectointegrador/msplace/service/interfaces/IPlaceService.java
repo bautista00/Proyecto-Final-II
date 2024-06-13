@@ -1,5 +1,6 @@
 package com.proyectointegrador.msplace.service.interfaces;
 
+import com.proyectointegrador.msplace.domain.Place;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
 import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
 import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;

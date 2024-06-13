@@ -1,7 +1,6 @@
 package com.proyectointegrador.msevents.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyectointegrador.msevents.configuration.Search.EventSpecification;
 import com.proyectointegrador.msevents.domain.DateEvent;
 import com.proyectointegrador.msevents.domain.Event;
 import com.proyectointegrador.msevents.domain.Images;
@@ -13,6 +12,8 @@ import com.proyectointegrador.msevents.repository.IDateEventRepository;
 import com.proyectointegrador.msevents.repository.IEventRepository;
 import com.proyectointegrador.msevents.repository.IImagesRepository;
 import com.proyectointegrador.msevents.repository.PlaceRepository;
+import com.proyectointegrador.msevents.service.interfaces.ICategoryService;
+import com.proyectointegrador.msevents.service.interfaces.IDateEventService;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
@@ -32,6 +33,10 @@ public class EventService implements IEventService {
     private final IDateEventRepository dateEventRepository;
 
     private final PlaceRepository placeRepository;
+
+    private final ICategoryService categoryService;
+
+    private final IDateEventService dateEventService;
 
     private final IImagesRepository imagesRepository;
 
@@ -110,20 +115,47 @@ public class EventService implements IEventService {
         Specification<Event> spec = Specification.where(null);
 
         if (name != null && !name.isEmpty()) {
-            spec = spec.and(EventSpecification.nameContains(name));
+            Optional<Event> eventName = eventRepository.findEventByName(name);
+            if (eventName.isPresent()) {
+                Event event = eventName.get();
+                spec = spec.and((root, query, cb) -> cb.equal(root.get("id"), event.getId()));
+            }
         }
         if (category != null && !category.isEmpty()) {
-            spec = spec.and(EventSpecification.categoryContains(category));
+            Long categoryId = categoryService.getCategoryByName(category).get().getId();
+            List<Event> eventCategory = eventRepository.findByCategory(categoryId);
+            if (!eventCategory.isEmpty()) {
+                List<Long> eventIds = eventCategory.stream().map(Event::getId).collect(Collectors.toList());
+                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+            }
         }
         if (city != null && !city.isEmpty()) {
-            spec = spec.and(EventSpecification.cityContains(city));
+            Set<Place> places = placeRepository.getPlaceByCity(city);
+            List<Long> placesIds = places.stream().map(Place::getId).collect(Collectors.toList());
+            List<Event> eventCity = new ArrayList<>();
+            for (Long id : placesIds) {
+                List<Event> events = eventRepository.findByPlaceId(id);
+                if (events != null && !events.isEmpty()) {
+                    eventCity.addAll(events);
+                }
+            }
+            if (!eventCity.isEmpty()) {
+                List<Long> eventIds = eventCity.stream().map(Event::getId).collect(Collectors.toList());
+                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+            }
         }
         if (date != null) {
-            spec = spec.and(EventSpecification.dateIs(date));
+            Long eventDateId = dateEventService.getDateEventByDate(date).get().getId();
+            List<Event> eventDate = eventRepository.findEventByDateEvent(eventDateId);
+            if (!eventDate.isEmpty()) {
+                List<Long> eventIds = eventDate.stream().map(Event::getId).collect(Collectors.toList());
+                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+            }
         }
 
         return eventRepository.findAll(spec);
     }
+
 
     @Override
     public EventDTO addEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception {

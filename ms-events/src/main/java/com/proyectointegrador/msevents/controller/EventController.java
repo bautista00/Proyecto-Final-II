@@ -22,6 +22,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -92,11 +94,12 @@ public class EventController {
     }
 
     @GetMapping("/public/search")
-    public List<Event> searchEvents(
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String category,
-            @RequestParam(required = false) String city,
-            @RequestParam(required = false) Date date) {
+    public List<Event> searchEvents(@RequestParam(required = false) String name, @RequestParam(required = false) String category, @RequestParam(required = false) String city, @RequestParam(required = false) String dateString) throws ParseException {
+        Date date = null;
+        if (dateString != null && !dateString.isEmpty()) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            date = dateFormat.parse(dateString);
+        }
         return eventService.searchEvents(name, category, city, date);
     }
 

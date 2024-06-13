@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 @RequiredArgsConstructor
@@ -22,6 +23,11 @@ public class PlaceRepository {
 
     public List<Place> getPlacesByIds(List<Long> ids) {
         ResponseEntity<List<Place>> response = placeRepository.getPlacesByIds(ids);
+        return response.getBody();
+    }
+
+    public Set<Place> getPlaceByCity(String city) {
+        ResponseEntity<Set<Place>> response = placeRepository.getPlaceByCity(city);
         return response.getBody();
     }
 }

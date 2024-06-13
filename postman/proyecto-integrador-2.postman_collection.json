@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "e52d6003-dbb3-4528-ab23-517345c597cb",
-		"name": "proyecto-integrador-2 Copy",
+		"_postman_id": "3b9bb2ba-1482-4dc7-97f1-be1b794b0c70",
+		"name": "proyecto-integrador-2-final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29131553"
 	},
@@ -28,61 +28,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -132,61 +82,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -237,61 +137,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -342,61 +192,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -444,61 +244,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -507,7 +257,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"firstName\": \"Maria Paulina\",\r\n    \"lastName\": \"Oberti Busso\",\r\n    \"email\": \"paulinaobertibusso@gmail.com\",\r\n    \"userName\": \"paulinaobertibusso\"\r\n}\r\n",
+							"raw": "{\r\n    \"id\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"firstName\": \"Paulina\",\r\n    \"lastName\": \"Oberti Busso\",\r\n    \"email\": \"paulinaobertibusso@gmail.com\",\r\n    \"userName\": \"paulinaobertibusso\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -545,61 +295,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -616,7 +316,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/users/roles/addRole?id=32d0a4a9-39d3-46c5-989c-d540c5ab7eff&role=USER",
+							"raw": "http://localhost:8082/users/roles/addRole?id=a38049f6-f807-4739-961e-5c26b788b952&role=ADMIN",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -630,11 +330,11 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "32d0a4a9-39d3-46c5-989c-d540c5ab7eff"
+									"value": "a38049f6-f807-4739-961e-5c26b788b952"
 								},
 								{
 									"key": "role",
-									"value": "USER"
+									"value": "ADMIN"
 								}
 							]
 						}
@@ -657,61 +357,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -728,7 +378,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/users/delete",
+							"raw": "http://localhost:8082/users/delete/a38049f6-f807-4739-961e-5c26b788b952",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -736,7 +386,8 @@
 							"port": "8082",
 							"path": [
 								"users",
-								"delete"
+								"delete",
+								"a38049f6-f807-4739-961e-5c26b788b952"
 							]
 						}
 					},
@@ -758,61 +409,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -829,7 +430,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/users/roles/deleteRole?id=32d0a4a9-39d3-46c5-989c-d540c5ab7eff&role=USER",
+							"raw": "http://localhost:8082/users/roles/deleteRole?id=a38049f6-f807-4739-961e-5c26b788b952&role=ADMIN",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -843,11 +444,11 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "32d0a4a9-39d3-46c5-989c-d540c5ab7eff"
+									"value": "a38049f6-f807-4739-961e-5c26b788b952"
 								},
 								{
 									"key": "role",
-									"value": "USER"
+									"value": "ADMIN"
 								}
 							]
 						}
@@ -858,61 +459,11 @@
 					"name": "userInfo",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -942,10 +493,13 @@
 				{
 					"name": "getZoneById",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/public/id/17",
+							"raw": "http://localhost:8084/zone/public/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -955,7 +509,7 @@
 								"zone",
 								"public",
 								"id",
-								"17"
+								"1"
 							]
 						}
 					},
@@ -964,10 +518,13 @@
 				{
 					"name": "getZoneByName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/public/name?name=Popular Norte",
+							"raw": "http://localhost:8084/zone/public/name?name=Zona A",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -981,7 +538,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Popular Norte"
+									"value": "Zona A"
 								}
 							]
 						}
@@ -991,6 +548,9 @@
 				{
 					"name": "getAllZones",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1012,10 +572,13 @@
 				{
 					"name": "getAvailability",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/public/availability/17",
+							"raw": "http://localhost:8084/zone/public/availability/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1025,7 +588,7 @@
 								"zone",
 								"public",
 								"availability",
-								"17"
+								"1"
 							]
 						}
 					},
@@ -1035,61 +598,11 @@
 					"name": "addZone",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1098,7 +611,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 8\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Popular Norte\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 150,\r\n    \"place\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\": \"Prueba de description\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1125,61 +638,11 @@
 					"name": "updateZone",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1188,7 +651,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 15,\r\n    \"name\": \"Popular\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 1,\r\n    \"place\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Popular\",\r\n    \"quantitySeat\": 150,\r\n    \"availability\": 1,\r\n    \"place\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\":\"description\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1215,61 +678,11 @@
 					"name": "deleteZoneById",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1277,7 +690,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/private/delete/15",
+							"raw": "http://localhost:8084/zone/private/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1287,7 +700,7 @@
 								"zone",
 								"private",
 								"delete",
-								"15"
+								"5"
 							]
 						}
 					},
@@ -1297,61 +710,11 @@
 					"name": "deleteZoneByName",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1359,7 +722,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/zone/private/delete/name?name=Popular Norte",
+							"raw": "http://localhost:8084/zone/private/delete/name?name=Popular",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1374,7 +737,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Popular Norte"
+									"value": "Popular"
 								}
 							]
 						}
@@ -1389,10 +752,13 @@
 				{
 					"name": "getPlaceById",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/public/id/8",
+							"raw": "http://localhost:8084/place/public/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1402,7 +768,7 @@
 								"place",
 								"public",
 								"id",
-								"8"
+								"1"
 							]
 						}
 					},
@@ -1411,10 +777,13 @@
 				{
 					"name": "getPlaceByName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/public/name?name=Arthur Ashe Stadium",
+							"raw": "http://localhost:8084/place/public/name?name=Teatro Gran Rex",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1428,7 +797,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Arthur Ashe Stadium"
+									"value": "Teatro Gran Rex"
 								}
 							]
 						}
@@ -1438,6 +807,9 @@
 				{
 					"name": "getAllPlaces",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1459,10 +831,13 @@
 				{
 					"name": "getAllZonesByPlaceId",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/public/zones/5",
+							"raw": "http://localhost:8084/place/public/zones/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1472,7 +847,7 @@
 								"place",
 								"public",
 								"zones",
-								"5"
+								"1"
 							]
 						}
 					},
@@ -1481,10 +856,13 @@
 				{
 					"name": "getAllZonesByPlaceName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/public/zones/name?name=Arthur Ashe Stadium",
+							"raw": "http://localhost:8084/place/public/zones/name?name=Teatro Gran Rex",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1499,7 +877,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Arthur Ashe Stadium"
+									"value": "Teatro Gran Rex"
 								}
 							]
 						}
@@ -1510,61 +888,11 @@
 					"name": "addPlace",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1573,7 +901,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium 3\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 6\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Arthur Ashe Stadium 3\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 123,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1600,61 +928,11 @@
 					"name": "updatePlace",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1663,7 +941,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Arthur Ashe Stadium\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 4567,\r\n    \"city\": {\r\n        \"id\": 5\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Eliminar\",\r\n    \"neighborhood\": \"Flushing Meadows\",\r\n    \"street\": \"Arthur Ashe Stadium Rd\",\r\n    \"number\": 4567,\r\n    \"city\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1690,61 +968,11 @@
 					"name": "deletePlaceById",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1752,7 +980,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/private/delete/6",
+							"raw": "http://localhost:8084/place/private/delete/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1762,7 +990,7 @@
 								"place",
 								"private",
 								"delete",
-								"6"
+								"4"
 							]
 						}
 					},
@@ -1772,61 +1000,11 @@
 					"name": "deletePlaceByName",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -1834,7 +1012,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/place/private/delete/name?name=Arthur Ashe Stadium 3",
+							"raw": "http://localhost:8084/place/private/delete/name?name=Eliminar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1849,7 +1027,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Arthur Ashe Stadium 3"
+									"value": "Eliminar"
 								}
 							]
 						}
@@ -1864,10 +1042,13 @@
 				{
 					"name": "getCityById",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/public/id/2",
+							"raw": "http://localhost:8084/city/public/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1877,7 +1058,7 @@
 								"city",
 								"public",
 								"id",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -1886,10 +1067,13 @@
 				{
 					"name": "getCityByName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/public/name?name=New York",
+							"raw": "http://localhost:8084/city/public/name?name=Escobar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1903,7 +1087,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "New York"
+									"value": "Escobar"
 								}
 							]
 						}
@@ -1913,6 +1097,9 @@
 				{
 					"name": "getAllCities",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1934,10 +1121,13 @@
 				{
 					"name": "getCityByZipCode",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/zipCode/public/54321",
+							"raw": "http://localhost:8084/city/public/zipCode/1407",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1945,9 +1135,9 @@
 							"port": "8084",
 							"path": [
 								"city",
-								"zipCode",
 								"public",
-								"54321"
+								"zipCode",
+								"1407"
 							]
 						}
 					},
@@ -1956,10 +1146,13 @@
 				{
 					"name": "getAllPlacesByCityId",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/public/places/5",
+							"raw": "http://localhost:8084/city/public/places/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1969,7 +1162,7 @@
 								"city",
 								"public",
 								"places",
-								"5"
+								"3"
 							]
 						}
 					},
@@ -1978,10 +1171,13 @@
 				{
 					"name": "getAllPlacesByCityName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/public/places/name?name=New York",
+							"raw": "http://localhost:8084/city/public/places/name?name=Escobar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1996,7 +1192,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "New York"
+									"value": "Escobar"
 								}
 							]
 						}
@@ -2007,61 +1203,11 @@
 					"name": "addCity",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -2097,61 +1243,11 @@
 					"name": "updateCity",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -2160,7 +1256,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"New York\",\r\n    \"zipCode\": \"12345\"\r\n}",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"Eliminar\",\r\n    \"zipCode\": \"12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2187,61 +1283,11 @@
 					"name": "deleteCityById",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -2249,7 +1295,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/private/delete/5",
+							"raw": "http://localhost:8084/city/private/delete/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2259,7 +1305,7 @@
 								"city",
 								"private",
 								"delete",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -2269,61 +1315,11 @@
 					"name": "deleteCityByName",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDE5NjcsImlhdCI6MTcxODI0MDE2NywiYXV0aF90aW1lIjoxNzE4MjQwMTQzLCJqdGkiOiIwNDI4NzIxOS1mZmQ3LTQ1YmMtYWMyMy1mN2Q1OTA0YWVmMjYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNWM4ODQ1ODItNThlYi00ODMwLTg2YzYtNzEwMTc5OWZjNGUwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNYXJpYSBQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJNYXJpYSBQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.DdVbY93P_tr4-rcLhXBCgaPtGWzjDj19q-Qbi67VUYrytWA7RaOdGBg53X3W963GegXwPjzclUyXNie7df0YDNvmUHqmBXVVhbatkwtKMnua74Luu4Pkcr_9eDTK_awN0co1VChj-FdLkuiTDFfjymAWSuCn_glihShq9rn6piXzEweAKtTcCgovenP8UzwrSJYq9G5_9hHmNCTWYDf7v-I1sAjCKdxfUV3pDe7KEzwOhxy7cfM5AUK9SIPJjLLK1wtoutwi4H8yOO-IVUMDOm9N3pGmC7LAgfuRfBB4_W8gRpy5YY2nSMT5Hp5eYBzI9JsAVO4d695iLjfTh-0bYw",
 									"type": "string"
 								}
 							]
@@ -2331,7 +1327,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/city/private/delete/name?name=New York",
+							"raw": "http://localhost:8084/city/private/delete/name?name=Eliminar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2346,7 +1342,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "New York"
+									"value": "Eliminar"
 								}
 							]
 						}
@@ -2361,10 +1357,13 @@
 				{
 					"name": "getSeatbyID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/id/13",
+							"raw": "http://localhost:8084/seat/public/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2374,7 +1373,7 @@
 								"seat",
 								"public",
 								"id",
-								"13"
+								"1"
 							]
 						}
 					},
@@ -2383,6 +1382,9 @@
 				{
 					"name": "getAllSeats",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -2404,10 +1406,13 @@
 				{
 					"name": "getSeatAvailabilitybyID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/availability/9",
+							"raw": "http://localhost:8084/seat/public/availability/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2417,7 +1422,7 @@
 								"seat",
 								"public",
 								"availability",
-								"9"
+								"1"
 							]
 						}
 					},
@@ -2426,10 +1431,13 @@
 				{
 					"name": "getSeatsbyZoneID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/zone/id/17",
+							"raw": "http://localhost:8084/seat/public/zone/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2440,7 +1448,7 @@
 								"public",
 								"zone",
 								"id",
-								"17"
+								"1"
 							]
 						}
 					},
@@ -2449,10 +1457,13 @@
 				{
 					"name": "getSeatsbyZoneName",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/zone/name?name=Popular Norte",
+							"raw": "http://localhost:8084/seat/public/zone/name?name=Zona A",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2467,7 +1478,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Popular Norte"
+									"value": "Zona A"
 								}
 							]
 						}
@@ -2477,10 +1488,13 @@
 				{
 					"name": "getAvailableSeatsbyZoneID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/zone/availability/17",
+							"raw": "http://localhost:8084/seat/public/zone/availability/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2491,7 +1505,7 @@
 								"public",
 								"zone",
 								"availability",
-								"17"
+								"3"
 							]
 						}
 					},
@@ -2500,10 +1514,13 @@
 				{
 					"name": "getNotAvailableSeatsbyZoneID",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/public/zone/noAvailability/17",
+							"raw": "http://localhost:8084/seat/public/zone/noAvailability/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2514,7 +1531,7 @@
 								"public",
 								"zone",
 								"noAvailability",
-								"17"
+								"1"
 							]
 						}
 					},
@@ -2524,61 +1541,11 @@
 					"name": "addSeat",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -2587,7 +1554,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"availability\": 1,\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 19\r\n    }\r\n}\r\n",
+							"raw": "{\r\n    \"price\": 100.0,\r\n    \"zone\": {\r\n        \"id\": 1\r\n    },\r\n    \"availability\": 0\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2614,61 +1581,11 @@
 					"name": "updateSeat",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -2677,7 +1594,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 16,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 19\r\n    },\r\n    \"ticketId\" : 8\r\n}",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"availability\": 0,\r\n    \"price\": 150.0,\r\n    \"zone\": {\r\n        \"id\": 3\r\n    },\r\n    \"ticketId\" : 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2704,61 +1621,11 @@
 					"name": "updateSeatAvailabilitybyID",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -2766,7 +1633,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/private/availability/8",
+							"raw": "http://localhost:8084/seat/private/availability/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2776,7 +1643,7 @@
 								"seat",
 								"private",
 								"availability",
-								"8"
+								"1"
 							]
 						}
 					},
@@ -2786,61 +1653,11 @@
 					"name": "deleteSeat",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -2848,7 +1665,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/private/delete/8",
+							"raw": "http://localhost:8084/seat/private/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2858,7 +1675,7 @@
 								"seat",
 								"private",
 								"delete",
-								"8"
+								"5"
 							]
 						}
 					},
@@ -2868,61 +1685,11 @@
 					"name": "findByTicketId",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -2930,7 +1697,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/seat/private/ticket/6",
+							"raw": "http://localhost:8084/seat/private/ticket/12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2940,7 +1707,7 @@
 								"seat",
 								"private",
 								"ticket",
-								"6"
+								"12"
 							]
 						}
 					},
@@ -2955,61 +1722,11 @@
 					"name": "getById",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3017,7 +1734,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/tickets/2",
+							"raw": "http://localhost:8085/tickets/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3025,7 +1742,7 @@
 							"port": "8085",
 							"path": [
 								"tickets",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -3035,61 +1752,11 @@
 					"name": "getAll",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3115,61 +1782,11 @@
 					"name": "createTicket",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3178,7 +1795,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"paymentMethodId\": 2,\r\n    \"seatsId\": [36]\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"userId\": \"f7049e0e-0a21-4e19-819d-bf8915f2998f\",\r\n    \"paymentMethodId\": 1,\r\n    \"seatsId\": [1, 2],\r\n    \"eventId\": 1\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3285,61 +1902,11 @@
 					"name": "getByUserId",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3370,6 +1937,9 @@
 				{
 					"name": "getById",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -3416,61 +1986,11 @@
 					"name": "getByTicketId",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3497,10 +2017,13 @@
 				{
 					"name": "getByCategory",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/private/category?category=Credit Card",
+							"raw": "http://localhost:8085/paymentMethod/public/category?category=Tarjeta de crédito",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3508,13 +2031,13 @@
 							"port": "8085",
 							"path": [
 								"paymentMethod",
-								"private",
+								"public",
 								"category"
 							],
 							"query": [
 								{
 									"key": "category",
-									"value": "Credit Card"
+									"value": "Tarjeta de crédito"
 								}
 							]
 						}
@@ -3525,61 +2048,11 @@
 					"name": "createPaymentMethod",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3615,61 +2088,11 @@
 					"name": "updatePaymentMethod",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3678,7 +2101,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"category\": \"Credit Card\",\r\n    \"detail\": \"MasterCard\"\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"category\": \"Credit Card\",\r\n    \"detail\": \"MasterCard\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3705,61 +2128,11 @@
 					"name": "deletePaymentMethod",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDM5NzAsImlhdCI6MTcxODI0MjE3MCwiYXV0aF90aW1lIjoxNzE4MjQyMTMzLCJqdGkiOiIyMmIyMzg0Ny0yNTg0LTRkOTMtODRmYi1hYWU5ZTA0OTYzNDgiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiMDU1NTVlZTQtNDU0NS00YWRhLTgxNzAtZmJkOThjZDcwNjFkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.QlAhdq5egDWNTQaqBarFRXGdaK4bkPOAGFa_8bxQbkgTr7dQl0T-_qqQeXELqytEOThdliS4I8akDI6LZ6zb9zqZPJJkDwE0xUNkNqf80-PaWxEBztswLbXNRZini-ss5lsYY_xWQkwWxozANufMGcUgrt-aXZQ_-OoT3bF7Opozi7xVEbWewD523ru3NmoBHLODNNlWtpHIPs9YAlM3q7Md5D-3SAaH0PAkBgALOark3wbbd9AFBheZL7qnaPb48T3VJ-dxSm3XP4eOFgK5ZnqdOxNlXF_7pHY6oCLUJnEHc_SUTWx-saePC9QRLHA0nfif5euzcLYY9IVtgnggIQ",
 									"type": "string"
 								}
 							]
@@ -3767,7 +2140,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8085/paymentMethod/private/delete/3",
+							"raw": "http://localhost:8085/paymentMethod/private/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3777,7 +2150,7 @@
 								"paymentMethod",
 								"private",
 								"delete",
-								"3"
+								"5"
 							]
 						}
 					},
@@ -3807,61 +2180,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -3911,6 +2234,9 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -3934,10 +2260,13 @@
 				{
 					"name": "Get Category By Name",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/category/public/getByName/Música",
+							"raw": "http://localhost:8083/category/public/getByName/Salud y Bienestar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3947,7 +2276,7 @@
 								"category",
 								"public",
 								"getByName",
-								"Música"
+								"Salud y Bienestar"
 							]
 						}
 					},
@@ -3956,6 +2285,9 @@
 				{
 					"name": "Get All Categories",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -3979,61 +2311,11 @@
 					"name": "Update Category",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4042,7 +2324,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"name\": \"Música\"\n}",
+							"raw": "{\n    \"id\": 8,\n    \"name\": \"Música\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4069,61 +2351,11 @@
 					"name": "Delete Category By Id",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4131,7 +2363,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/category/private/deleteById/1",
+							"raw": "http://localhost:8083/category/private/deleteById/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4141,7 +2373,7 @@
 								"category",
 								"private",
 								"deleteById",
-								"1"
+								"8"
 							]
 						}
 					},
@@ -4151,61 +2383,11 @@
 					"name": "Delete Category By Name",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4238,61 +2420,11 @@
 					"name": "Add DateEvent",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4301,7 +2433,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"date\": \"2024-09-14T22:15:00Z\"\n}",
+							"raw": "{\n    \"date\": \"2024-09-14T21:29:00.000+00:00\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4327,6 +2459,9 @@
 				{
 					"name": "Get DateEvent By Id",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -4349,6 +2484,9 @@
 				{
 					"name": "Get DateEvent By Date",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -4394,61 +2532,11 @@
 					"name": "Update DateEvent",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4457,7 +2545,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"date\": \"2024-09-14T21:29:00Z\"\n}",
+							"raw": "{\n    \"id\": 8,\n    \"date\": \"2024-09-14T22:15:00.000+00:00\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4484,61 +2572,11 @@
 					"name": "Delete DateEvent By Id",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4546,7 +2584,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/dateEvent/private/deleteById/2",
+							"raw": "http://localhost:8083/dateEvent/private/deleteById/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4556,7 +2594,7 @@
 								"dateEvent",
 								"private",
 								"deleteById",
-								"2"
+								"5"
 							]
 						}
 					},
@@ -4566,61 +2604,11 @@
 					"name": "Delete DateEvent By Date",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNDYwMTAsImlhdCI6MTcxODI0NDIxMCwiYXV0aF90aW1lIjoxNzE4MjQ0MTg3LCJqdGkiOiI5YzcwNmZlMy1iM2IxLTRhMGItOTdjMS1kZjA4OThmYmFhODEiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiNjM1MmJiZGItOTZiNy00NjEzLWE0NTAtZTc4OGUzMmIzM2NhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.c2DsuiHpRbZc9t5ifGvhOzyRWJqM8Rcu2Ns4sUgKnJGEDgiK_HpZ3oMUqMJ31XCu7JLYhQPpgXKjyYt-84KE3FmGmk0sOmyDgv4JxDsnNHXfQM_ZecilRLxiq8CanUhOFVoAp5P8-qdEsqrjm0T5NuArgf3TdQDOtSzuzhBPOCquX14zNjzTrg9t98HhLovH3KbpPJl1i2WfDc7gbBEkAIECfDv4Ehy1BQqDx_lMPXV-phrp0n7Ogg4PWH4Xg6v-U7g7Zs2t0VoEnFteZaRT1Y_fTMWtXBw95bs5KLKA-Pq9OXxBCZ3eWGKJd7qbY5rU0fEdPY3aAEBa6mE_e6JKBQ",
 									"type": "string"
 								}
 							]
@@ -4628,7 +2616,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/dateEvent/private/deleteByDate/2024-09-14T21:29:00.000+00:00",
+							"raw": "http://localhost:8083/dateEvent/private/deleteByDate/2024-09-14T22:15:00.000+00:00",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4638,7 +2626,7 @@
 								"dateEvent",
 								"private",
 								"deleteByDate",
-								"2024-09-14T21:29:00.000+00:00"
+								"2024-09-14T22:15:00.000+00:00"
 							]
 						}
 					},
@@ -4650,98 +2638,11 @@
 			"name": "event",
 			"item": [
 				{
-					"name": "Add Event",
-					"request": {
-						"auth": {
-							"type": "oauth2",
-							"oauth2": [
-								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"After Hours til Dawn World Tour\",\n    \"description\": \"The Weeknd's presents his two albums After Hours and Dawn FM in a world tour\",\n    \"photo\": \"theweeknd.jpg\",\n    \"category\": {\n        \"id\": 1\n    },\n    \"dateEvent\": {\n        \"date\": \"2024-05-26T23:47:00Z\"\n    },\n    \"placeId\": 1\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8083/event/private/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8083",
-							"path": [
-								"event",
-								"private",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get Event By Id",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -4764,10 +2665,13 @@
 				{
 					"name": "Get Event By Name",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/event/public/getByName/Twelve Carat Toothache World Tour - Post Malone",
+							"raw": "http://localhost:8083/event/public/getByName/The Weeknd",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4777,7 +2681,7 @@
 								"event",
 								"public",
 								"getByName",
-								"Twelve Carat Toothache World Tour - Post Malone"
+								"The Weeknd"
 							]
 						}
 					},
@@ -4786,6 +2690,9 @@
 				{
 					"name": "Get All Events",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -4899,61 +2806,11 @@
 					"name": "Delete Event By Id",
 					"request": {
 						"auth": {
-							"type": "oauth2",
-							"oauth2": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
-									"type": "string"
-								},
-								{
-									"key": "accessTokenUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/token",
-									"type": "string"
-								},
-								{
-									"key": "authUrl",
-									"value": "http://localhost:8080/realms/ticketrek/protocol/openid-connect/auth",
-									"type": "string"
-								},
-								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "grant_type",
-									"value": "authorization_code",
-									"type": "string"
-								},
-								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
-									"type": "string"
-								},
-								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNTAyNTIsImlhdCI6MTcxODI0ODQ1MiwiYXV0aF90aW1lIjoxNzE4MjQ4NDI2LCJqdGkiOiI4ZWJjMDI2OS01ODQ0LTRlYjItOGVjOC1lMzZjODJiMzc2OGMiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZTY3YmVjZDMtZjM2My00NWY1LWFlMmQtZDU0YmEyZmVlMmZhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiZTY3YmVjZDMtZjM2My00NWY1LWFlMmQtZDU0YmEyZmVlMmZhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.RfvQtJ04cSPx73UWWEIAPocgPEPYcgGEiuYepKZiLxziyb8yR_FlZ8GSaPq5oiJJraRlmCLPBNs-2dx0L_RJqJEEk1lDHVNCyZJ8Dp-zZIJ-2AKSvdXbZbZOduR2pS4o3glvOLSmPzfmgO0sOFxp-u6er4qm7i_FVSuuovBWai9lK2wp2-PW4aU9Ia3arw9yLcn0Q6b3awOOeyyDLgUR2hGK-vYUc69huPxScrhTDzw7w_UIOUuVPGhmCw6QdMNICSrwIPuZpHDnnmDTenWxR2VLVIPLptFkz0fJ5138tSXx90F8Pq2mG-a_EMLo-0j89ac2mEk9g0QHUeUQqlOvUg",
 									"type": "string"
 								}
 							]
@@ -4961,7 +2818,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/event/private/deleteById/2",
+							"raw": "http://localhost:8083/event/private/deleteById/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4971,7 +2828,7 @@
 								"event",
 								"private",
 								"deleteById",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -4981,11 +2838,83 @@
 					"name": "Delete Event By Name",
 					"request": {
 						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxOUQ4a2FtMWQ5MTlhT0kwb0dhQmtDQVFjR3VNSFNhVlJDX0dqeDVtT3BzIn0.eyJleHAiOjE3MTgyNTAyNTIsImlhdCI6MTcxODI0ODQ1MiwiYXV0aF90aW1lIjoxNzE4MjQ4NDI2LCJqdGkiOiI4ZWJjMDI2OS01ODQ0LTRlYjItOGVjOC1lMzZjODJiMzc2OGMiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL3RpY2tldHJlayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmNzA0OWUwZS0wYTIxLTRlMTktODE5ZC1iZjg5MTVmMjk5OGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZTY3YmVjZDMtZjM2My00NWY1LWFlMmQtZDU0YmEyZmVlMmZhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy10aWNrZXRyZWsiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQURNSU4iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIHJvbGVzIiwic2lkIjoiZTY3YmVjZDMtZjM2My00NWY1LWFlMmQtZDU0YmEyZmVlMmZhIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJQYXVsaW5hIE9iZXJ0aSBCdXNzbyIsInByZWZlcnJlZF91c2VybmFtZSI6InBhdWxpbmFvYmVydGlidXNzbyIsImdpdmVuX25hbWUiOiJQYXVsaW5hIiwiZmFtaWx5X25hbWUiOiJPYmVydGkgQnVzc28iLCJlbWFpbCI6InBhdWxpbmFvYmVydGlidXNzb0BnbWFpbC5jb20ifQ.RfvQtJ04cSPx73UWWEIAPocgPEPYcgGEiuYepKZiLxziyb8yR_FlZ8GSaPq5oiJJraRlmCLPBNs-2dx0L_RJqJEEk1lDHVNCyZJ8Dp-zZIJ-2AKSvdXbZbZOduR2pS4o3glvOLSmPzfmgO0sOFxp-u6er4qm7i_FVSuuovBWai9lK2wp2-PW4aU9Ia3arw9yLcn0Q6b3awOOeyyDLgUR2hGK-vYUc69huPxScrhTDzw7w_UIOUuVPGhmCw6QdMNICSrwIPuZpHDnnmDTenWxR2VLVIPLptFkz0fJ5138tSXx90F8Pq2mG-a_EMLo-0j89ac2mEk9g0QHUeUQqlOvUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/event/private/deleteByName/Partido de Fútbol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"event",
+								"private",
+								"deleteByName",
+								"Partido de Fútbol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPlaceId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/event/public/findByPlaceId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"event",
+								"public",
+								"findByPlaceId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addEvent",
+					"request": {
+						"auth": {
 							"type": "oauth2",
 							"oauth2": [
 								{
 									"key": "clientSecret",
-									"value": "mbUrQfgEcBT6ALFMMg3sHqFSm3yezdMc",
+									"value": "oHRGXx5e8UpGwZnopFHfuaETeKcP2DLF",
+									"type": "string"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid ",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "api-gateway-client",
 									"type": "string"
 								},
 								{
@@ -4999,18 +2928,8 @@
 									"type": "string"
 								},
 								{
-									"key": "tokenName",
-									"value": "pi2",
-									"type": "string"
-								},
-								{
-									"key": "client_authentication",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "addTokenTo",
-									"value": "header",
+									"key": "redirect_uri",
+									"value": "http://localhost:8090",
 									"type": "string"
 								},
 								{
@@ -5019,32 +2938,42 @@
 									"type": "string"
 								},
 								{
-									"key": "useBrowser",
-									"value": false,
-									"type": "boolean"
-								},
-								{
-									"key": "scope",
-									"value": "openid",
+									"key": "tokenName",
+									"value": "pi2",
 									"type": "string"
 								},
 								{
-									"key": "redirect_uri",
-									"value": "http://localhost:8090",
-									"type": "string"
-								},
-								{
-									"key": "clientId",
-									"value": "api-gateway-client",
+									"key": "addTokenTo",
+									"value": "header",
 									"type": "string"
 								}
 							]
 						},
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "eventDTO",
+									"value": "{\n  \"name\": \"AfterLife Brasil\",\n  \"description\": \"Nueva Propuesta, nuevos escenarios.\",\n  \"category\":{\n     \"name\": \"Festival\"\n   },\n\"dateEvent\":{ \n    \"date\": \"2024-02-24T18:30:00\"},\n \"placeId\": 1\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef28eb5-6d61-4130-a1c3-36a1973a5fd3"
+								},
+								{
+									"key": " ",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
 						"url": {
-							"raw": "http://localhost:8083/event/private/deleteByName/Twelve Carat Toothache World Tour - Post Malone",
-							"protocol": "http",
+							"raw": "localhost:8083/event/private/add",
 							"host": [
 								"localhost"
 							],
@@ -5052,29 +2981,165 @@
 							"path": [
 								"event",
 								"private",
-								"deleteByName",
-								"Twelve Carat Toothache World Tour - Post Malone"
+								"add"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "findByPlaceId",
+					"name": "search",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/event/findByPlaceId/8",
-							"protocol": "http",
+							"raw": "localhost:8083/event/public/search?city=Escobar",
 							"host": [
 								"localhost"
 							],
 							"port": "8083",
 							"path": [
 								"event",
-								"findByPlaceId",
-								"8"
+								"public",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "The Weeknd",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Concierto",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Escobar"
+								},
+								{
+									"key": "date",
+									"value": "2024-06-15T03:00:00.000-03:00",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authorization Code Grant Type",
+			"item": [
+				{
+					"name": "Authorize",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/realms/casa-digital/protocol/openid-connect/auth?response_type=code&redirect_uri=http://localhost:8081/login/oauth2/code/keycloak&state=abc123&client_id=casa-digital-client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"casa-digital",
+								"protocol",
+								"openid-connect",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8081/login/oauth2/code/keycloak"
+								},
+								{
+									"key": "state",
+									"value": "abc123"
+								},
+								{
+									"key": "client_id",
+									"value": "casa-digital-client"
+								},
+								{
+									"key": "scope",
+									"value": "openid mi-scope",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "817944fb-6cda-444b-bb0c-7ffc9070ae06.9223cd72-1397-484b-8bb1-c009da9186b0.d98acaaf-e4bf-42ce-8299-762af6c6bc98",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost:8081/login/oauth2/code/keycloak",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "casa-digital-client",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "SN1EISk5W5HCPxCZVYDqUoUnOpCgaW53",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/casa-digital/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"casa-digital",
+								"protocol",
+								"openid-connect",
+								"token"
 							]
 						}
 					},
