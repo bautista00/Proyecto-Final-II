@@ -1,17 +1,11 @@
 package com.proyectointegrador.msevents.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.proyectointegrador.msevents.domain.DateEvent;
-import com.proyectointegrador.msevents.domain.Event;
-import com.proyectointegrador.msevents.domain.Images;
-import com.proyectointegrador.msevents.domain.Place;
+import com.proyectointegrador.msevents.domain.*;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.dto.EventGetDTO;
 import com.proyectointegrador.msevents.exceptions.ResourceNotFoundException;
-import com.proyectointegrador.msevents.repository.IDateEventRepository;
-import com.proyectointegrador.msevents.repository.IEventRepository;
-import com.proyectointegrador.msevents.repository.IImagesRepository;
-import com.proyectointegrador.msevents.repository.PlaceRepository;
+import com.proyectointegrador.msevents.repository.*;
 import com.proyectointegrador.msevents.service.interfaces.ICategoryService;
 import com.proyectointegrador.msevents.service.interfaces.IDateEventService;
 import com.proyectointegrador.msevents.service.interfaces.IEventService;
@@ -44,24 +38,43 @@ public class EventService implements IEventService {
 
     private final ObjectMapper mapper;
 
+    private final ICategoryRepository categoryRepository;
+
     @Transactional
     protected EventDTO saveEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception {
         DateEvent dateEvent = eventDTO.getDateEvent();
         if (dateEvent == null) {
             throw new IllegalArgumentException("DateEvent is required");
         }
+
         dateEventRepository.save(dateEvent);
+
         List<String> imageUrls = awsService.generateImageUrls(awsService.uploadFiles(files));
         Images images = new Images();
         images.setUrl(imageUrls);
         imagesRepository.save(images);
+
         eventDTO.setImages(images);
+
+        Category category = eventDTO.getCategory();
+        if (category == null || category.getId() == null) {
+            throw new IllegalArgumentException("Category is required and must have an ID");
+        }
+
+        Optional<Category> optionalCategory = categoryRepository.findCategoryById(category.getId());
+        if (optionalCategory.isPresent()) {
+            category = optionalCategory.get();
+        } else {
+            throw new IllegalArgumentException("Category with ID " + category.getId() + " not found");
+        }
+
         Event event = mapper.convertValue(eventDTO, Event.class);
         event.setDateEvent(dateEvent);
+        event.setCategory(category);
         eventRepository.save(event);
+
         return mapper.convertValue(event, EventDTO.class);
     }
-
     @Override
     public Optional<EventGetDTO> getEventById(Long id) {
         Optional<Event> event = eventRepository.findEventById(id);

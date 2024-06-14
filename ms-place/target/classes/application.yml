@@ -1,11 +1,17 @@
 spring:
   application:
     name: ms-place
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/ticketreck
+#    username: root
+#    password: contra
+#    driver-class-name: com.mysql.cj.jdbc.Driver
   datasource:
-    url: jdbc:mysql://localhost:3306/ticketreck
-    username: root
-    password: lmcpauli1
+    url: jdbc:mysql://ticketreck-db-mysql.cf4gakmqo0vw.us-east-1.rds.amazonaws.com:3306/ticketreckDB
+    username: admin
+    password: xWwbbN9sYkKlLJJb6jz5
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
