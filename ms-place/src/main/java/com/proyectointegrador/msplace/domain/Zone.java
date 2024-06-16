@@ -18,8 +18,7 @@ import java.util.Set;
 public class Zone {
 
     @Id
-    @SequenceGenerator(name = "zone-sequence", sequenceName = "zone-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "zone-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "ID de la zona", example = "1")
     private Long id;
 

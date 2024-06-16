@@ -16,8 +16,7 @@ import lombok.*;
 public class Seat {
 
     @Id
-    @SequenceGenerator(name = "seat-sequence", sequenceName = "seat-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "seat-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "ID del asiento", example = "1")
     private Long id;
 
