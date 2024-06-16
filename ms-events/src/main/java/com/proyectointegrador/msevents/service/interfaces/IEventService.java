@@ -18,7 +18,7 @@ public interface IEventService {
     Set<EventGetDTO> getAllEvents();
     List<Event> searchEvents(String name, String category, String city, Date date);
 
-    EventDTO addEvent(EventDTO eventDTO,List<MultipartFile> files) throws Exception;
+    EventDTO addEvent(EventDTO eventDTO, MultipartFile file) throws Exception;
     EventDTO updateEvent(EventDTO eventDTO) throws ResourceNotFoundException;
 
     void deleteEventById(Long id);

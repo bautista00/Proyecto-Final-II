@@ -11,8 +11,6 @@ import software.amazon.awssdk.services.s3.S3Client;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.net.URL;
@@ -30,20 +28,16 @@ public class AwsService implements IAwsService {
     private String bucketName;
 
     @Override
-    public List<String> uploadFiles(List<MultipartFile> files) throws Exception {
-        List<String> uploadedFiles = new ArrayList<>();
+    public String uploadFile(MultipartFile file) throws Exception {
         try {
-            for (MultipartFile file : files) {
-                String newFileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-                PutObjectRequest request = PutObjectRequest.builder()
-                        .bucket(bucketName)
-                        .key(newFileName)
-                        .build();
-                s3Client.putObject(request, RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
-                LOGGER.info("File uploaded with the name..." + newFileName);
-                uploadedFiles.add(newFileName);
-            }
-            return uploadedFiles;
+            String newFileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+            PutObjectRequest request = PutObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(newFileName)
+                    .build();
+            s3Client.putObject(request, RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
+            LOGGER.info("File uploaded with the name..." + newFileName);
+            return newFileName;
         } catch (IOException e) {
             LOGGER.info("Error uploading file");
         }
@@ -70,19 +64,13 @@ public class AwsService implements IAwsService {
         return getObjectResponse == null ? null : getObjectResponse;
     }
 
-
-
     @Override
-    public List<String> generateImageUrls(List<String> fileNames) {
-        List<String> imageUrls = new ArrayList<>();
-        for (String fileName : fileNames) {
-            GetUrlRequest getUrlRequest = GetUrlRequest.builder()
-                    .bucket(bucketName)
-                    .key(fileName)
-                    .build();
-            URL url = s3Client.utilities().getUrl(getUrlRequest);
-            imageUrls.add(url.toString());
-        }
-        return imageUrls;
+    public String generateImageUrl(String fileName) {
+        GetUrlRequest getUrlRequest = GetUrlRequest.builder()
+                .bucket(bucketName)
+                .key(fileName)
+                .build();
+        URL url = s3Client.utilities().getUrl(getUrlRequest);
+        return url.toString();
     }
 }

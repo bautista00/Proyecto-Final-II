@@ -138,20 +138,18 @@ public class EventController {
     })
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/private/add")
-    public ResponseEntity<?> addEvent(@RequestParam(value="eventDTO") String eventDTOStr, @RequestPart(value = "file") List<MultipartFile> files) throws Exception {
-        if (files == null || files.isEmpty()) {
+    public ResponseEntity<?> addEvent(@RequestParam(value="eventDTO") String eventDTOStr, @RequestPart(value = "file") MultipartFile file) throws Exception {
+        if (file == null) {
             return new ResponseEntity<>("At least one photo is required", HttpStatus.BAD_REQUEST);
         }
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         EventDTO eventDTO = objectMapper.readValue(eventDTOStr, EventDTO.class);
         try {
-            awsService.uploadFiles(files);
+            awsService.uploadFile(file);
             StringBuilder response = new StringBuilder("The following files were successfully uploaded to the s3 bucket:\n");
-            for (MultipartFile file : files) {
-                response.append(file.getOriginalFilename()).append("\n");
-            }
-            EventDTO newEventDTO = eventService.addEvent(eventDTO,files);
+            response.append(file.getOriginalFilename()).append("\n");
+            EventDTO newEventDTO = eventService.addEvent(eventDTO, file);
             response.append("Event created successfully - ").append(newEventDTO);
             return new ResponseEntity<>(response.toString(), HttpStatus.CREATED);
         } catch (Exception e) {

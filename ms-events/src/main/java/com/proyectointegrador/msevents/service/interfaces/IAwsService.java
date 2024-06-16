@@ -6,12 +6,11 @@ import java.io.InputStream;
 import java.util.List;
 
 public interface IAwsService {
-    List<String> uploadFiles (List<MultipartFile> files) throws Exception;
+    String uploadFile(MultipartFile file) throws Exception;
 
     List<String> getObjectsFromS3();
 
     InputStream downloadFile(String key);
 
-    List<String>generateImageUrls(List<String> fileNames);
-
+    String generateImageUrl(String fileName);
 }

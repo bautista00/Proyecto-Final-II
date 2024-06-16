@@ -41,7 +41,7 @@ public class EventService implements IEventService {
     private final ICategoryRepository categoryRepository;
 
     @Transactional
-    protected EventDTO saveEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception {
+    protected EventDTO saveEvent(EventDTO eventDTO, MultipartFile file) throws Exception {
         DateEvent dateEvent = eventDTO.getDateEvent();
         if (dateEvent == null) {
             throw new IllegalArgumentException("DateEvent is required");
@@ -49,11 +49,13 @@ public class EventService implements IEventService {
 
         dateEventRepository.save(dateEvent);
 
-        List<String> imageUrls = awsService.generateImageUrls(awsService.uploadFiles(files));
-        Images images = new Images();
-        images.setUrl(imageUrls);
-        imagesRepository.save(images);
+        // Subir archivo y obtener URL
+        String imageUrl = awsService.uploadFile(file);
 
+        // Crear objeto Images y guardar en la base de datos
+        Images images = new Images();
+        images.setUrl(imageUrl);
+        imagesRepository.save(images);
         eventDTO.setImages(images);
 
         Category category = eventDTO.getCategory();
@@ -61,12 +63,12 @@ public class EventService implements IEventService {
             throw new IllegalArgumentException("Category is required and must have an ID");
         }
 
-        Optional<Category> optionalCategory = categoryRepository.findCategoryById(category.getId());
-        if (optionalCategory.isPresent()) {
-            category = optionalCategory.get();
-        } else {
+        Optional<Category> optionalCategory = categoryRepository.findById(category.getId());
+        if (optionalCategory.isEmpty()) {
             throw new IllegalArgumentException("Category with ID " + category.getId() + " not found");
         }
+
+        category = optionalCategory.get();
 
         Event event = mapper.convertValue(eventDTO, Event.class);
         event.setDateEvent(dateEvent);
@@ -75,6 +77,7 @@ public class EventService implements IEventService {
 
         return mapper.convertValue(event, EventDTO.class);
     }
+
     @Override
     public Optional<EventGetDTO> getEventById(Long id) {
         Optional<Event> event = eventRepository.findEventById(id);
@@ -171,8 +174,8 @@ public class EventService implements IEventService {
 
 
     @Override
-    public EventDTO addEvent(EventDTO eventDTO, List<MultipartFile> files) throws Exception {
-        return saveEvent(eventDTO, files);
+    public EventDTO addEvent(EventDTO eventDTO, MultipartFile file) throws Exception {
+        return saveEvent(eventDTO, file);
     }
 
     @Override

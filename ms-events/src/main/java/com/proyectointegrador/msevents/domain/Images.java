@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -22,7 +23,7 @@ public class Images {
     private Long id;
 
     @Column(length = 3000)
-    private List<String> url;
+    private String url;
 
     @OneToOne(mappedBy = "images")
     @JsonIgnore

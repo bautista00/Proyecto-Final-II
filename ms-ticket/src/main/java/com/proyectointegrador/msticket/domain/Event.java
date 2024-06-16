@@ -11,4 +11,5 @@ public class Event {
     private String description;
     private DateEvent dateEvent;
     private Place place;
+    private Image images;
 }
