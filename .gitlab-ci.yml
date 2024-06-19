@@ -39,5 +39,5 @@ deploy_eureka_server:
     - echo "Deploying eureka-server"
     - pwd
     - ls
-    - scp target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-54-211-227-50.compute-1.amazonaws.com:/home/ubuntu
+    - scp target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-88-142-25.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying eureka-server."
