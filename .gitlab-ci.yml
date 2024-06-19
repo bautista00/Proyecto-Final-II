@@ -15,9 +15,9 @@ build_eureka_server:
     name: eureka_server_build
     paths:
       - eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar
-  #rules:
-  #  - changes:
-  #      - eureka-server/**/*
+  rules:
+    - changes:
+        - eureka-server/**/*
 
 deploy_eureka_server:
   stage: deploy
