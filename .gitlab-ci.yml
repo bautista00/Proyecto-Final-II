@@ -7,16 +7,17 @@ build_eureka_server:
   image: maven:3.8.5-openjdk-17
   script:
     - echo "Building eureka-server..."
-    - cd eureka-server
-    - mvn clean install
+    - "cd eureka-server"
+    - "mvn clean"
+    - "mvn clean install"
     - echo "Finished building eureka-server."
   artifacts:
     name: eureka_server_build
     paths:
       - eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar
-  rules:
-    - changes:
-        - eureka-server/**/*
+  #rules:
+  #  - changes:
+  #      - eureka-server/**/*
 
 deploy_eureka_server:
   stage: deploy
