@@ -9,6 +9,10 @@ import java.util.List;
 public interface ITicketRepository extends JpaRepository<Ticket, Long> {
     List<Ticket> findByUserId(String id);
 
-    @Query("SELECT t FROM Ticket t WHERE t.eventId IN :eventIds")
+    @Query("SELECT t FROM Ticket t WHERE t.eventId IN ?1")
     List<Ticket> findTicketsByEventIds(List<Long> eventIds);
+
+    @Query("SELECT COUNT(DISTINCT t.eventId) FROM Ticket t WHERE t.eventId IN ?1")
+    int countDistinctEventIds(List<Long> eventIds);
+
 }

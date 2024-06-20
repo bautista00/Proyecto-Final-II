@@ -5,6 +5,7 @@ import com.proyectointegrador.msticket.domain.*;
 import com.proyectointegrador.msticket.dto.TicketAllDTO;
 import com.proyectointegrador.msticket.dto.TicketCreateDTO;
 import com.proyectointegrador.msticket.dto.EmailDTO;
+import com.proyectointegrador.msticket.dto.TicketReportDTO;
 import com.proyectointegrador.msticket.exception.PaymentMethodNotFoundException;
 import com.proyectointegrador.msticket.exception.TicketNotFoundException;
 import com.proyectointegrador.msticket.repository.*;
@@ -76,6 +77,7 @@ public class TicketServiceImpl implements ITicketService {
                 })
                 .collect(Collectors.toList());
     }
+
 
     private String buildEmailMessage(User user, Ticket ticket, List<Seat> seats, Event event) {
         StringBuilder message = new StringBuilder();
@@ -165,11 +167,49 @@ public class TicketServiceImpl implements ITicketService {
         return ticketRepository.findTicketsByEventIds(eventIds);
     }
 
-    public List<Ticket> getTicketsByReportSearch(Map<String, String> criteria) {
+    @Override
+    public int countDistinctEventIds(List<Long> eventIds) {
+        return ticketRepository.countDistinctEventIds(eventIds);
+    }
+
+    @Override
+    public Map<String, Object> getTicketsByReportSearch(Map<String, String> criteria) {
         List<Long> eventIds = eventRepository.getEventIdsByReportSearch(criteria);
-        if (eventIds.isEmpty()) {
-            return Collections.emptyList();
+        List<Ticket> tickets = new ArrayList<>();
+        List<TicketReportDTO> ticketsReportDTO = new ArrayList<>();
+        int distinctEventCount = 0;
+        Double totalRevenue = 0.0;
+        if (!eventIds.isEmpty()) {
+            tickets = findTicketsByEventIds(eventIds);
+            distinctEventCount = countDistinctEventIds(eventIds);
+            if (!tickets.isEmpty()) {
+                for (Ticket ticket : tickets) {
+                    List<Seat> seats = seatRepository.findByTicketId(ticket.getId());
+                    double ticketPrice = 0.0;
+                    for (Seat seat : seats) {
+                            ticketPrice += seat.getPrice();
+                    }
+                    Event event = eventRepository.findEventById(ticket.getEventId());
+                    TicketReportDTO ticketReportDTO = new TicketReportDTO(
+                            event.getName(),
+                            event.getPlace().getName(),
+                            ticketPrice,
+                            event.getDateEvent().getDate()
+                    );
+                    ticketsReportDTO.add(ticketReportDTO);
+                    totalRevenue += ticketPrice;
+                }
+            } else {
+                ticketsReportDTO = Collections.emptyList();
+                distinctEventCount = 0;
+            }
         }
-        return findTicketsByEventIds(eventIds);
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("tickets", ticketsReportDTO);
+        result.put("totalTickets", tickets.size());
+        result.put("totalDistinctEvents", distinctEventCount);
+        result.put("totalRevenue", totalRevenue);
+        return result;
     }
 }

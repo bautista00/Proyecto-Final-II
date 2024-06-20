@@ -16,5 +16,6 @@ public interface ITicketService {
     void deleteTicket(Long id);
     List<Ticket> findByUserId(String id);
     List<Ticket> findTicketsByEventIds(List<Long> eventIds);
-    List<Ticket> getTicketsByReportSearch(Map<String, String> criteria);
+    int countDistinctEventIds(List<Long> eventIds);
+    Map<String, Object> getTicketsByReportSearch(Map<String, String> criteria);
 }

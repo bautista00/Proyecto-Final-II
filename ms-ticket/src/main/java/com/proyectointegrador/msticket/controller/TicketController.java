@@ -4,6 +4,7 @@ package com.proyectointegrador.msticket.controller;
 import com.proyectointegrador.msticket.domain.Ticket;
 import com.proyectointegrador.msticket.dto.TicketAllDTO;
 import com.proyectointegrador.msticket.dto.TicketCreateDTO;
+import com.proyectointegrador.msticket.dto.TicketReportDTO;
 import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -79,12 +80,14 @@ public class TicketController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/private/report")
-    public ResponseEntity<List<Ticket>> getTicketsByReportSearch(@RequestBody Map<String, String> criteria) {
-        List<Ticket> tickets = ticketService.getTicketsByReportSearch(criteria);
-        if (tickets.isEmpty()) {
+    @PostMapping("/report")
+    public ResponseEntity<Map<String, Object>> getTicketsByReportSearch(@RequestBody Map<String, String> criteria) {
+        Map<String, Object> result = ticketService.getTicketsByReportSearch(criteria);
+        if (((List<TicketReportDTO>) result.get("tickets")).isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(tickets);
+        return ResponseEntity.ok(result);
     }
+
+
 }

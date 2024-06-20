@@ -16,7 +16,7 @@ public interface FeignEventRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/event/public/getById/{id}")
     Event findEventById(@PathVariable Long id);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/events/idsByCriteria")
+    @RequestMapping(method = RequestMethod.GET, value = "/event/private/idsByCriteria")
     List<Long> getEventIdsByReportSearch(@RequestParam Map<String, String> criteria);
 
 }
