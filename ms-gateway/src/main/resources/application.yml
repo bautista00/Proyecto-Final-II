@@ -3,13 +3,13 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: 3.88.142.25
     prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://3.88.142.25:8761/eureka
 
 spring:
   application:
@@ -48,7 +48,7 @@ spring:
       client:
         provider:
           keycloak-gateway:
-            issuer-uri: http://localhost:8080/realms/ticketrek
+            issuer-uri: http://54.211.227.50/:8080/realms/ticketrek
         registration:
           keycloak-gateway:
             client-id: api-gateway-client
@@ -56,4 +56,4 @@ spring:
             scope:
               - openid
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8090/login/oauth2/code/keycloak
+            redirect-uri: http://3.88.142.25:8090/login/oauth2/code/keycloak
