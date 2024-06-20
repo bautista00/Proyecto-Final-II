@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tickets")
@@ -75,5 +76,15 @@ public class TicketController {
     public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/private/report")
+    public ResponseEntity<List<Ticket>> getTicketsByReportSearch(@RequestBody Map<String, String> criteria) {
+        List<Ticket> tickets = ticketService.getTicketsByReportSearch(criteria);
+        if (tickets.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tickets);
     }
 }

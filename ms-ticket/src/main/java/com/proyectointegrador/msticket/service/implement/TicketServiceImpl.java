@@ -13,9 +13,8 @@ import com.proyectointegrador.msticket.service.interfaces.ITicketService;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -159,5 +158,18 @@ public class TicketServiceImpl implements ITicketService {
         }
 
         return ticketsUser;
+    }
+
+    @Override
+    public List<Ticket> findTicketsByEventIds(List<Long> eventIds) {
+        return ticketRepository.findTicketsByEventIds(eventIds);
+    }
+
+    public List<Ticket> getTicketsByReportSearch(Map<String, String> criteria) {
+        List<Long> eventIds = eventRepository.getEventIdsByReportSearch(criteria);
+        if (eventIds.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return findTicketsByEventIds(eventIds);
     }
 }
