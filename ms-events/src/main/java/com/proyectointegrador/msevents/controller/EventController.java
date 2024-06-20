@@ -94,7 +94,7 @@ public class EventController {
     }
 
     @GetMapping("/public/search")
-    public List<Event> searchEvents(@RequestParam(required = false) String name, @RequestParam(required = false) String category, @RequestParam(required = false) String city, @RequestParam(required = false) String dateString) throws ParseException {
+    public List<EventGetDTO> searchEvents(@RequestParam(required = false) String name, @RequestParam(required = false) String category, @RequestParam(required = false) String city, @RequestParam(required = false) String dateString) throws ParseException {
         Date date = null;
         if (dateString != null && !dateString.isEmpty()) {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");

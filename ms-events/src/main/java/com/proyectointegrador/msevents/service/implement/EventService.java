@@ -2,6 +2,8 @@ package com.proyectointegrador.msevents.service.implement;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyectointegrador.msevents.domain.*;
+import com.proyectointegrador.msevents.dto.CategoryDTO;
+import com.proyectointegrador.msevents.dto.DateEventDTO;
 import com.proyectointegrador.msevents.dto.EventDTO;
 import com.proyectointegrador.msevents.dto.EventGetDTO;
 import com.proyectointegrador.msevents.exceptions.ResourceNotFoundException;
@@ -49,10 +51,7 @@ public class EventService implements IEventService {
 
         dateEventRepository.save(dateEvent);
 
-        // Subir archivo y obtener URL
         String imageUrl = awsService.uploadFile(file);
-
-        // Crear objeto Images y guardar en la base de datos
         Images images = new Images();
         images.setUrl(imageUrl);
         imagesRepository.save(images);
@@ -127,7 +126,7 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public List<Event> searchEvents(String name, String category, String city, Date date) {
+    public List<EventGetDTO> searchEvents(String name, String category, String city, Date date) {
         Specification<Event> spec = Specification.where(null);
 
         if (name != null && !name.isEmpty()) {
@@ -135,43 +134,89 @@ public class EventService implements IEventService {
             if (eventName.isPresent()) {
                 Event event = eventName.get();
                 spec = spec.and((root, query, cb) -> cb.equal(root.get("id"), event.getId()));
+            } else {
+                return Collections.emptyList();
             }
         }
+
         if (category != null && !category.isEmpty()) {
-            Long categoryId = categoryService.getCategoryByName(category).get().getId();
-            List<Event> eventCategory = eventRepository.findByCategory(categoryId);
-            if (!eventCategory.isEmpty()) {
-                List<Long> eventIds = eventCategory.stream().map(Event::getId).collect(Collectors.toList());
-                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+            Optional<CategoryDTO> categoryOptional = categoryService.getCategoryByName(category);
+            if (categoryOptional.isPresent()) {
+                Long categoryId = categoryOptional.get().getId();
+                List<Event> eventCategory = eventRepository.findByCategory(categoryId);
+                if (!eventCategory.isEmpty()) {
+                    List<Long> eventIds = eventCategory.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList();
             }
         }
+
         if (city != null && !city.isEmpty()) {
             Set<Place> places = placeRepository.getPlaceByCity(city);
-            List<Long> placesIds = places.stream().map(Place::getId).collect(Collectors.toList());
-            List<Event> eventCity = new ArrayList<>();
-            for (Long id : placesIds) {
-                List<Event> events = eventRepository.findByPlaceId(id);
-                if (events != null && !events.isEmpty()) {
-                    eventCity.addAll(events);
+            if (!places.isEmpty()) {
+                List<Long> placesIds = places.stream().map(Place::getId).collect(Collectors.toList());
+                List<Event> eventCity = new ArrayList<>();
+                for (Long id : placesIds) {
+                    List<Event> events = eventRepository.findByPlaceId(id);
+                    if (events != null && !events.isEmpty()) {
+                        eventCity.addAll(events);
+                    }
                 }
-            }
-            if (!eventCity.isEmpty()) {
-                List<Long> eventIds = eventCity.stream().map(Event::getId).collect(Collectors.toList());
-                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                if (!eventCity.isEmpty()) {
+                    List<Long> eventIds = eventCity.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList(); // Si no se encuentran lugares por ciudad, devolver lista vacía
             }
         }
+
         if (date != null) {
-            Long eventDateId = dateEventService.getDateEventByDate(date).get().getId();
-            List<Event> eventDate = eventRepository.findEventByDateEvent(eventDateId);
-            if (!eventDate.isEmpty()) {
-                List<Long> eventIds = eventDate.stream().map(Event::getId).collect(Collectors.toList());
-                spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+            Optional<DateEventDTO> dateEventOptional = dateEventService.getDateEventByDate(date);
+            if (dateEventOptional.isPresent()) {
+                Long eventDateId = dateEventOptional.get().getId();
+                List<Event> eventDate = eventRepository.findEventByDateEvent(eventDateId);
+                if (!eventDate.isEmpty()) {
+                    List<Long> eventIds = eventDate.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList();
             }
         }
 
-        return eventRepository.findAll(spec);
-    }
+        List<Event> events = eventRepository.findAll(spec);
 
+        if (events.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        Set<Long> placeIds = events.stream()
+                .map(Event::getPlaceId)
+                .collect(Collectors.toSet());
+
+        List<Place> places = placeRepository.getPlacesByIds(new ArrayList<>(placeIds));
+
+        Map<Long, Place> placeMap = places.stream()
+                .collect(Collectors.toMap(Place::getId, Function.identity()));
+
+        List<EventGetDTO> eventsDTO = new ArrayList<>();
+        for (Event event : events) {
+            EventGetDTO eventGetDTO = mapper.convertValue(event, EventGetDTO.class);
+            eventGetDTO.setPlace(placeMap.get(event.getPlaceId()));
+            eventsDTO.add(eventGetDTO);
+        }
+
+        return eventsDTO;
+    }
 
     @Override
     public EventDTO addEvent(EventDTO eventDTO, MultipartFile file) throws Exception {
