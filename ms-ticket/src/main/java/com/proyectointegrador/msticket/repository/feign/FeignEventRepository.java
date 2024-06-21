@@ -3,10 +3,7 @@ package com.proyectointegrador.msticket.repository.feign;
 import com.proyectointegrador.msticket.configuration.feign.FeignInterceptor;
 import com.proyectointegrador.msticket.domain.Event;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +13,7 @@ public interface FeignEventRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/event/public/getById/{id}")
     Event findEventById(@PathVariable Long id);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/event/private/idsByCriteria")
-    List<Long> getEventIdsByReportSearch(@RequestParam Map<String, String> criteria);
+    @RequestMapping(method = RequestMethod.POST, value = "/event/private/idsByCriteria")
+    List<Long> getEventIdsByReportSearch(@RequestBody Map<String, String> criteria);
 
 }

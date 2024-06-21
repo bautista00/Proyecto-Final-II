@@ -6,10 +6,7 @@ import com.proyectointegrador.msevents.dto.EventGetDTO;
 import com.proyectointegrador.msevents.exceptions.ResourceNotFoundException;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public interface IEventService {
 
@@ -17,6 +14,8 @@ public interface IEventService {
     Optional<EventGetDTO> getEventByName(String name);
     Set<EventGetDTO> getAllEvents();
     List<EventGetDTO> searchEvents(String name, String category, String city, Date date);
+
+    List<Long> searchEventsReport(Map<String, String> criteria);
 
     EventDTO addEvent(EventDTO eventDTO, MultipartFile file) throws Exception;
     EventDTO updateEvent(EventDTO eventDTO) throws ResourceNotFoundException;

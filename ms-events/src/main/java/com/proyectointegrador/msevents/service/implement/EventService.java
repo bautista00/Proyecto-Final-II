@@ -217,6 +217,83 @@ public class EventService implements IEventService {
 
         return eventsDTO;
     }
+    @Override
+    public List<Long> searchEventsReport(Map<String, String> criteria) {
+        Specification<Event> spec = Specification.where(null);
+
+        String name = criteria.get("eventName");
+        String category = criteria.get("category");
+        String city = criteria.get("city");
+        String place = criteria.get("place");
+
+
+        if (name != null && !name.isEmpty()) {
+            Optional<Event> eventName = eventRepository.findEventByName(name);
+            if (eventName.isPresent()) {
+                Event event = eventName.get();
+                spec = spec.and((root, query, cb) -> cb.equal(root.get("id"), event.getId()));
+            } else {
+                return Collections.emptyList();
+            }
+        }
+
+        if (category != null && !category.isEmpty()) {
+            Optional<CategoryDTO> categoryOptional = categoryService.getCategoryByName(category);
+            if (categoryOptional.isPresent()) {
+                Long categoryId = categoryOptional.get().getId();
+                List<Event> eventCategory = eventRepository.findByCategory(categoryId);
+                if (!eventCategory.isEmpty()) {
+                    List<Long> eventIds = eventCategory.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList();
+            }
+        }
+
+        if (city != null && !city.isEmpty()) {
+            Set<Place> places = placeRepository.getPlaceByCity(city);
+            if (!places.isEmpty()) {
+                List<Long> placesIds = places.stream().map(Place::getId).collect(Collectors.toList());
+                List<Event> eventCity = new ArrayList<>();
+                for (Long id : placesIds) {
+                    List<Event> events = eventRepository.findByPlaceId(id);
+                    if (events != null && !events.isEmpty()) {
+                        eventCity.addAll(events);
+                    }
+                }
+                if (!eventCity.isEmpty()) {
+                    List<Long> eventIds = eventCity.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList();
+            }
+        }
+
+        if (place != null && !place.isEmpty()) {
+            Optional<Place> placeOptional = placeRepository.getPlaceByName(place);
+            if (placeOptional.isPresent()) {
+                Long placeId = placeOptional.get().getId();
+                List<Event> eventsPlace = eventRepository.findByPlaceId(placeId);
+                if (eventsPlace != null && !eventsPlace.isEmpty()) {
+                    List<Long> eventIds = eventsPlace.stream().map(Event::getId).collect(Collectors.toList());
+                    spec = spec.and((root, query, cb) -> root.get("id").in(eventIds));
+                } else {
+                    return Collections.emptyList();
+                }
+            } else {
+                return Collections.emptyList();
+            }
+        }
+
+        List<Event> events = eventRepository.findAll(spec);
+        return events.stream().map(Event::getId).collect(Collectors.toList());
+    }
 
     @Override
     public EventDTO addEvent(EventDTO eventDTO, MultipartFile file) throws Exception {

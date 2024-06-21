@@ -24,10 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -101,6 +98,16 @@ public class EventController {
             date = dateFormat.parse(dateString);
         }
         return eventService.searchEvents(name, category, city, date);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/private/idsByCriteria")
+    public List<Long> getEventIdsByReportSearch(@RequestBody Map<String, String> criteria){
+        if (criteria.isEmpty() || criteria.values().stream().allMatch(String::isEmpty)) {
+            return new ArrayList<>();
+        }
+        List<Long> eventIds = eventService.searchEventsReport(criteria);
+        return eventIds;
     }
 
     @Operation(summary = "Obtener evento por ID de estadio", description = "Devuelve una lista de eventos por ID de Place(Estadio)")
@@ -229,4 +236,5 @@ public class EventController {
             return new ResponseEntity<>("Error while deleting event with the name: " + name, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }
