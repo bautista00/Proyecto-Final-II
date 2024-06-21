@@ -5,6 +5,9 @@ import com.proyectointegrador.msticket.repository.feign.FeignEventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 @Repository
 @RequiredArgsConstructor
 public class EventRepository {
@@ -13,5 +16,9 @@ public class EventRepository {
 
     public Event findEventById(Long id) {
         return eventRepository.findEventById(id);
+    }
+
+    public List<Long> getEventIdsByReportSearch(Map<String, String> criteria){
+        return eventRepository.getEventIdsByReportSearch(criteria);
     }
 }

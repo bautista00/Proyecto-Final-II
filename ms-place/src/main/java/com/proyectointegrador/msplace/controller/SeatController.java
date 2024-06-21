@@ -77,7 +77,7 @@ public class SeatController {
         return seatService.findByTicketId(id);
     }
 
-    @PutMapping("/updateSeatByTicket")
+    @PutMapping("/private/updateSeatByTicket")
     public Optional<Seat> updateSeatByTicket(@RequestBody Seat seat){
         return seatService.updateSeatByTicket(seat);
     }

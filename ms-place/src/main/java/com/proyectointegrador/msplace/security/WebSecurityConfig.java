@@ -19,6 +19,14 @@ public class WebSecurityConfig {
 
         http
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("city/public/**").permitAll()
+                        .requestMatchers("city/private/**").authenticated()
+                        .requestMatchers("place/public/**").permitAll()
+                        .requestMatchers("place/private/**").authenticated()
+                        .requestMatchers("zone/public/**").permitAll()
+                        .requestMatchers("zone/private/**").authenticated()
+                        .requestMatchers("seat/public/**").permitAll()
+                        .requestMatchers("seat/private/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2

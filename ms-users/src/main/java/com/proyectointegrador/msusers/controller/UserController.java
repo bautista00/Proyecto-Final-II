@@ -115,7 +115,7 @@ public class UserController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200")
     })
-    @PreAuthorize("hasRole('ADMIN')")
+
     @GetMapping("/roles/{id}")
     public ResponseEntity<List<String>> getUserRoles(@Parameter(description = "ID del usuario para obtener los roles", example = "f7049e0e-0a21-4e19-819d-bf8915f2998f") @PathVariable String id){
         return ResponseEntity.ok(userService.getUserRoles(id));

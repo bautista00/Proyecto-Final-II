@@ -3,8 +3,11 @@ package com.proyectointegrador.msplace.controller;
 import com.proyectointegrador.msplace.domain.Event;
 import com.proyectointegrador.msplace.domain.Place;
 import com.proyectointegrador.msplace.dto.PlaceDTO;
+import com.proyectointegrador.msplace.dto.PlaceOnlyDTO;
 import com.proyectointegrador.msplace.dto.ZoneOnlyDTO;
 import com.proyectointegrador.msplace.repository.EventRepository;
+import com.proyectointegrador.msplace.service.implement.CityService;
+import com.proyectointegrador.msplace.service.interfaces.ICityService;
 import com.proyectointegrador.msplace.service.interfaces.IPlaceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -30,6 +33,8 @@ import java.util.Set;
 public class PlaceController {
 
     private final IPlaceService placeService;
+
+    private final ICityService cityService;
 
     @Operation(summary = "Obtener place(estadio) por ID", description = "Devuelve un place basado en Id")
     @GetMapping("/public/id/{id}")
@@ -67,6 +72,11 @@ public class PlaceController {
     @GetMapping("/public/zones/name")
     public Set<ZoneOnlyDTO> getAllZonesByPlaceName(@Parameter(description = "Nombre del place para obtener las zonas", example = "1") @RequestParam("name") String name) {
         return placeService.getAllZonesByPlaceName(name);
+    }
+
+    @GetMapping("/public/city/{city}")
+    Set<PlaceOnlyDTO> getPlaceByCity(@PathVariable String city) {
+        return cityService.getAllPlacesByCityName(city);
     }
 
     @Operation(summary = "Crear un place(estadio)", description = "Crea un nuevo place(estadio)",

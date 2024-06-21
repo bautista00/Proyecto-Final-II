@@ -12,6 +12,6 @@ import java.util.List;
 
 @FeignClient( name= "ms-events", url="http://localhost:8083", configuration = FeignInterceptor.class)
 public interface FeignEventRepository {
-    @RequestMapping(method = RequestMethod.GET, value = "/event/findByPlaceId/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/event/public/findByPlaceId/{id}")
     ResponseEntity<List<Event>> findByPlaceId(@PathVariable Long id);
 }

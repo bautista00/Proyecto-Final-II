@@ -1,4 +1,4 @@
-package com.proyectointegrador.msticket.configuration.feign;
+package com.proyectointegrador.msplace.configuration.swagger;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -12,9 +12,9 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI(){
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Microservicio de Tickets")
+                        .title("API de Microservicio de Estadio")
                         .version("1.0")
-                        .description("Documentación de la API para el Microservicio de Tickets")
+                        .description("Documentación de la API para el Microservicio de Eventos")
                 );
     }
 }

@@ -19,8 +19,7 @@ import java.util.Set;
 public class City {
 
     @Id
-    @SequenceGenerator(name = "city-sequence", sequenceName = "city-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "city-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "ID de la ciudad", example = "1")
     private Long id;
 

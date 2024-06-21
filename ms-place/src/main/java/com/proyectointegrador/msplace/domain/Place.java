@@ -21,8 +21,7 @@ import java.util.Set;
 public class Place {
 
     @Id
-    @SequenceGenerator(name = "place-sequence", sequenceName = "place-sequence", allocationSize = 1)
-    @GeneratedValue(generator = "place-sequence", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "Id de Place", example = "1")
     private Long id;
 
