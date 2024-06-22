@@ -99,7 +99,7 @@ build_ms_events:
   artifacts:
     name: ms_events_build
     paths:
-      - ms-events/target/ms-ticket-0.0.1-SNAPSHOT.jar
+      - ms-events/target/ms-events-0.0.1-SNAPSHOT.jar
   rules:
     - changes:
         - ms-events/**/*
