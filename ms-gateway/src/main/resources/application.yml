@@ -3,13 +3,13 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: 3.88.142.25
     prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://3.88.142.25:8761/eureka
 
 spring:
   application:
@@ -19,7 +19,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:5173"
+            allowedOrigins: "http://ticketrek-pi-bucket.s3-website-sa-east-1.amazonaws.com:5173"
             allowedHeaders: "*"
             allowedMethods:
               - GET
