@@ -65,7 +65,7 @@ build_ms_place:
   artifacts:
     name: ms_place_build
     paths:
-      - ms-place/target/ms-users-0.0.1-SNAPSHOT.jar
+      - ms-place/target/ms-place-0.0.1-SNAPSHOT.jar
   rules:
     - changes:
         - ms-place/**/*
