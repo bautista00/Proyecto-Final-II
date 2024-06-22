@@ -3,13 +3,13 @@ server:
 
 eureka:
   instance:
-    hostname: 54.91.250.44
+    hostname: 3.91.148.208
     prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://54.91.250.44:8761/eureka
+      defaultZone: http://3.91.148.208:8761/eureka
 
 spring:
   application:
