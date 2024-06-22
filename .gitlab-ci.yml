@@ -27,11 +27,11 @@ build_ms_gateway:
     - "cd ms-gateway"
     - "mvn clean"
     - "mvn clean install"
-    - echo "Finished building eureka-server."
+    - echo "Finished building ms-gateway."
   artifacts:
     name: ms_gateway_build
     paths:
-      - ms-gateway/target/eureka-server-0.0.1-SNAPSHOT.jar
+      - ms-gateway/target/ms-gateway-0.0.1-SNAPSHOT.jar
   rules:
     - changes:
         - ms-gateway/**/*
