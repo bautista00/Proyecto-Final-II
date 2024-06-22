@@ -87,6 +87,23 @@ build_ms_ticket:
     - changes:
         - ms-ticket/**/*
 
+build_ms_events:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-events..."
+    - "cd ms-events"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-events."
+  artifacts:
+    name: ms_events_build
+    paths:
+      - ms-events/target/ms-ticket-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-events/**/*
+
 deploy_eureka_server:
   stage: deploy
   dependencies:
@@ -201,3 +218,26 @@ deploy_ms_ticket:
     - ls
     - scp target/ms-ticket-0.0.1-SNAPSHOT.jar ubuntu@ec2-34-201-45-70.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying ms-ticket."
+
+deploy_ms_events:
+  stage: deploy
+  dependencies:
+    - build_ms_events
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-events
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_2" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-events"
+    - pwd
+    - ls
+    - scp target/ms-events-0.0.1-SNAPSHOT.jar ubuntu@ec2-34-201-45-70.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-events."
