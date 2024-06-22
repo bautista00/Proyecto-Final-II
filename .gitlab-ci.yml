@@ -84,7 +84,7 @@ deploy_eureka_server:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - touch ~/.ssh/config
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - ssh-keyscan -H "$DEPLOY_MS_IP_1" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying eureka-server"
@@ -107,7 +107,7 @@ deploy_ms_gateway:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - touch ~/.ssh/config
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - ssh-keyscan -H "$DEPLOY_MS_IP_1" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying ms-gateway"
@@ -130,7 +130,7 @@ deploy_ms_users:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - touch ~/.ssh/config
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - ssh-keyscan -H "$DEPLOY_MS_IP_1" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying ms-users"
@@ -153,7 +153,7 @@ deploy_ms_place:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - touch ~/.ssh/config
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - ssh-keyscan -H "$DEPLOY_MS_IP_2" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying ms-place"

@@ -7,7 +7,7 @@ server:
 
 eureka:
   instance:
-    hostname: 3.88.142.25
+    hostname: 54.91.250.44
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
@@ -17,4 +17,4 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://3.88.142.25:8761/eureka
+      defaultZone: http://54.91.250.44:8761/eureka
