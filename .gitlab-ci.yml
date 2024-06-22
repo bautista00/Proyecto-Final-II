@@ -53,6 +53,23 @@ build_ms_users:
     - changes:
         - ms-users/**/*
 
+build_ms_place:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-place..."
+    - "cd ms-place"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-place."
+  artifacts:
+    name: ms_place_build
+    paths:
+      - ms-place/target/ms-users-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-place/**/*
+
 deploy_eureka_server:
   stage: deploy
   dependencies:
@@ -121,3 +138,26 @@ deploy_ms_users:
     - ls
     - scp target/ms-users-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-88-142-25.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying ms-users."
+
+deploy_ms_place:
+  stage: deploy
+  dependencies:
+    - build_ms_place
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-place
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-place"
+    - pwd
+    - ls
+    - scp target/ms-place-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-88-142-25.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-place."
