@@ -36,6 +36,23 @@ build_ms_gateway:
     - changes:
         - ms-gateway/**/*
 
+build_ms_users:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-users..."
+    - "cd ms-users"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-users."
+  artifacts:
+    name: ms_users_build
+    paths:
+      - ms-users/target/ms-users-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-users/**/*
+
 deploy_eureka_server:
   stage: deploy
   dependencies:
@@ -81,3 +98,26 @@ deploy_ms_gateway:
     - ls
     - scp target/ms-gateway-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-88-142-25.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying ms-gateway."
+
+deploy_ms_users:
+  stage: deploy
+  dependencies:
+    - build_ms_users
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-users
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-users"
+    - pwd
+    - ls
+    - scp target/ms-users-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-88-142-25.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-users."
