@@ -170,7 +170,7 @@ deploy_ms_users:
     - echo "Deploying ms-users"
     - pwd
     - ls
-    - scp target/ms-users-0.0.1-SNAPSHOT.jar ubuntu@ec2-54-211-138-34.compute-1.amazonaws.com:/home/ubuntu
+    - scp target/ms-users-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-66-156.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying ms-users."
 
 deploy_ms_ticket:
