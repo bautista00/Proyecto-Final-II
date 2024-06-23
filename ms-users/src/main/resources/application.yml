@@ -9,11 +9,11 @@ spring:
 
 eureka:
   instance:
-    hostname: 3.91.148.208
+    hostname: 18.234.78.224
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     service-url:
-      defaultZone: http://3.91.148.208:8761/eureka
+      defaultZone: http://18.234.78.224:8761/eureka
 
 server:
   port: 8082
