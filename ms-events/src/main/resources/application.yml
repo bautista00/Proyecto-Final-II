@@ -16,6 +16,18 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://54.211.227.50:8080/realms/ticketrek
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
 
 eureka:
   instance:
