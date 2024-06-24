@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient( name= "ms-events", url="http://localhost:8083", configuration = FeignInterceptor.class)
+@FeignClient( name= "ms-events", url="http://3.87.226.2:8083", configuration = FeignInterceptor.class)
 public interface FeignEventRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/event/public/findByPlaceId/{id}")
     ResponseEntity<List<Event>> findByPlaceId(@PathVariable Long id);

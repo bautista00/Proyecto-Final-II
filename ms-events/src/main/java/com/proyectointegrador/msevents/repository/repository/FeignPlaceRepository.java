@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-@FeignClient(name= "ms-place", url="http://localhost:8084", configuration = FeignInterceptor.class)
+@FeignClient(name= "ms-place", url="http://3.87.226.2:8084", configuration = FeignInterceptor.class)
 public interface FeignPlaceRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/place/public/id/{id}")
     ResponseEntity<Optional<Place>> getPlaceById(@PathVariable Long id);
