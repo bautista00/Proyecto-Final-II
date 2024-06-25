@@ -28,25 +28,25 @@ spring:
               - DELETE
       routes:
         - id: ms-users
-          uri: http://18.234.78.224:8082
+          uri: http://3.87.66.156:8082
           predicates:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
         - id: ms-ticket
-          uri: http://18.234.78.224:8085
+          uri: http://3.87.66.156:8085
           predicates:
             - Path=/api/ticket/**
           filters:
             - StripPrefix=2
         - id: ms-place
-          uri: http://18.234.78.224:8084/
+          uri: http://3.87.226.2:8084/
           predicates:
             - Path=/api/place/**
           filters:
             - StripPrefix=2
         - id: ms-events
-          uri: http://18.234.78.224:8083/
+          uri: http://3.87.226.2:8083/
           predicates:
             - Path=/api/events/**
           filters:
