@@ -1,0 +1,243 @@
+stages:
+  - build
+  - deploy
+
+build_eureka_server:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building eureka-server..."
+    - "cd eureka-server"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building eureka-server."
+  artifacts:
+    name: eureka_server_build
+    paths:
+      - eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - eureka-server/**/*
+
+build_ms_gateway:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-gateway..."
+    - "cd ms-gateway"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-gateway."
+  artifacts:
+    name: ms_gateway_build
+    paths:
+      - ms-gateway/target/ms-gateway-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-gateway/**/*
+
+build_ms_users:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-users..."
+    - "cd ms-users"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-users."
+  artifacts:
+    name: ms_users_build
+    paths:
+      - ms-users/target/ms-users-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-users/**/*
+
+build_ms_ticket:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-ticket..."
+    - "cd ms-ticket"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-ticket."
+  artifacts:
+    name: ms_ticket_build
+    paths:
+      - ms-ticket/target/ms-ticket-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-ticket/**/*
+
+build_ms_events:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-events..."
+    - "cd ms-events"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-events."
+  artifacts:
+    name: ms_events_build
+    paths:
+      - ms-events/target/ms-events-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-events/**/*
+
+build_ms_place:
+  stage: build
+  image: maven:3.8.5-openjdk-17
+  script:
+    - echo "Building ms-place..."
+    - "cd ms-place"
+    - "mvn clean"
+    - "mvn clean install"
+    - echo "Finished building ms-place."
+  artifacts:
+    name: ms_place_build
+    paths:
+      - ms-place/target/ms-place-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - ms-place/**/*
+
+deploy_eureka_server:
+  stage: deploy
+  dependencies:
+    - build_eureka_server
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd eureka-server
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_1" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying eureka-server"
+    - pwd
+    - ls
+    - scp target/eureka-server-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-234-78-224.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying eureka-server."
+
+deploy_ms_gateway:
+  stage: deploy
+  dependencies:
+    - build_ms_gateway
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-gateway
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_1" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-gateway"
+    - pwd
+    - ls
+    - scp target/ms-gateway-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-234-78-224.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-gateway."
+
+deploy_ms_users:
+  stage: deploy
+  dependencies:
+    - build_ms_users
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-users
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_2" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-users"
+    - pwd
+    - ls
+    - scp target/ms-users-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-66-156.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-users."
+
+deploy_ms_ticket:
+  stage: deploy
+  dependencies:
+    - build_ms_ticket
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-ticket
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_2" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-ticket"
+    - pwd
+    - ls
+    - scp target/ms-ticket-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-66-156.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-ticket."
+
+deploy_ms_events:
+  stage: deploy
+  dependencies:
+    - build_ms_events
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-events
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_3" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-events"
+    - pwd
+    - ls
+    - scp target/ms-events-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-226-2.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-events."
+
+deploy_ms_place:
+  stage: deploy
+  dependencies:
+    - build_ms_place
+  image: ubuntu
+  before_script:
+    - apt-get update && apt-get install -y openssh-client
+    - cd ms-place
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_MS_IP_3" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - echo "Deploying ms-place"
+    - pwd
+    - ls
+    - scp target/ms-place-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-226-2.compute-1.amazonaws.com:/home/ubuntu
+    - echo "Finished deploying ms-place."

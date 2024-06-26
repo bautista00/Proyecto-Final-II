@@ -3,13 +3,13 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: 18.234.78.224
     prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://18.234.78.224:8761/eureka
 
 spring:
   application:
@@ -19,7 +19,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:5173"
+            allowedOrigins: "*"
             allowedHeaders: "*"
             allowedMethods:
               - GET
@@ -28,27 +28,26 @@ spring:
               - DELETE
       routes:
         - id: ms-users
-          uri: lb://ms-users
+          uri: http://3.87.66.156:8082
           predicates:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
         - id: ms-ticket
-          uri: lb://ms-ticket
+          uri: http://3.87.66.156:8085
           predicates:
             - Path=/api/ticket/**
           filters:
             - StripPrefix=2
         - id: ms-place
-          uri: lb://ms-place
+          uri: http://3.87.226.2:8084/
           predicates:
             - Path=/api/place/**
           filters:
             - StripPrefix=2
         - id: ms-events
-          uri: lb://ms-events
+          uri: http://3.87.226.2:8083/
           predicates:
             - Path=/api/events/**
           filters:
             - StripPrefix=2
-

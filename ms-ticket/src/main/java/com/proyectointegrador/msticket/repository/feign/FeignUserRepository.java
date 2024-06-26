@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Optional;
 
-@FeignClient( name= "ms-users", url="http://localhost:8082", configuration = FeignInterceptor.class)
+@FeignClient( name= "ms-users", url="http://3.87.66.156:8082", configuration = FeignInterceptor.class)
 public interface FeignUserRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/users/id/{id}")
     ResponseEntity<Optional<User>> findUserById(@PathVariable String id);

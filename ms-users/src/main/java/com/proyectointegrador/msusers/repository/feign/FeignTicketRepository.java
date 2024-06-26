@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
-@FeignClient( name= "ms-ticket", url="http://localhost:8085", configuration = FeignInterceptor.class)
+@FeignClient( name= "ms-ticket", url="http://3.87.66.156:8085", configuration = FeignInterceptor.class)
 public interface FeignTicketRepository {
     @RequestMapping(method = RequestMethod.GET, value = "/tickets/findByUserId/{id}")
     ResponseEntity<List<Ticket>> findByUserId(@PathVariable String id);
