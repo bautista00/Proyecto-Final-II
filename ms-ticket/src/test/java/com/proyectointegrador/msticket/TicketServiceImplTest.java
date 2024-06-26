@@ -88,47 +88,38 @@ public class TicketServiceImplTest {
 
         when(mapper.convertValue(ticket, TicketAllDTO.class)).thenReturn(ticketAllDTO);
 
-        // Act
         Optional<TicketAllDTO> result = ticketService.getTicketById(1L);
 
-        // Assert
         assertTrue(result.isPresent());
         assertEquals(ticketAllDTO, result.get());
     }
 
     @Test
     void getTicketById_NotFound() {
-        // Arrange
         when(ticketRepository.findById(1L)).thenReturn(Optional.empty());
 
-        // Act
         Optional<TicketAllDTO> result = ticketService.getTicketById(1L);
 
-        // Assert
         assertFalse(result.isPresent());
     }
 
     @Test
     void createTicket_Success() throws MessagingException {
-        // Arrange
         TicketCreateDTO ticketCreateDTO = new TicketCreateDTO();
         ticketCreateDTO.setUserId("user123");
         ticketCreateDTO.setEventId(1L);
         ticketCreateDTO.setPaymentMethodId(1L);
         ticketCreateDTO.setSeatsId(Arrays.asList(1L, 2L));
 
-        // Mock ObjectMapper
         ObjectMapper objectMapper = Mockito.mock(ObjectMapper.class);
         Mockito.when(objectMapper.convertValue(Mockito.any(), Mockito.eq(Ticket.class))).thenReturn(new Ticket());
 
-        // Mock PaymentMethod
         PaymentMethod paymentMethod = new PaymentMethod();
         paymentMethod.setId(1L);
         paymentMethod.setCategory("algo");
         paymentMethod.setDetail("algo");
         when(paymentMethodRepository.findById(1L)).thenReturn(Optional.of(paymentMethod));
 
-        // Mock Seats
         Seat seat1 = new Seat(1L, 1.0, 44444L);
         Seat seat2 = new Seat(2L, 1.0, 55555L);
         when(seatRepository.findSeatById(1L)).thenReturn(seat1);
@@ -143,7 +134,6 @@ public class TicketServiceImplTest {
         Place place = new Place();
         place.setName("hola");
 
-        // Mock Event
         Event event = new Event();
         event.setId(1L);
         event.setName("Event");
@@ -152,13 +142,11 @@ public class TicketServiceImplTest {
         when(eventRepository.findEventById(1L)).thenReturn(event);
 
 
-        // Mock User
         User user = new User();
         user.setId("user123");
         user.setEmail("user@example.com");
         when(userRepository.findUserById("user123")).thenReturn(Optional.of(user));
 
-        // Mock TicketRepository
         Ticket savedTicket = new Ticket();
         savedTicket.setId(1L);
         savedTicket.setUserId("user123");
@@ -167,10 +155,8 @@ public class TicketServiceImplTest {
         when(ticketRepository.save(any(Ticket.class))).thenReturn(savedTicket);
 
         when(mapper.convertValue(ticketCreateDTO,Ticket.class)).thenReturn(savedTicket);
-        // Act
         Ticket result = ticketService.createTicket(ticketCreateDTO);
 
-        // Assert
         assertNotNull(result);
         assertEquals(1L, result.getId());
         assertEquals("user123", result.getUserId());

@@ -93,8 +93,7 @@ class EventServiceTest {
         Place place = new Place();
         place.setId(1L);
 
-        Optional<Event> optionalEvent = Optional.of(event); // Crear un Optional<Event> con el evento
-
+        Optional<Event> optionalEvent = Optional.of(event);
         when(eventRepository.findEventById(1L)).thenReturn(optionalEvent);
         when(mapper.convertValue(eq(optionalEvent), eq(EventGetDTO.class))).thenReturn(eventGetDTO); // Ajustar el stubbing
 
@@ -182,10 +181,8 @@ class EventServiceTest {
 
         EventDTO result = eventService.updateEvent(eventDTO);
 
-        // Verificar que el resultado sea el esperado
         assertEquals(eventDTO, result);
 
-        // Verificar las interacciones con los mocks
         verify(eventRepository).findEventById(1L);
         verify(eventRepository).save(event);
     }

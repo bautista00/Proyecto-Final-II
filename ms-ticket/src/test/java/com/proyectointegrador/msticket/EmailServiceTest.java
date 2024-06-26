@@ -38,20 +38,16 @@ public class EmailServiceTest {
 
 	@Test
 	void sendMail_Successful() throws MessagingException {
-		// Mocking emailDTO
 		EmailDTO emailDTO = new EmailDTO();
 		emailDTO.setReceiver("test@example.com");
 		emailDTO.setSubject("Test Subject");
 		emailDTO.setMessage("Test Message");
 
-		// Mocking templateEngine
 
 		when(templateEngine.process(eq("email"), any(Context.class))).thenReturn("<html><body>This is a test email</body></html>");
 
-		// Perform the method call
 		emailService.sendMail(emailDTO);
 
-		// Verify that the JavaMailSender send method was called
 		verify(javaMailSender).send(any(MimeMessage.class));
 	}
 
@@ -62,7 +58,6 @@ public class EmailServiceTest {
 
 	@Test
 	void sendMail_Failure() {
-		// Arrange
 		EmailDTO emailDTO = new EmailDTO();
 		emailDTO.setReceiver("test@example.com");
 		emailDTO.setSubject("Test Subject");
@@ -70,7 +65,6 @@ public class EmailServiceTest {
 
 		when(javaMailSender.createMimeMessage()).thenThrow(new RuntimeException("Mail server error"));
 
-		// Act & Assert
 		Exception exception = assertThrows(RuntimeException.class, () -> {
 			emailService.sendMail(emailDTO);
 		});

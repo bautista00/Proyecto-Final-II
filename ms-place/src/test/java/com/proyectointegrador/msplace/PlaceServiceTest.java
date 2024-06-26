@@ -100,10 +100,8 @@ class PlaceServiceTest {
         when(mapper.convertValue(place, PlaceDTO.class)).thenReturn(placeDTO);
         when(eventRepository.findByPLaceId(1L)).thenReturn(new ArrayList<>());
 
-        // Act
         Optional<PlaceDTO> placeDTOOptional = placeService.getPlaceByName("TestPlace");
 
-        // Assert
         assertTrue(placeDTOOptional.isPresent());
         PlaceDTO placeDTO = placeDTOOptional.get();
         assertNotNull(placeDTO);
@@ -124,7 +122,6 @@ class PlaceServiceTest {
 
     @Test
     void getAllPlaces_shouldReturnPlaceDTOs() {
-        // Arrange
         Place place = new Place();
         place.setId(1L);
         place.setName("TestPlace");
@@ -135,10 +132,8 @@ class PlaceServiceTest {
         when(mapper.convertValue(place, PlaceDTO.class)).thenReturn(placeDTO);
         when(eventRepository.findByPLaceId(1L)).thenReturn(new ArrayList<>());
 
-        // Act
         Set<PlaceDTO> result = placeService.getAllPlaces();
 
-        // Assert
         assertEquals(1, result.size());
         assertTrue(result.contains(placeDTO));
         verify(placeRepository).findAll();

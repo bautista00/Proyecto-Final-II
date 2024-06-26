@@ -173,21 +173,16 @@ class SeatServiceTest {
         allSeats.add(seat2);
         allSeats.add(seat3);
 
-        // Convertir los seats a SeatOnlyDTOs
         Set<SeatOnlyDTO> allSeatDTOs = allSeats.stream()
                 .map(seat -> mapper.convertValue(seat, SeatOnlyDTO.class))
                 .collect(Collectors.toSet());
 
-        // Configurar el mock del repository para devolver la lista de seats
         when(seatRepository.findAll()).thenReturn(allSeats);
 
-        // Mockear el método getAllSeatsByZoneId para devolver los DTOs
         when(seatService.getAllSeatsByZoneId(1L)).thenReturn(allSeatDTOs);
 
-        // Ejecutar el método a probar
         Set<SeatOnlyDTO> result = seatService.getSeatsNotAvailableByZoneId(1L);
 
-        // Verificar el resultado
         assertEquals(2, result.size());
         for (SeatOnlyDTO seatDTO : result) {
             assertEquals(0, seatDTO.getAvailability());
