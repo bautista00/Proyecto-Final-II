@@ -3,6 +3,7 @@ package com.proyectointegrador.msusers.repository;
 import com.proyectointegrador.msusers.domain.Ticket;
 import com.proyectointegrador.msusers.domain.User;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.RoleMappingResource;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @RequiredArgsConstructor
+@Setter
 public class UserRepository implements IUserRepository{
 
     private final Keycloak keycloak;
