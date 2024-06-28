@@ -237,7 +237,6 @@ deploy_ms_place:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - echo "Deploying ms-place"
-    - pwd
     - ls
     - scp target/ms-place-0.0.1-SNAPSHOT.jar ubuntu@ec2-3-87-226-2.compute-1.amazonaws.com:/home/ubuntu
     - echo "Finished deploying ms-place."
